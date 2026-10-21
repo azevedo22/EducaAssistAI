@@ -2,7 +2,9 @@
 
 Assistente conversacional com RAG (Retrieval-Augmented Generation) para consulta de documentação institucional do IPB. Responde com base nos documentos carregados e recusa responder quando a informação não existe nesses documentos.
 
-> [Captura de ecrã ou GIF de uma conversa]
+| Painel de administração | Configuração de modelos |
+|---|---|
+| ![Painel de administração com documentos indexados](docs/images/admin.png) | ![Escolha do LLM e dos embeddings sem alterar código](docs/images/configuracao.png) |
 
 ## Funcionalidades
 
@@ -164,33 +166,47 @@ requirements.txt    Dependências Python
 
 ## Avaliação
 
-Benchmark com **160 perguntas** em 8 categorias (20 por categoria), com um conjunto de respostas de referência.
+Benchmark com **160 perguntas reais** em 8 categorias (20 por categoria), construído a partir de dois documentos institucionais (calendário académico e horários de atendimento). Os resultados são os do relatório final do projeto.
 
-**Recusa (anti-alucinação):** nas 40 perguntas sem resposta nos documentos (categorias "desconhecido" e "anti-alucinação"), o sistema recusou responder em **100%** dos casos.
+**Configuração testada:** gerador `llama-3.1-8b-instant` (Groq), embeddings `paraphrase-multilingual-MiniLM-L12-v2` locais (384 dimensões), 247 excertos indexados.
 
-**Recuperação** (os documentos certos aparecem nos resultados):
+### Recusa (anti-alucinação)
 
-| Categoria | Recall@5 | Recall@20 | MRR |
-|---|---|---|---|
-| Factual | 0,90 | 1,00 | 0,72 |
-| Restrição | 0,86 | 1,00 | 0,82 |
-| Multi-hop | 0,72 | 0,98 | 1,00 |
-| Conversacional | 0,80 | 0,90 | 0,54 |
-| Listagem | 0,46 | 0,80 | 0,68 |
+Nas 40 perguntas sem resposta nos documentos ou com premissas falsas, o sistema recusou ou corrigiu a premissa em **40/40 casos (1,00)**. Não foram observadas alucinações.
 
-**Qualidade da resposta** (avaliada por um LLM juiz, 100 perguntas):
+### Recuperação
 
-| Categoria | Correta | Parcial | Incorreta |
-|---|---|---|---|
-| Factual | 90% | 0% | 10% |
-| Multi-hop | 40% | 50% | 10% |
-| Listagem | 35% | 45% | 20% |
-| Restrição | 25% | 25% | 50% |
-| Conversacional | 5% | 0% | 95% |
+| Categoria | Recall@5 | Recall@20 | NDCG@10 | MRR |
+|---|---|---|---|---|
+| Factual | 0,90 | 1,00 | 0,76 | 0,72 |
+| Restrição | 0,86 | 1,00 | 0,87 | 0,82 |
+| Multi-hop | 0,71 | 0,98 | 0,91 | 1,00 |
+| Conversacional | 0,80 | 0,90 | 0,65 | 0,54 |
+| Listagem | 0,46 | 0,80 | 0,74 | 0,68 |
 
-Perguntas factuais diretas funcionam bem e a recusa é fiável. Perguntas com restrições, listagens longas, contagens e follow-ups conversacionais são os principais pontos a melhorar.
+### Correção das respostas
 
-Para correr o benchmark: ver `benchmark/` (`run_benchmark.py`, `evaluate.py`, `judge.py`) e `backend/eval/`.
+Avaliada por um modelo juiz independente (`openai/gpt-oss-120b`). Correção = Correto + 0,5 × Parcial.
+
+| Categoria | Correto | Parcial | Incorreto | Correção |
+|---|---|---|---|---|
+| Factual | 0,90 | 0,00 | 0,10 | **0,90** |
+| Listagem | 0,35 | 0,45 | 0,20 | 0,57 |
+| Restrição | 0,25 | 0,15 | 0,60 | 0,33 |
+| Conversacional | 0,20 | 0,00 | 0,80 | 0,20 |
+
+**Multi-hop (ablação do gerador):** com o mesmo retriever e o mesmo contexto, a correção sobe de 0,00 com `llama-3.1-8b-instant` (que se abstém) para **0,93** com `llama-3.3-70b-versatile`. A limitação está na capacidade de síntese do modelo pequeno, não na recuperação.
+
+**Contagem:** acerto exato de 0,05 (0,15 com tolerância de ±1). Contar sobre todo o corpus exige uma consulta estruturada, não recuperação semântica.
+
+### Leitura dos resultados
+
+- A recuperação híbrida é forte: Recall@20 de 1,00 nas perguntas factuais e de restrição.
+- A recusa é fiável: o sistema prefere admitir que não sabe a inventar.
+- As listagens são o ponto fraco da recuperação, porque o reranking limita a 6 os excertos por ficheiro.
+- As perguntas de seguimento são bem recuperadas, mas a síntese da resposta falha com o modelo de 8B.
+
+Os scripts de avaliação estão em `benchmark/` (`evaluate.py`, `judge.py`) e em `backend/eval/`.
 
 ## Autor
 
