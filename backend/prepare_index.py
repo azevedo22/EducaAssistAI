@@ -1,11 +1,23 @@
+"""Indexação a partir da linha de comandos (alternativa ao painel de Administração).
+
+Correr a partir da raiz do projeto:
+    python -m backend.prepare_index
+
+Usa a mesma coleção que o backend (ipb_docs_v3_<EMBED_PROVIDER>) e a mesma
+pasta (backend/db), pelo que os documentos ficam visíveis na aplicação.
+"""
 import os
-from ingest import load_text_documents, scrape_ipb_page
-from chunk import chunk_text
-from retrieval import create_collection, index_documents
+
+from backend.ingest import load_text_documents, scrape_ipb_page
+from backend.chunk import chunk_text
+from backend.retrieval import collection_name_for_provider, create_collection, index_documents
 
 
 def build_index(text_paths, web_urls):
-    collection = create_collection(persist_directory="backend/db", name="ipb_docs_v2")
+    collection = create_collection(
+        persist_directory="backend/db",
+        name=collection_name_for_provider("ipb_docs_v3"),
+    )
 
     texts = []
     metadatas = []
@@ -34,7 +46,7 @@ def build_index(text_paths, web_urls):
 
 
 if __name__ == "__main__":
-    text_paths = ["data/sample.txt"]
+    text_paths = ["backend/data/sample.txt"]
     web_urls = ["https://www.ipb.pt"]
 
     if not any(os.path.exists(path) for path in text_paths):

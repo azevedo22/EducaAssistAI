@@ -39,7 +39,7 @@ Variáveis de ambiente reconhecidas:
 
   Gemini:
     GEMINI_LLM_API_KEY      obrigatória (sem default); pode reutilizar GOOGLE_API_KEY
-    GEMINI_LLM_MODEL        default: gemini-2.0-flash
+    GEMINI_LLM_MODEL        default: gemini-2.5-flash
     GEMINI_LLM_TIMEOUT      default: 60 (segundos)
 """
 
