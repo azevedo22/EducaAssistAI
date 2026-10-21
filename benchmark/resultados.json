@@ -1,0 +1,1713 @@
+{
+  "linhas": [
+    {
+      "id": "fact_01",
+      "categoria": "factual",
+      "resposta": "O horário de atendimento de António Jorge Ferreira Vaz é terça-feira, das 11:00 às 13:00 e das 16:00 às 18:00.",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 0.8395700624665824,
+      "mrr": 1.0,
+      "token_f1": 0.7567567567567567,
+      "rouge_l": 0.7567567567567567,
+      "bleu": 0.605478327168454
+    },
+    {
+      "id": "fact_02",
+      "categoria": "factual",
+      "resposta": "Ana Isabel Pinheiro Nunes Pereira tem horário de atendimento nas seguintes datas e horários: terça-feira 09:00 - 11:00; quinta-feira 09:00 - 11:00.",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "token_f1": 0.5365853658536586,
+      "rouge_l": 0.5365853658536586,
+      "bleu": 0.24125880497129865
+    },
+    {
+      "id": "fact_03",
+      "categoria": "factual",
+      "resposta": "Segunda-feira 11:00 - 13:00; terça-feira 11:00 - 13:00.",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 0.8308842371584716,
+      "mrr": 1.0,
+      "token_f1": 0.46153846153846156,
+      "rouge_l": 0.46153846153846156,
+      "bleu": 0.06284358628898817
+    },
+    {
+      "id": "fact_04",
+      "categoria": "factual",
+      "resposta": "Terça-feira 09:00 - 11:00; Sexta-feira 09:00 - 11:00.",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "token_f1": 0.4285714285714285,
+      "rouge_l": 0.4285714285714285,
+      "bleu": 0.048942634212879386
+    },
+    {
+      "id": "fact_05",
+      "categoria": "factual",
+      "resposta": "Segunda-feira 09:00 - 11:00.",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "token_f1": 0.375,
+      "rouge_l": 0.375,
+      "bleu": 0.05782700803395868
+    },
+    {
+      "id": "fact_06",
+      "categoria": "factual",
+      "resposta": "Quarta-feira, 10:00 - 12:00 e 14:00 - 16:00.",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "token_f1": 0.44444444444444436,
+      "rouge_l": 0.44444444444444436,
+      "bleu": 0.06595255877099522
+    },
+    {
+      "id": "fact_07",
+      "categoria": "factual",
+      "resposta": "O horário de atendimento de Adriano Manuel Alves Ferreira é terça-feira, das 16:00 às 18:00.",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 0.8756458727267334,
+      "mrr": 1.0,
+      "token_f1": 0.7407407407407408,
+      "rouge_l": 0.6666666666666665,
+      "bleu": 0.46892438882117243
+    },
+    {
+      "id": "fact_08",
+      "categoria": "factual",
+      "resposta": "Quarta-feira 19:00 - 21:00.",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "token_f1": 0.375,
+      "rouge_l": 0.375,
+      "bleu": 0.05782700803395868
+    },
+    {
+      "id": "fact_09",
+      "categoria": "factual",
+      "resposta": "Sexta-feira, das 18:00 às 20:00.",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 0.8175295903539445,
+      "mrr": 1.0,
+      "token_f1": 0.5263157894736842,
+      "rouge_l": 0.5263157894736842,
+      "bleu": 0.16529888822158656
+    },
+    {
+      "id": "fact_10",
+      "categoria": "factual",
+      "resposta": "O horário de atendimento de Carla Alexandra Soares Geraldes é quarta-feira 11:00 - 13:00 e quinta-feira 18:00 - 20:00.",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 0.7844801364718913,
+      "mrr": 1.0,
+      "token_f1": 0.5405405405405405,
+      "rouge_l": 0.5405405405405405,
+      "bleu": 0.218285418602495
+    },
+    {
+      "id": "list_01",
+      "categoria": "listagem",
+      "resposta": "* António Jorge Ferreira Vaz\n* Eduarda Cristina Pires Luso\n* Maria Isabel Lopes Marcelino Dias de Abreu\n* Pedro Miguel Rodrigues Oliveira\n* Flora Cristina Meireles Silva\n* Silvia Maria Afonso Fernandes\n* Rui Alexandre Figueiredo de Oliveira",
+      "recall@5": 0.7142857142857143,
+      "recall@20": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "token_f1": 0.927536231884058,
+      "rouge_l": 0.6956521739130435,
+      "bleu": 0.6757294525043844
+    },
+    {
+      "id": "list_02",
+      "categoria": "listagem",
+      "resposta": "* Edite Martins Cordeiro (DEP.: DM, email: emc@ipb.pt, Gab.: 101)\n* Paula Maria Pereira de Barros (DEP.: DM, email: pbarros@ipb.pt, Gab.: 2)\n* Ana Isabel Pinheiro Nunes Pereira (DEP.: DM, email: apereira@ipb.pt, Gab.: 54)\n* João Carlos Oliveira Nunes (DEP.: DM, email: jnunes@ipb.pt, Gab.: 24)\n* Carla Sofia Veiga Fernandes (DEP.: DM, email: cveiga@ipb.pt, Gab.: 39)\n* Florbela Alexandra Pires Fernandes (DEP.: DM, email: fflor@ipb.pt, Gab.: 31)\n* Mário António Rodrigues Grande Abrantes (DEP.: DM, email: mar@ipb.pt, Gab.: 53)\n* Maria de Fátima Moreira da Silva Pacheco (DEP.: DM, email: pacheco@ipb.pt, Gab.: 112)",
+      "recall@5": 0.5555555555555556,
+      "recall@20": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "token_f1": 0.46341463414634143,
+      "rouge_l": 0.25609756097560976,
+      "bleu": 0.2103188603985946
+    },
+    {
+      "id": "list_03",
+      "categoria": "listagem",
+      "resposta": "* Pedro Leonel Pamplona Folhento\n* António Miguel Verdelho Paula\n* Matheus Henrique Alves\n* João Carlos Almendra Roque\n* Sérgio Manuel de Sousa Rosa\n* Carlos Liberal Moreno Afonso\n* Débora Rodrigues de Sousa Macanjo Ferreira\n* Pedro Nuno Gonçalves Nogueiro\n* Manuel Teixeira Brás César\n* Valdemar Raul Ramos Garcia",
+      "recall@5": 0.45454545454545453,
+      "recall@20": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "token_f1": 0.9032258064516129,
+      "rouge_l": 0.49462365591397855,
+      "bleu": 0.5380198997453864
+    },
+    {
+      "id": "list_04",
+      "categoria": "listagem",
+      "resposta": "* Maria Prudência Gonçalves Martins\n* Carla Alexandra Soares Geraldes\n* Francisco José Basilio Pimentel Pires Peito\n* José Mário Escudeiro Aguiar\n* Maria Clara Rodrigues Bento Vaz Fernandes\n* Osmano Manuel Fins Morais\n* João Manuel Carvalho Sobrinho Teixeira\n* Lucas Fernando Alves da Silva Zafanelli\n* Helena Isabel Martins Santos Paulo",
+      "recall@5": 0.4166666666666667,
+      "recall@20": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "token_f1": 0.7927927927927928,
+      "rouge_l": 0.4324324324324324,
+      "bleu": 0.40613883321086136
+    },
+    {
+      "id": "list_05",
+      "categoria": "listagem",
+      "resposta": "* Bernardo Farrero (terça-feira 14:00 - 16:00)\n* Luís Miguel Silva Correia (quarta-feira 18:00 - 20:00)\n* Jorge Alexandre Rente Paulo (quarta-feira 14:00 - 16:00)\n* João da Rocha e Silva (terça-feira 09:00 - 11:00; quarta-feira 09:00 - 11:00)\n* Manuel Luís Pires Clara (quarta-feira 14:00 - 16:00; sexta-feira 11:00 - 13:00)\n* Alexandra Sofia Rosa Jerónimo (segunda-feira 09:00 - 11:00)\n* Hugo Miguel Andrade Lopes Figueiredo da Silva (segunda-feira 16:00 - 18:00)\n* Cristovão Lucas dos Santos (segunda-feira 17:00 - 19:00; quarta-feira 16:00 - 18:00)\n* Luís Manuel Frölén Ribeiro (quinta-feira 14:00 - 16:00; sexta-feira 11:00 - 13:00)",
+      "recall@5": 0.38461538461538464,
+      "recall@20": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "token_f1": 0.5033112582781457,
+      "rouge_l": 0.21192052980132453,
+      "bleu": 0.26564275889543587
+    },
+    {
+      "id": "list_06",
+      "categoria": "listagem",
+      "resposta": "- Joana Andrêa Soares Amaral\n- Maria Filomena Filipe Barreiro\n- Helder Teixeira Gomes\n- Ricardo Frederico Pereira Dias\n- Pedro Jorge Louro Crugeira\n- Ana Maria Alves Queiroz da Silva\n- Mónia Andreia Rodrigues Martins\n- José António Correia Silva\n- Rolando Carlos Pereira Simões Dias\n- António Manuel Esteves Ribeiro\n- Paulo Miguel Pereira de Brito\n- Ramiro José Espinheira Martins\n- Simão Pedro de Almeida Pinho",
+      "recall@5": 0.35714285714285715,
+      "recall@20": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "token_f1": 0.835820895522388,
+      "rouge_l": 0.3880597014925373,
+      "bleu": 0.5021780445413998
+    },
+    {
+      "id": "list_07",
+      "categoria": "listagem",
+      "resposta": "* Laiany Suganuma Brancalião\n* Inês Cristina Vinhas de Seixas\n* José Luís Sousa de Magalhães Lima\n* Rebeca Baron Kalbermatter\n* João Afonso Braun Neto\n* José Augusto de Almeida Pinheiro de Carvalho\n* Ruben Alexandre Moreno Clemente\n* Luís Fernando Piardi\n* Américo Vicente Teixeira Leite\n* Arezki Abderrahim Chellal\n* José Alexandre de Carvalho Gonçalves\n* Fernando Jorge Teixeira\n* Guido Szekir Berger\n* Adriano Manuel Alves Ferreira\n* Fernando Jorge Coutinho Monteiro\n* Getúlio Paulo Peixoto Igrejas\n* Paulo Jorge Pinto Leitão",
+      "recall@5": 0.19230769230769232,
+      "recall@20": 0.7692307692307693,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "token_f1": 0.7499999999999999,
+      "rouge_l": 0.2826086956521739,
+      "bleu": 0.29567757732047845
+    },
+    {
+      "id": "list_08",
+      "categoria": "listagem",
+      "resposta": "Os docentes do departamento DCES com atendimento marcado são:\n\n• Paulo Jorge Aragão Guimarães\n• Ana Paula Carvalho do Monte\n• Lígia Maria Almendra Xavier Barreira Lousada\n• Lídia Maria Galvão Rodrigues Praça\n• Ana Isabel Rodrigues Fernandes\n• Carlos Jorge Maia Domingues\n• Luís Carlos Magalhães Pires\n• Guery Tã Baute e Silva\n• Larysa Ribeiro\n• Norberto Celestino Vasques Loureiro\n• José Carlos Lopes\n• Pedro José Marques Silva\n• Berta Isabel Gomes Gonçalves\n• Maria Isabel Barreiro Ribeiro\n• Elaine Cristina Borges Scalabrini\n• Adélia Marlene Teixeira Matos\n• Benilde Joaquina Pereira Moreira\n• Vítor Fernando Fontes da Costa\n• Luis Miguel da Paz Gonçalves\n• Maria Goreti Teixeira Rodrigues\n• Joaquim Agostinho Mendes Leite\n• José Bernardo Martins Alves\n• João Pedro Almendra Xavier Teixeira\n• Eunice Maria Marques Neves dos Santos\n• Jorge Humberto Lopes Marinho Sampaio",
+      "recall@5": 0.12195121951219512,
+      "recall@20": 0.4878048780487805,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "token_f1": 0.7656765676567657,
+      "rouge_l": 0.2706270627062706,
+      "bleu": 0.3350150749275149
+    },
+    {
+      "id": "list_09",
+      "categoria": "listagem",
+      "resposta": "Os docentes do departamento DIC com atendimento marcado são:\n\n* Reis Lima Quarteu (segunda-feira 11:00 - 13:00)\n* Alexandre de Oliveira Júnior (sexta-feira 14:00 - 16:00)\n* Diogo Patrício Pereira Alves (quarta-feira 14:00 - 17:00)\n* Arnaldo António Pinto Pereira (terça-feira 15:00 - 17:00)\n* Cosmin Constantinescu (segunda-feira 20:00 - 22:00)\n* Luís Carlos Marques Afonso (segunda-feira 16:00 - 18:00)\n* Gilberto de Sousa Ferraz (quinta-feira 18:00 - 20:00)\n* Nelson Alexandre Perdigão Figueiredo (sexta-feira 18:00 - 20:00)\n* João Pedro Preto Atenor (sexta-feira 14:00 - 16:00)\n* Bruno Miguel Cavaleiro Reis (quarta-feira 10:00 - 12:00)\n* Miguel de Lacerda Pereira (sexta-feira 18:00 - 20:00)\n* Miguel Araújo Oliveira (segunda-feira 16:00 - 18:00)\n* José Luís Miranda Gonçalves (segunda-feira 16:00 - 18:00)\n* Ana Sofia Figueiredo Rodrigues (quarta-feira 18:00 - 20:00)\n* Sandra Luísa Pereira Gonçalves (terça-feira 18:00 - 20:00)\n* Bruno Filipe Lopes da Silva (quinta-feira 18:00 - 20:00)\n* Paulo Alexandre Vara Alves (quarta-feira 14:00 - 16:00)\n* Nuno Miguel Rodrigues de Carvalho (segunda-feira 18:00 - 20:00)\n* Nuno Romeu Cardoso Sequeira (sexta-feira 14:30 - 16:30)\n* Sérgio Paulo Perdigão do Vale (quarta-feira 10:00 - 12:00)\n* Gabriel de Arruda Leite (segunda-feira 15:00 - 17:00; quinta-feira 15:00 - 17:00)\n* José Luís Padrão Exposto (segunda-feira 14:00 - 16:00; terça-feira 09:00 - 11:00)",
+      "recall@5": 0.08196721311475409,
+      "recall@20": 0.3114754098360656,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "token_f1": 0.4260089686098654,
+      "rouge_l": 0.21524663677130046,
+      "bleu": 0.20290555685045686
+    },
+    {
+      "id": "list_10",
+      "categoria": "listagem",
+      "resposta": "* DEP.: DTQB\n* DEP.: DM\n* DEP.: DCES\n* DEP.: DTM\n* DEP.: DIC\n* DEP.: DE\n* DEP.: DMA\n* DEP.: DGI\n\n*(Nota: este documento tem 199 registos; foram analisados 20 devido ao limite de contexto do modelo. Para maior precisão, filtra por departamento, dia ou outro critério — ou define a variável de ambiente `MAX_AGGREGATION_CHUNKS` para um valor superior.)*",
+      "recall@5": 0.25,
+      "recall@20": 0.5,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "token_f1": 0.21052631578947367,
+      "rouge_l": 0.07894736842105264,
+      "bleu": 0.02863382924283849
+    },
+    {
+      "id": "restr_01",
+      "categoria": "restricao",
+      "resposta": "* Edite Martins Cordeiro\n* Paula Maria Pereira de Barros\n* Ana Paula Carvalho do Monte\n* Carla Sofia Veiga Fernandes\n* João Carlos Oliveira Nunes\n* Ana Isabel Pinheiro Nunes Pereira\n* João Paulo Pais de Almeida\n* Florbela Alexandra Pires Fernandes\n* Mário António Rodrigues Grande Abrantes\n* Maria de Fátima Moreira da Silva Pacheco\n* Nuno Gonçalves Rodrigues\n* Américo Vicente Teixeira Leite\n* António Manuel Esteves Ribeiro\n* António Miguel Verdelho Paula\n* José Carlos Rufino Amaro\n* José Luís Padrão Exposto\n* Luís Carlos Magalhães Pires\n* Manuel Teixeira Brás César\n* Pedro João Soares Rodrigues",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "token_f1": 0.16666666666666669,
+      "rouge_l": 0.16666666666666669,
+      "bleu": 0.09099734244644606
+    },
+    {
+      "id": "restr_02",
+      "categoria": "restricao",
+      "resposta": "Os docentes do departamento DMA que têm atendimento à segunda-feira são:\n\n* António Miguel Verdelho Paula (11:00 - 13:00)\n* Edite Martins Cordeiro (16:00 - 18:00)\n* Américo Vicente Teixeira Leite (14:00 - 16:00)\n* António Manuel Esteves Ribeiro (14:00 - 16:00)\n* José Carlos Rufino Amaro (14:00 - 16:00)\n* José Luís Padrão Exposto (14:00 - 16:00)\n* Luís Carlos Magalhães Pires (14:00 - 16:00)\n* Osmano Manuel Fins Morais (17:00 - 18:00)",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "token_f1": 0.2380952380952381,
+      "rouge_l": 0.16666666666666666,
+      "bleu": 0.06811547339473456
+    },
+    {
+      "id": "restr_03",
+      "categoria": "restricao",
+      "resposta": "Os docentes do departamento DCCP que têm atendimento à segunda-feira são:\n\n* Flora Cristina Meireles Silva (14:00 - 18:00)\n* Pedro Miguel Rodrigues Oliveira (16:00 - 18:00)\n* Eduarda Cristina Pires Luso (não tem atendimento à segunda-feira)\n* Silvia Maria Afonso Fernandes (não tem atendimento à segunda-feira)\n* Rui Alexandre Figueiredo de Oliveira (não tem atendimento à segunda-feira)\n* Maria Isabel Lopes Marcelino Dias de Abreu (não tem atendimento à segunda-feira)\n* António Jorge Ferreira Vaz (não tem atendimento à segunda-feira)\n* Sérgio Paulo Perdigão do Vale (não tem atendimento à segunda-feira)\n* António Miguel Verdelho Paula (11:00 - 13:00)\n* José Carlos Rufino Amaro (14:00 - 16:00)\n* José Luís Padrão Exposto (14:00 - 16:00)\n* Luís Carlos Magalhães Pires (14:00 - 16:00)\n* Manuel Teixeira Brás César (16:00 - 18:00)\n* Osmano Manuel Fins Morais (17:00 - 18:00)\n* Pedro João Soares Rodrigues (14:00 - 16:00)\n* Ramiro José Espinheira Martins (14:00 - 16:00)",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "token_f1": 0.15584415584415584,
+      "rouge_l": 0.12987012987012989,
+      "bleu": 0.046399042819914874
+    },
+    {
+      "id": "restr_04",
+      "categoria": "restricao",
+      "resposta": "Os docentes do departamento DGI que têm atendimento à segunda-feira são:\n\n• Osmano Manuel Fins Morais\n• Francisco José Basilio Pimentel Pires Peito\n• João Manuel Carvalho Sobrinho Teixeira\n• Carla Alexandra Soares Geraldes\n• José Mário Escudeiro Aguiar\n• Maria Prudência Gonçalves Martins\n• António Jorge da Silva Trindade Duarte\n• Helena Isabel Martins Santos Paulo\n• Lucas Fernando Alves da Silva Zafanelli\n• Ricardo Alexandre Tavares Lopes Saraiva Gomes\n• Elisa Margarida Marcos Correia de Barros\n• Edite Martins Cordeiro\n• Américo Vicente Teixeira Leite\n• Ana Isabel Rodrigues Fernandes\n• António Manuel Esteves Ribeiro\n• António Miguel Verdelho Paula\n• José Carlos Rufino Amaro\n• José Luís Padrão Exposto",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "token_f1": 0.3304347826086957,
+      "rouge_l": 0.2434782608695652,
+      "bleu": 0.1497277324249351
+    },
+    {
+      "id": "restr_05",
+      "categoria": "restricao",
+      "resposta": "* Cristovão Lucas dos Santos\n* Alexandra Sofia Rosa Jerónimo\n* Hugo Miguel Andrade Lopes Figueiredo da Silva\n* Jorge Henrique de Carvalho Santos\n* Bernardo Farrero\n* Carlos Alberto Rodrigues Andrade\n* Luís Manuel Frölén Ribeiro\n* Luís Miguel Cavaleiro Queijo\n* Manuel Luís Pires Clara\n* Jorge Alexandre Rente Paulo\n* Luís Miguel Silva Correia",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "token_f1": 0.5555555555555555,
+      "rouge_l": 0.4444444444444444,
+      "bleu": 0.35506744599127116
+    },
+    {
+      "id": "restr_06",
+      "categoria": "restricao",
+      "resposta": "Os docentes do departamento DTQB que têm atendimento à segunda-feira são:\n\n* Mónia Andreia Rodrigues Martins (14:00 - 16:00)\n* Ramiro José Espinheira Martins (14:00 - 16:00)\n* António Manuel Esteves Ribeiro (14:00 - 16:00)\n* Ana Paula Carvalho do Monte (14:30 - 17:00)\n* Américo Vicente Teixeira Leite (14:00 - 16:00)\n* José Carlos Rufino Amaro (14:00 - 16:00)\n* José Luís Padrão Exposto (14:00 - 16:00)",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "token_f1": 0.4050632911392405,
+      "rouge_l": 0.25316455696202533,
+      "bleu": 0.14371955143694362
+    },
+    {
+      "id": "restr_07",
+      "categoria": "restricao",
+      "resposta": "- Laiany Suganuma Brancalião (DEP.: DE, email: laiany@ipb.pt, Gab.: LE)\n- Getúlio Paulo Peixoto Igrejas (DEP.: DE, email: igrejas@ipb.pt, Gab.: Gab. Dir.)\n- Américo Vicente Teixeira Leite (DEP.: DE, email: avtl@ipb.pt, Gab.: 10)\n- João Afonso Braun Neto (DEP.: DE, email: jbneto@ipb.pt, Gab.: LI&I)\n- João Paulo Coelho (DEP.: DE, email: jpcoelho@ipb.pt, Gab.: 41)\n- Sérgio Paulo Perdigão do Vale (DEP.: DIC, email: seg7@ipb.pt, Gab.: Ccom)\n- Ana Paula Carvalho do Monte (DEP.: DCES, email: apmonte@ipb.pt, Gab.: 52)\n- Ruben Alexandre Moreno Clemente (DEP.: DE, email: ruben.clemente@ipb.pt, Gab.: 13)\n- Paula Maria Pereira de Barros (DEP.: DM, email: pbarros@ipb.pt, Gab.: 2)\n- Jorge Henrique de Carvalho Santos (DEP.: DTM, email: jsantos@ipb.pt, Gab.: FabLab)\n- Nuno Miguel Rodrigues de Carvalho (DEP.: DIC, email: nc@ipb.pt, Gab.: 13)\n- Gabriel de Arruda Leite (DEP.: DIC, email: gabriel.leite@ipb.pt, Gab.: LI&I)\n- Cosmin Constantinescu (DEP.: DIC, email: cosmin@ipb.pt, Gab.: 13)\n- Paula Adriana Ferreri de Gusmão e Silva (DEP.: DCES, email: paula.ferreri@ipb.pt, Gab.: 13)\n- Edite Martins Cordeiro (DEP.: DM, email: emc@ipb.pt, Gab.: 101)\n- Nuno Gonçalves Rodrigues (DEP.: DIC, email: nuno@ipb.pt, Gab.: 93)\n- Flora Cristina Meireles Silva (DEP.: DCCP, email: flora@ipb.pt, Gab.: 4)\n- José Luís Miranda Gonçalves (DEP.: DIC, email: zeluis@ipb.pt, Gab.: 13)\n- Luís Carlos Marques Afonso (DEP.: DIC, email: lafonso@ipb.pt, Gab.: 13)",
+      "recall@5": 0.8333333333333334,
+      "recall@20": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "token_f1": 0.1370716510903427,
+      "rouge_l": 0.09345794392523364,
+      "bleu": 0.041401127047807636
+    },
+    {
+      "id": "restr_08",
+      "categoria": "restricao",
+      "resposta": "* Berta Isabel Gomes Gonçalves (DEP.: DCES, email: berta.goncalves@ipb.pt, Gab.: 13). Horário de atendimento: sexta-feira 18:00 - 20:00.\n* Luis Miguel da Paz Gonçalves (DEP.: DCES, email: luis.paz@ipb.pt, Gab.: 13). Horário de atendimento: sexta-feira 16:00 - 18:00.\n* Larysa Ribeiro (DEP.: DCES, email: larysa.savosh@ipb.pt, Gab.: 27). Horário de atendimento: sexta-feira 11:00- 13:00.\n* Nelson Alexandre Perdigão Figueiredo (DEP.: DIC, email: nfigueiredo@ipb.pt, Gab.: 13). Horário de atendimento: sexta-feira 18:00 - 20:00.\n* Sandra Carvalho Dias (DEP.: DIC, email: sandra.dias@ipb.pt, Gab.: 13). Horário de atendimento: sexta-feira 18:00 - 20:00.",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "token_f1": 0.1904761904761905,
+      "rouge_l": 0.14285714285714285,
+      "bleu": 0.06900351365247187
+    },
+    {
+      "id": "restr_09",
+      "categoria": "restricao",
+      "resposta": "- Edite Martins Cordeiro (DEP.: DM, email: emc@ipb.pt, Gab.: 101)\n- João Paulo Pais de Almeida (DEP.: DM, email: jpa@ipb.pt, Gab.: 46)\n- Paula Maria Pereira de Barros (DEP.: DM, email: pbarros@ipb.pt, Gab.: 2)\n- Maria de Fátima Moreira da Silva Pacheco (DEP.: DM, email: pacheco@ipb.pt, Gab.: 112)\n- Florbela Alexandra Pires Fernandes (DEP.: DM, email: fflor@ipb.pt, Gab.: 31)",
+      "recall@5": 0.8333333333333334,
+      "recall@20": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "token_f1": 0.23423423423423423,
+      "rouge_l": 0.14414414414414414,
+      "bleu": 0.10080821277464468
+    },
+    {
+      "id": "restr_10",
+      "categoria": "restricao",
+      "resposta": "- Paula Maria Pereira de Barros (14:30 - 16:00)\n- Florbela Alexandra Pires Fernandes (11:00 - 13:00, 16:00 - 17:00)\n- João Carlos Oliveira Nunes (13:00 - 14:00)\n- Mário António Rodrigues Grande Abrantes (10:00 - 11:30)\n- Edite Martins Cordeiro (não tem atendimento à quarta-feira)\n- Maria de Fátima Moreira da Silva Pacheco (16:00 - 17:00, 17:00 - 18:00)\n- João Paulo Pais de Almeida (não tem atendimento à quarta-feira)\n- Isabel Maria Lopes (16:00 - 18:00)\n- José Carlos Lopes (15:00 - 17:00)\n- Leonel Domingues Deusdado (14:00 - 16:00)\n- Carla Alexandra Soares Geraldes (11:00 - 13:00)\n- Fernando Jorge Coutinho Monteiro (11:00 - 13:00)\n- João Paulo Ramos Teixeira (14:00 - 16:00)\n- Joaquim Agostinho Mendes Leite (14:00 - 16:00)",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "token_f1": 0.3741935483870968,
+      "rouge_l": 0.20645161290322578,
+      "bleu": 0.1511615301860587
+    },
+    {
+      "id": "unknown_01",
+      "categoria": "desconhecido",
+      "resposta": "Não encontrei essa informação nos documentos fornecidos.\n\nFONTES_USADAS:",
+      "recusou": true
+    },
+    {
+      "id": "unknown_02",
+      "categoria": "desconhecido",
+      "resposta": "Não encontrei essa informação nos documentos fornecidos.\n\nFONTES_USADAS:",
+      "recusou": true
+    },
+    {
+      "id": "unknown_03",
+      "categoria": "desconhecido",
+      "resposta": "Não encontrei essa informação nos documentos fornecidos.\n\nFONTES_USADAS:",
+      "recusou": true
+    },
+    {
+      "id": "unknown_04",
+      "categoria": "desconhecido",
+      "resposta": "Não encontrei essa informação nos documentos fornecidos.\n\n*(Nota: este documento tem 199 registos; foram analisados 20 devido ao limite de contexto do modelo. Para maior precisão, filtra por departamento, dia ou outro critério — ou define a variável de ambiente `MAX_AGGREGATION_CHUNKS` para um valor superior.)*",
+      "recusou": true
+    },
+    {
+      "id": "unknown_05",
+      "categoria": "desconhecido",
+      "resposta": "Não encontrei essa informação nos documentos fornecidos.\n\nFONTES_USADAS:",
+      "recusou": true
+    },
+    {
+      "id": "unknown_06",
+      "categoria": "desconhecido",
+      "resposta": "Não encontrei essa informação nos documentos fornecidos.\n\nFONTES_USADAS:",
+      "recusou": true
+    },
+    {
+      "id": "unknown_07",
+      "categoria": "desconhecido",
+      "resposta": "Não encontrei essa informação nos documentos fornecidos.",
+      "recusou": true
+    },
+    {
+      "id": "unknown_08",
+      "categoria": "desconhecido",
+      "resposta": "Não encontrei essa informação nos documentos fornecidos.\n\nFONTES_USADAS:",
+      "recusou": true
+    },
+    {
+      "id": "unknown_09",
+      "categoria": "desconhecido",
+      "resposta": "Não encontrei essa informação nos documentos fornecidos.\n\nFONTES_USADAS:",
+      "recusou": true
+    },
+    {
+      "id": "unknown_10",
+      "categoria": "desconhecido",
+      "resposta": "Não encontrei essa informação nos documentos fornecidos.\n\nFONTES_USADAS:",
+      "recusou": true
+    },
+    {
+      "id": "anti_01",
+      "categoria": "anti_alucinacao",
+      "resposta": "Não encontrei essa informação nos documentos fornecidos.\n\nFONTES_USADAS:",
+      "recusou": true
+    },
+    {
+      "id": "anti_02",
+      "categoria": "anti_alucinacao",
+      "resposta": "Não encontrei essa informação nos documentos fornecidos.\n\nFONTES_USADAS:",
+      "recusou": true
+    },
+    {
+      "id": "anti_03",
+      "categoria": "anti_alucinacao",
+      "resposta": "Não encontrei essa informação nos documentos fornecidos.\n\nFONTES_USADAS:",
+      "recusou": true
+    },
+    {
+      "id": "anti_04",
+      "categoria": "anti_alucinacao",
+      "resposta": "Não encontrei essa informação nos documentos fornecidos.\n\nFONTES_USADAS:",
+      "recusou": true
+    },
+    {
+      "id": "anti_05",
+      "categoria": "anti_alucinacao",
+      "resposta": "Não encontrei essa informação nos documentos fornecidos.\n\nFONTES_USADAS:",
+      "recusou": true
+    },
+    {
+      "id": "anti_06",
+      "categoria": "anti_alucinacao",
+      "resposta": "Não encontrei essa informação nos documentos fornecidos.\n\nFONTES_USADAS:",
+      "recusou": true
+    },
+    {
+      "id": "anti_07",
+      "categoria": "anti_alucinacao",
+      "resposta": "Não encontrei essa informação nos documentos fornecidos.\n\nFONTES_USADAS:",
+      "recusou": true
+    },
+    {
+      "id": "anti_08",
+      "categoria": "anti_alucinacao",
+      "resposta": "Não encontrei essa informação nos documentos fornecidos.\n\nFONTES_USADAS:",
+      "recusou": true
+    },
+    {
+      "id": "anti_09",
+      "categoria": "anti_alucinacao",
+      "resposta": "Não encontrei essa informação nos documentos fornecidos.\n\nFONTES_USADAS:\n\n*(Nota: este documento tem 199 registos; foram analisados 20 devido ao limite de contexto do modelo. Para maior precisão, filtra por departamento, dia ou outro critério — ou define a variável de ambiente `MAX_AGGREGATION_CHUNKS` para um valor superior.)*",
+      "recusou": true
+    },
+    {
+      "id": "anti_10",
+      "categoria": "anti_alucinacao",
+      "resposta": "Não encontrei essa informação nos documentos fornecidos.",
+      "recusou": true
+    },
+    {
+      "id": "count_01",
+      "categoria": "contagem",
+      "resposta": "Existem 20 docentes na lista de horários de atendimento.\n\n*(Nota: este documento tem 199 registos; foram analisados 20 devido ao limite de contexto do modelo. Para maior precisão, filtra por departamento, dia ou outro critério — ou define a variável de ambiente `MAX_AGGREGATION_CHUNKS` para um valor superior.)*",
+      "num_sistema": 20,
+      "num_ref": 198,
+      "exato": false,
+      "tol1": false
+    },
+    {
+      "id": "count_03",
+      "categoria": "contagem",
+      "resposta": "Existem 19 docentes que pertencem ao departamento DIC.\n\n*(Nota: este documento tem 199 registos; foram analisados 20 devido ao limite de contexto do modelo. Para maior precisão, filtra por departamento, dia ou outro critério — ou define a variável de ambiente `MAX_AGGREGATION_CHUNKS` para um valor superior.)*",
+      "num_sistema": 19,
+      "num_ref": 61,
+      "exato": false,
+      "tol1": false
+    },
+    {
+      "id": "count_04",
+      "categoria": "contagem",
+      "resposta": "Existem 13 docentes pertencentes ao departamento DCES:\n\n* Lígia Maria Almendra Xavier Barreira Lousada\n* Paula Cristina Anta Fontes Xavier\n* Lídia Maria Galvão Rodrigues Praça\n* Amélia Maria Martins Pires\n* Paula Odete Fernandes\n* Oliva Maria Dourado Martins\n* Ana Isabel Rodrigues Fernandes\n* Edite Martins Cordeiro\n* Luís Carlos Magalhães Pires\n* Maria Isabel Barreiro Ribeiro\n* Carlos Jorge Maia Domingues\n* Paulo Jorge Aragão Guimarães\n* Leonel Domingues Deusdado\n\n*(Nota: este documento tem 199 registos; foram analisados 20 devido ao limite de contexto do modelo. Para maior precisão, filtra por departamento, dia ou outro critério — ou define a variável de ambiente `MAX_AGGREGATION_CHUNKS` para um valor superior.)*",
+      "num_sistema": 13,
+      "num_ref": 41,
+      "exato": false,
+      "tol1": false
+    },
+    {
+      "id": "count_06",
+      "categoria": "contagem",
+      "resposta": "Existem 13 docentes com atendimento à segunda-feira:\n\n* Getúlio Paulo Peixoto Igrejas\n* Reis Lima Quarteu\n* António Miguel Verdelho Paula\n* João Paulo Coelho\n* Luís Carlos Magalhães Pires\n* Américo Vicente Teixeira Leite\n* Ana Isabel Rodrigues Fernandes\n* Oliva Maria Dourado Martins\n* Francisco José Basilio Pimentel Pires Peito\n* Osmano Manuel Fins Morais\n* Paulo Jorge Pinto Leitão\n* Amélia Maria Martins Pires\n* José Luís Padrão Exposto\n\n*(Nota: este documento tem 199 registos; foram analisados 20 devido ao limite de contexto do modelo. Para maior precisão, filtra por departamento, dia ou outro critério — ou define a variável de ambiente `MAX_AGGREGATION_CHUNKS` para um valor superior.)*",
+      "num_sistema": 13,
+      "num_ref": 48,
+      "exato": false,
+      "tol1": false
+    },
+    {
+      "id": "count_07",
+      "categoria": "contagem",
+      "resposta": "Existem 8 docentes com atendimento à terça-feira:\n\n* Amélia Maria Martins Pires (11:00 - 13:00; 18:00 - 19:00)\n* José Luís Padrão Exposto (09:00 - 11:00)\n* Ricardo Frederico Pereira Dias (16:00 - 18:00)\n* Paula Cristina Anta Fontes Xavier (16:00 - 17:00)\n* Ana Isabel Rodrigues Fernandes (20:00 - 21:00)\n* Edite Martins Cordeiro (14:00 - 16:00)\n* Jorge Taborda Loureiro (não tem atendimento à terça-feira)\n* António Miguel Verdelho Paula (11:00 - 13:00)\n* Francisco José Basilio Pimentel Pires Peito (11:00 - 13:00)\n* Américo Vicente Teixeira Leite (18:00 - 20:00)\n* Luís Carlos Magalhães Pires (14:00 - 16:00)\n\n*(Nota: este documento tem 199 registos; foram analisados 20 devido ao limite de contexto do modelo. Para maior precisão, filtra por departamento, dia ou outro critério — ou define a variável de ambiente `MAX_AGGREGATION_CHUNKS` para um valor superior.)*",
+      "num_sistema": 8,
+      "num_ref": 75,
+      "exato": false,
+      "tol1": false
+    },
+    {
+      "id": "count_08",
+      "categoria": "contagem",
+      "resposta": "Existem 8 docentes com atendimento à quarta-feira:\n• Manuel Luís Pires Clara (14:00 - 16:00)\n• Paula Cristina Anta Fontes Xavier (16:00 - 17:00)\n• Maria de Fátima Moreira da Silva Pacheco (16:00 - 17:00, 17:00 - 18:00)\n• Edite Martins Cordeiro (14:00 - 16:00)\n• Carla Alexandra Soares Geraldes (11:00 - 13:00)\n• José Luís Padrão Exposto (14:00 - 16:00)\n• Paula Maria Pereira de Barros (10:00 - 12:30)\n• Márcia Cristina Rêgo Rogão (14:00 - 16:00)\n\n*(Nota: este documento tem 199 registos; foram analisados 20 devido ao limite de contexto do modelo. Para maior precisão, filtra por departamento, dia ou outro critério — ou define a variável de ambiente `MAX_AGGREGATION_CHUNKS` para um valor superior.)*",
+      "num_sistema": 8,
+      "num_ref": 71,
+      "exato": false,
+      "tol1": false
+    },
+    {
+      "id": "count_09",
+      "categoria": "contagem",
+      "resposta": "Existem 7 docentes com atendimento à sexta-feira:\n\n* Berta Isabel Gomes Gonçalves (DEP.: DCES, email: berta.goncalves@ipb.pt, Gab.: 13)\n* Manuel Luís Pires Clara (DEP.: DTM, email: pclara@ipb.pt, Gab.: 19)\n* Paulo Duarte Ferreira Gouveia (DEP.: DIC, email: pgouveia@ipb.pt, Gab.: 40)\n* Luís Manuel Frölén Ribeiro (DEP.: DTM, email: frolen@ipb.pt, Gab.: 27)\n* Luís Miguel Cavaleiro Queijo (DEP.: DTM, email: lqueijo@ipb.pt, Gab.: 26)\n* Nuno Gonçalves Rodrigues (DEP.: DIC, email: nuno@ipb.pt, Gab.: 93)\n* José Luís Padrão Exposto (DEP.: DIC, email: exp@ipb.pt, Gab.: 90)\n\n*(Nota: este documento tem 199 registos; foram analisados 20 devido ao limite de contexto do modelo. Para maior precisão, filtra por departamento, dia ou outro critério — ou define a variável de ambiente `MAX_AGGREGATION_CHUNKS` para um valor superior.)*",
+      "num_sistema": 7,
+      "num_ref": 32,
+      "exato": false,
+      "tol1": false
+    },
+    {
+      "id": "count_10",
+      "categoria": "contagem",
+      "resposta": "Existem 3 docentes do departamento DTQB na lista:\n\n* Ricardo Frederico Pereira Dias (DEP.: DTQB, email: ricardod@ipb.pt, Gab.: 28)\n* Maria Filomena Filipe Barreiro (DEP.: DTQB, email: barreiro@ipb.pt, Gab.: 62)\n\n*(Nota: este documento tem 199 registos; foram analisados 20 devido ao limite de contexto do modelo. Para maior precisão, filtra por departamento, dia ou outro critério — ou define a variável de ambiente `MAX_AGGREGATION_CHUNKS` para um valor superior.)*",
+      "num_sistema": 3,
+      "num_ref": 14,
+      "exato": false,
+      "tol1": false
+    },
+    {
+      "id": "conv_02",
+      "categoria": "conversacional",
+      "resposta": "* Edite Martins Cordeiro (DEP.: DM, email: emc@ipb.pt, Gab.: 101). Horário de atendimento: segunda-feira 16:00 - 18:00; terça-feira 14:00 - 16:00.\n* Paula Maria Pereira de Barros (DEP.: DM, email: pbarros@ipb.pt, Gab.: 2). Horário de atendimento: segunda-feira 14:30 - 16:00; quarta-feira 10:00 - 12:30.\n* António Miguel Verdelho Paula (DEP.: DMA, email: mpaula@ipb.pt, Gab.: 4). Horário de atendimento: segunda-feira 11:00 - 13:00; terça-feira 11:00 - 13:00.\n* Ana Paula Carvalho do Monte (DEP.: DCES, email: apmonte@ipb.pt, Gab.: 52). Horário de atendimento: segunda-feira 14:30 - 17:00; quinta-feira 11:00 - 12:30.\n* Valdemar Raul Ramos Garcia (DEP.: DMA, email: valdemar@ipb.pt, Gab.: 20). Horário de atendimento: segunda-feira 18:00 - 19:00; terça-feira 16:00 - 18:00; quarta-feira 15:00 - 16:00.\n* Ana Isabel Rodrigues Fernandes (DEP.: DCES, email: af@ipb.pt, Gab.: 13). Horário de atendimento: segunda-feira 20:00 - 21:00; terça-feira 20:00 - 21:00.\n* José Luís Padrão Exposto (DEP.: DIC, email: exp@ipb.pt, Gab.: 90). Horário de atendimento: segunda-feira 14:00 - 16:00; terça-feira 09:00 - 11:00.\n* Getúlio Paulo Peixoto Igrejas (DEP.: DE, email: igrejas@ipb.pt, Gab.: Gab. Dir.). Horário de atendimento: segunda-feira 11:00 - 13:00; terça-feira 11:00 - 13:00.\n* Amélia Maria Martins Pires (DEP.: DCES, email: amelia@ipb.pt, Gab.: 57). Horário de atendimento: segunda-feira 18:00 - 19:00; terça-feira 18:00 - 19:00; quinta-feira 16:00 - 18:00.\n* Luís Carlos Magalhães Pires (DEP.: DCES, email: luica@ipb.pt, Gab.: 34). Horário de atendimento: segunda-feira 14:00 - 16:00; quarta-feira 14:00 - 16:00.\n* Paulo Jorge Teixeira Matos (DEP.: DIC, email: pmatos@ipb.pt, Gab.: 96). Horário de atendimento: segunda-feira 11:00 - 12:30; quarta-feira 16:00 - 17:30; quinta-feira 16:00 - 17:30.\n* Francisco José Basilio Pimentel Pires Peito (DEP.: DGI, email: pires@ipb.pt, Gab.: 6). Horário de atendimento: segunda-feira 11:00 - 13:00; quinta-feira 15:00 - 17:00.\n* Nuno Gonçalves Rodrigues (DEP.: DIC, email: nuno@ipb.pt, Gab.: 93). Horário de",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "token_f1": 0.05797101449275363,
+      "rouge_l": 0.0463768115942029,
+      "bleu": 0.017639103853656073
+    },
+    {
+      "id": "conv_03",
+      "categoria": "conversacional",
+      "resposta": "À terça-feira, Edite Martins Cordeiro atende de 14:00 - 16:00.",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "token_f1": 0.8000000000000002,
+      "rouge_l": 0.8000000000000002,
+      "bleu": 0.6076795808137692
+    },
+    {
+      "id": "conv_05",
+      "categoria": "conversacional",
+      "resposta": "Ana Isabel Pinheiro Nunes Pereira tem gabinete 54.",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "token_f1": 0.48,
+      "rouge_l": 0.4,
+      "bleu": 0.1981917551665954
+    },
+    {
+      "id": "conv_10",
+      "categoria": "conversacional",
+      "resposta": "Existem 9 docentes que atendem à terça-feira:\n\n* Davide Emanuel da Silva Dias (11:00 - 20:00)\n* José Luís Padrão Exposto (09:00 - 11:00)\n* Reis Lima Quarteu (11:00 - 13:00)\n* Ricardo Frederico Pereira Dias (16:00 - 18:00)\n* Gabriel de Arruda Leite (15:00 - 17:00)\n* Amélia Maria Martins Pires (18:00 - 19:00)\n* Carlos Liberal Moreno Afonso (09:00 - 11:00)\n* Ana Isabel Rodrigues Fernandes (20:00 - 21:00)\n* Leonel Domingues Deusdado (14:00 - 16:00)\n\n*(Nota: este documento tem 199 registos; foram analisados 20 devido ao limite de contexto do modelo. Para maior precisão, filtra por departamento, dia ou outro critério — ou define a variável de ambiente `MAX_AGGREGATION_CHUNKS` para um valor superior.)*",
+      "recall@5": 0.0,
+      "recall@20": 0.0,
+      "ndcg@10": 0.0,
+      "mrr": 0.0,
+      "token_f1": 0.053571428571428575,
+      "rouge_l": 0.053571428571428575,
+      "bleu": 0.013405620707505764,
+      "topic_change": true
+    },
+    {
+      "id": "fact_11",
+      "categoria": "factual",
+      "resposta": "De acordo com o excerto [4], as aulas do 1.º semestre de 2025/2026 começam a 15/09/2025.",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 0.5706417189553201,
+      "mrr": 0.3333333333333333,
+      "token_f1": 0.6923076923076924,
+      "rouge_l": 0.6923076923076924,
+      "bleu": 0.4021074690812006
+    },
+    {
+      "id": "fact_12",
+      "categoria": "factual",
+      "resposta": "O 1.º semestre termina a 14/02/2026.",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 0.6653497124326151,
+      "mrr": 0.5,
+      "token_f1": 1.0,
+      "rouge_l": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "id": "fact_13",
+      "categoria": "factual",
+      "resposta": "De acordo com o excerto [8], as aulas do 2.º semestre começam a 16/02/2026.",
+      "recall@5": 0.0,
+      "recall@20": 1.0,
+      "ndcg@10": 0.31546487678572877,
+      "mrr": 0.125,
+      "token_f1": 0.7499999999999999,
+      "rouge_l": 0.7499999999999999,
+      "bleu": 0.5828233954152653
+    },
+    {
+      "id": "fact_18",
+      "categoria": "factual",
+      "resposta": "De acordo com o excerto [3], a data de assinatura de termos do 1.º semestre é 01/03/2026.",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 0.6934264036172708,
+      "mrr": 0.5,
+      "token_f1": 0.6896551724137931,
+      "rouge_l": 0.6896551724137931,
+      "bleu": 0.4464617303464354
+    },
+    {
+      "id": "list_11",
+      "categoria": "listagem",
+      "resposta": "Pausa Natal: 22/12/2025 a 03/01/2026\nPausa Académica: 12/01 a 17/01/2026",
+      "recall@5": 0.0,
+      "recall@20": 1.0,
+      "ndcg@10": 0.36181498356361597,
+      "mrr": 0.1111111111111111,
+      "token_f1": 0.7272727272727272,
+      "rouge_l": 0.7272727272727272,
+      "bleu": 0.2958307062586636
+    },
+    {
+      "id": "list_14",
+      "categoria": "listagem",
+      "resposta": "Segundo o excerto [4], as datas-chave do 1.º semestre são:\n\n- Início das aulas: 15/09/2025\n- Realização de Exames: 19/01 a 14/02/2026\n- Fim: 14/02/2026",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 0.6797310500037655,
+      "mrr": 0.5,
+      "token_f1": 0.3529411764705882,
+      "rouge_l": 0.3529411764705882,
+      "bleu": 0.09992869870690119
+    },
+    {
+      "id": "list_15",
+      "categoria": "listagem",
+      "resposta": "De acordo com o excerto [7], as datas-chave do 2.º semestre são:\n\n- Início das aulas: 16/02/2026\n- Realização de Exames: 15/06 a 11/07/2026\n- Fim: 11/07/2026",
+      "recall@5": 0.6666666666666666,
+      "recall@20": 1.0,
+      "ndcg@10": 0.619668607939653,
+      "mrr": 0.5,
+      "token_f1": 0.3333333333333333,
+      "rouge_l": 0.3333333333333333,
+      "bleu": 0.09264863757089695
+    },
+    {
+      "id": "list_17",
+      "categoria": "listagem",
+      "resposta": "1º Semestre: 19/01 a 14/02/2026\n2º Semestre: 15/06 a 11/07/2026",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 0.8854598815714874,
+      "mrr": 1.0,
+      "token_f1": 0.7272727272727272,
+      "rouge_l": 0.7272727272727272,
+      "bleu": 0.48119129303084457
+    },
+    {
+      "id": "list_19",
+      "categoria": "listagem",
+      "resposta": "Pausa Académica: 12/01 a 17/01/2026 (1º semestre); 08/06 a 13/06/2026 (2º semestre).",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 0.43067655807339306,
+      "mrr": 0.25,
+      "token_f1": 0.5,
+      "rouge_l": 0.5,
+      "bleu": 0.2796842457966537
+    },
+    {
+      "id": "restr_12",
+      "categoria": "restricao",
+      "resposta": "Pausa Académica: 08/06 a 13/06/2026.",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 0.6240505200038379,
+      "mrr": 0.5,
+      "token_f1": 0.6666666666666665,
+      "rouge_l": 0.6666666666666665,
+      "bleu": 0.5081327481546147
+    },
+    {
+      "id": "restr_13",
+      "categoria": "restricao",
+      "resposta": "A Pausa da Páscoa decorre de 30/03/2026 a 06/04/2026.",
+      "recall@5": 0.0,
+      "recall@20": 1.0,
+      "ndcg@10": 0.3562071871080222,
+      "mrr": 0.16666666666666666,
+      "token_f1": 0.6153846153846153,
+      "rouge_l": 0.6153846153846153,
+      "bleu": 0.392814650900513
+    },
+    {
+      "id": "restr_15",
+      "categoria": "restricao",
+      "resposta": "A renovação de matrículas ocorre nos seguintes períodos:\n\n- 23/02/2026 a 08/03/2026\n- 23/03/2026 a 12/04/2026",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "token_f1": 0.2,
+      "rouge_l": 0.2,
+      "bleu": 0.08513012360883544
+    },
+    {
+      "id": "restr_16",
+      "categoria": "restricao",
+      "resposta": "A Pausa de Natal decorre de 22/12/2025 a 03/01/2026.",
+      "recall@5": 0.0,
+      "recall@20": 1.0,
+      "ndcg@10": 0.3333333333333333,
+      "mrr": 0.14285714285714285,
+      "token_f1": 0.6153846153846153,
+      "rouge_l": 0.6153846153846153,
+      "bleu": 0.392814650900513
+    },
+    {
+      "id": "restr_17",
+      "categoria": "restricao",
+      "resposta": "De 19/01 a 14/02/2026.",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 0.7122630665145961,
+      "mrr": 0.5,
+      "token_f1": 1.0,
+      "rouge_l": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "id": "unknown_11",
+      "categoria": "desconhecido",
+      "resposta": "Não encontrei essa informação nos documentos fornecidos.\n\nFONTES_USADAS:",
+      "recusou": true
+    },
+    {
+      "id": "unknown_12",
+      "categoria": "desconhecido",
+      "resposta": "Não encontrei essa informação nos documentos fornecidos.\n\nFONTES_USADAS:",
+      "recusou": true
+    },
+    {
+      "id": "unknown_13",
+      "categoria": "desconhecido",
+      "resposta": "Não encontrei essa informação nos documentos fornecidos.\n\nFONTES_USADAS:",
+      "recusou": true
+    },
+    {
+      "id": "unknown_14",
+      "categoria": "desconhecido",
+      "resposta": "Não encontrei essa informação nos documentos fornecidos.\n\nFONTES_USADAS:\n\n*(Nota: este documento tem 48 registos; foram analisados 20 devido ao limite de contexto do modelo. Para maior precisão, filtra por departamento, dia ou outro critério — ou define a variável de ambiente `MAX_AGGREGATION_CHUNKS` para um valor superior.)*",
+      "recusou": true
+    },
+    {
+      "id": "unknown_15",
+      "categoria": "desconhecido",
+      "resposta": "Não encontrei essa informação nos documentos fornecidos.\n\nFONTES_USADAS:",
+      "recusou": true
+    },
+    {
+      "id": "unknown_16",
+      "categoria": "desconhecido",
+      "resposta": "Não encontrei essa informação nos documentos fornecidos.\n\nFONTES_USADAS:",
+      "recusou": true
+    },
+    {
+      "id": "unknown_17",
+      "categoria": "desconhecido",
+      "resposta": "Não encontrei essa informação nos documentos fornecidos.\n\nFONTES_USADAS:",
+      "recusou": true
+    },
+    {
+      "id": "unknown_18",
+      "categoria": "desconhecido",
+      "resposta": "Não encontrei essa informação nos documentos fornecidos.\n\nFONTES_USADAS:",
+      "recusou": true
+    },
+    {
+      "id": "unknown_19",
+      "categoria": "desconhecido",
+      "resposta": "Não encontrei essa informação nos documentos fornecidos.\n\nFONTES_USADAS:",
+      "recusou": true
+    },
+    {
+      "id": "unknown_20",
+      "categoria": "desconhecido",
+      "resposta": "Não encontrei essa informação nos documentos fornecidos.\n\nFONTES_USADAS:",
+      "recusou": true
+    },
+    {
+      "id": "anti_11",
+      "categoria": "anti_alucinacao",
+      "resposta": "Não encontrei essa informação nos documentos fornecidos.\n\nFONTES_USADAS:",
+      "recusou": true
+    },
+    {
+      "id": "anti_12",
+      "categoria": "anti_alucinacao",
+      "resposta": "Não encontrei essa informação nos documentos fornecidos.\n\nFONTES_USADAS:",
+      "recusou": true
+    },
+    {
+      "id": "anti_13",
+      "categoria": "anti_alucinacao",
+      "resposta": "Não encontrei a informação sobre o Festival Académico de Bragança nos documentos fornecidos.\n\nFONTES_USADAS:",
+      "recusou": true
+    },
+    {
+      "id": "anti_14",
+      "categoria": "anti_alucinacao",
+      "resposta": "Não encontrei essa informação nos documentos fornecidos.\n\nFONTES_USADAS:",
+      "recusou": true
+    },
+    {
+      "id": "anti_15",
+      "categoria": "anti_alucinacao",
+      "resposta": "Não encontrei essa informação nos documentos fornecidos.\n\nFONTES_USADAS:",
+      "recusou": true
+    },
+    {
+      "id": "anti_16",
+      "categoria": "anti_alucinacao",
+      "resposta": "Não encontrei essa informação nos documentos fornecidos.\n\nFONTES_USADAS:",
+      "recusou": true
+    },
+    {
+      "id": "anti_17",
+      "categoria": "anti_alucinacao",
+      "resposta": "Não encontrei essa informação nos documentos fornecidos.\n\nFONTES_USADAS:",
+      "recusou": true
+    },
+    {
+      "id": "anti_18",
+      "categoria": "anti_alucinacao",
+      "resposta": "Não encontrei essa informação nos documentos fornecidos.\n\nSe a pergunta tivesse sido \"Qual a data da Semana de Integração do 1.º semestre?\", a resposta seria:\n\nA Semana de Integração do 1.º semestre ocorre de 08/09/2025 a 13/09/2025.",
+      "recusou": true
+    },
+    {
+      "id": "anti_19",
+      "categoria": "anti_alucinacao",
+      "resposta": "Não encontrei essa informação nos documentos fornecidos.\n\nFONTES_USADAS:",
+      "recusou": true
+    },
+    {
+      "id": "anti_20",
+      "categoria": "anti_alucinacao",
+      "resposta": "Não encontrei essa informação nos documentos fornecidos.\n\nFONTES_USADAS:",
+      "recusou": true
+    },
+    {
+      "id": "count_13",
+      "categoria": "contagem",
+      "resposta": "De acordo com o excerto [4], há 3 pausas letivas previstas ao longo do ano:\n\n- Pausa Natal: 22/12/2025 a 03/01/2026\n- Pausa Académica: 12/01 a 17/01/2026\n- Pausa Páscoa: 30/03/2026 a 06/04/2026",
+      "num_sistema": 4,
+      "num_ref": 4,
+      "exato": true,
+      "tol1": true
+    },
+    {
+      "id": "fact_15",
+      "categoria": "factual",
+      "resposta": "08/09/2025 a 13/09/2025.",
+      "recall@5": 0.0,
+      "recall@20": 1.0,
+      "ndcg@10": 0.3333333333333333,
+      "mrr": 0.14285714285714285,
+      "token_f1": 0.5,
+      "rouge_l": 0.5,
+      "bleu": 0.0
+    },
+    {
+      "id": "fact_16",
+      "categoria": "factual",
+      "resposta": "21/01/2026.",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 0.6934264036172708,
+      "mrr": 0.5,
+      "token_f1": 0.18181818181818182,
+      "rouge_l": 0.18181818181818182,
+      "bleu": 0.0
+    },
+    {
+      "id": "fact_17",
+      "categoria": "factual",
+      "resposta": "21/02/2026.",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 0.6934264036172708,
+      "mrr": 0.5,
+      "token_f1": 0.19999999999999998,
+      "rouge_l": 0.19999999999999998,
+      "bleu": 0.0
+    },
+    {
+      "id": "fact_19",
+      "categoria": "factual",
+      "resposta": "17/06/2026",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 0.6934264036172708,
+      "mrr": 0.5,
+      "token_f1": 0.19999999999999998,
+      "rouge_l": 0.19999999999999998,
+      "bleu": 0.0
+    },
+    {
+      "id": "list_20",
+      "categoria": "listagem",
+      "resposta": "21/01/2026 e 21/02/2026.",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 0.6934264036172708,
+      "mrr": 0.5,
+      "token_f1": 0.5714285714285715,
+      "rouge_l": 0.5714285714285715,
+      "bleu": 0.0
+    },
+    {
+      "id": "restr_19",
+      "categoria": "restricao",
+      "resposta": "22/09/2025 a 11/10/2025.",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "token_f1": 0.8571428571428571,
+      "rouge_l": 0.8571428571428571,
+      "bleu": 0.0
+    },
+    {
+      "id": "count_02",
+      "categoria": "contagem",
+      "resposta": "Estão representados 2 departamentos diferentes:\n*   SA\n*   Escolas\n\n*(Nota: este documento tem 48 registos; foram analisados 20 devido ao limite de contexto do modelo. Para maior precisão, filtra por departamento, dia ou outro critério — ou define a variável de ambiente `MAX_AGGREGATION_CHUNKS` para um valor superior.)*",
+      "num_sistema": 2,
+      "num_ref": 12,
+      "exato": false,
+      "tol1": false
+    },
+    {
+      "id": "count_05",
+      "categoria": "contagem",
+      "resposta": "Um docente pertence ao departamento DE.\n\n*(Nota: este documento tem 199 registos; foram analisados 20 devido ao limite de contexto do modelo. Para maior precisão, filtra por departamento, dia ou outro critério — ou define a variável de ambiente `MAX_AGGREGATION_CHUNKS` para um valor superior.)*",
+      "num_sistema": 199,
+      "num_ref": 26,
+      "exato": false,
+      "tol1": false
+    },
+    {
+      "id": "conv_01",
+      "categoria": "conversacional",
+      "resposta": "António Jorge Ferreira Vaz está no departamento DCCP.",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "token_f1": 0.75,
+      "rouge_l": 0.75,
+      "bleu": 0.5133450480401704
+    },
+    {
+      "id": "conv_04",
+      "categoria": "conversacional",
+      "resposta": "São 11 docentes ao todo.\n\n*(Nota: este documento tem 48 registos; foram analisados 20 devido ao limite de contexto do modelo. Para maior precisão, filtra por departamento, dia ou outro critério — ou define a variável de ambiente `MAX_AGGREGATION_CHUNKS` para um valor superior.)*",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 0.69613665366991,
+      "mrr": 0.5,
+      "token_f1": 0.16,
+      "rouge_l": 0.08,
+      "bleu": 0.0428656685449481
+    },
+    {
+      "id": "fact_14",
+      "categoria": "factual",
+      "resposta": "[Modo extrativo — LLM indisponível] Passagem mais relevante encontrada:\n**Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**      1   **Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**          2   **Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**              3   **Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**            4   **Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**...\n\n(Erro do LLM: Erro do Gemini: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 58.670080697s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '58s'}]}})",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 0.5012658353418871,
+      "mrr": 0.25,
+      "token_f1": 0.04,
+      "rouge_l": 0.04,
+      "bleu": 0.009237970930014303
+    },
+    {
+      "id": "restr_14",
+      "categoria": "restricao",
+      "resposta": "[Modo extrativo — LLM indisponível] Passagem mais relevante encontrada:\nEAF - Exames : Época de Avaliação Final SI - Semana Integração F - Feriado ER - Exames : Época de Recurso N - Natal EEA - Exames : Época Especial de Avaliação P - Páscoa PA - Pausa Académica.\n\n(Erro do LLM: Erro do Gemini: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 58.646426864s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '58s'}]}})",
+      "recall@5": 0.5,
+      "recall@20": 1.0,
+      "ndcg@10": 0.9609247825245575,
+      "mrr": 1.0,
+      "token_f1": 0.01092896174863388,
+      "rouge_l": 0.01092896174863388,
+      "bleu": 0.006662355423526071
+    },
+    {
+      "id": "count_14",
+      "categoria": "contagem",
+      "resposta": "[Modo extrativo — LLM indisponível] Passagem mais relevante encontrada:\n1ª fase do Concurso Local para acesso a formações IPB [2]: (Início, Fim).\n\n(Erro do LLM: Erro do Gemini: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 58.646827594s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.5-flash', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '58s'}]}})",
+      "num_sistema": 1,
+      "num_ref": 4,
+      "exato": false,
+      "tol1": false
+    },
+    {
+      "id": "conv_06",
+      "categoria": "conversacional",
+      "resposta": "Não encontrei essa informação nos documentos fornecidos.\n\n*Fontes mais próximas encontradas: `horários_de_atendimento_1º_sem__2025_2026.pdf`. Tenta reformular mencionando um destes documentos ou usando um critério mais específico (ex: nome, departamento, dia).*",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 0.8740944536619065,
+      "mrr": 1.0,
+      "token_f1": 0.0,
+      "rouge_l": 0.0,
+      "bleu": 0.03511476270817333
+    },
+    {
+      "id": "conv_07",
+      "categoria": "conversacional",
+      "resposta": "Os docentes do departamento DTM são:\n*   Cristovão Lucas dos Santos\n*   Hugo Miguel Andrade Lopes Figueiredo da Silva\n*   Manuel Luís Pires Clara\n*   João da Rocha e Silva\n*   Luísa Maria da Silva Barreira\n*   Bernardo Farrero\n*   Luís Manuel Frölén Ribeiro\n*   Luís Miguel Silva Correia\n*   Luís Miguel Cavaleiro Queijo\n*   Carlos Alberto Rodrigues Andrade\n*   Jorge Henrique de Carvalho Santos\n*   Jorge Alexandre Rente Paulo\n*   Alexandra Sofia Rosa Jerónimo",
+      "recall@5": 0.0,
+      "recall@20": 0.07692307692307693,
+      "ndcg@10": 0.0,
+      "mrr": 0.0625,
+      "token_f1": 0.991869918699187,
+      "rouge_l": 0.4878048780487805,
+      "bleu": 0.6545940401867313
+    },
+    {
+      "id": "conv_08",
+      "categoria": "conversacional",
+      "resposta": "Não encontrei essa informação nos documentos fornecidos.\n\n*Fontes mais próximas encontradas: `horários_de_atendimento_1º_sem__2025_2026.pdf`. Tenta reformular mencionando um destes documentos ou usando um critério mais específico (ex: nome, departamento, dia).*",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "token_f1": 0.05263157894736842,
+      "rouge_l": 0.05263157894736842,
+      "bleu": 0.04175872565419194
+    },
+    {
+      "id": "conv_09",
+      "categoria": "conversacional",
+      "resposta": "Não encontrei essa informação nos documentos fornecidos.\n\n*Fontes mais próximas encontradas: `CalendarioAcademico.pdf`. Tenta reformular mencionando um destes documentos ou usando um critério mais específico (ex: nome, departamento, dia).*",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 0.38685280723454163,
+      "mrr": 0.2,
+      "token_f1": 0.0,
+      "rouge_l": 0.0,
+      "bleu": 0.03511476270817333,
+      "topic_change": true
+    },
+    {
+      "id": "fact_20",
+      "categoria": "factual",
+      "resposta": "[Modo extrativo — LLM indisponível] Passagem mais relevante encontrada:\nEAF - Exames : Época de Avaliação Final SI - Semana Integração F - Feriado ER - Exames : Época de Recurso N - Natal EEA - Exames : Época Especial de Avaliação P - Páscoa PA - Pausa Académica.\n\n(Erro do LLM: Erro do Gemini: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 58.610301267s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '58s'}]}})",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 0.975788054854922,
+      "mrr": 1.0,
+      "token_f1": 0.05235602094240838,
+      "rouge_l": 0.041884816753926704,
+      "bleu": 0.013722900802410393
+    },
+    {
+      "id": "list_12",
+      "categoria": "listagem",
+      "resposta": "[Modo extrativo — LLM indisponível] Passagem mais relevante encontrada:\n**Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**      1   **Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**          2   **Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**              3   **Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**            4   **Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**...\n\n(Erro do LLM: Erro do Gemini: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 58.687305886s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.5-flash', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '58s'}]}})",
+      "recall@5": 0.5,
+      "recall@20": 1.0,
+      "ndcg@10": 0.5,
+      "mrr": 0.3333333333333333,
+      "token_f1": 0.06603773584905659,
+      "rouge_l": 0.04716981132075471,
+      "bleu": 0.010389785629708327
+    },
+    {
+      "id": "list_13",
+      "categoria": "listagem",
+      "resposta": "O Concurso Local para Maiores de 23 anos, detentores de classificação positiva em Prova especialmente adequada para Frequência de",
+      "recall@5": 0.0,
+      "recall@20": 0.0,
+      "ndcg@10": 0.0,
+      "mrr": 0.0,
+      "token_f1": 0.0,
+      "rouge_l": 0.0,
+      "bleu": 0.051376692245884724
+    },
+    {
+      "id": "list_16",
+      "categoria": "listagem",
+      "resposta": "[Modo extrativo — LLM indisponível] Passagem mais relevante encontrada:\nEAF - Exames : Época de Avaliação Final SI - Semana Integração F - Feriado ER - Exames : Época de Recurso N - Natal EEA - Exames : Época Especial de Avaliação P - Páscoa PA - Pausa Académica.\n\n(Erro do LLM: Erro do Gemini: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 58.700042936s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '58s'}]}})",
+      "recall@5": 0.5,
+      "recall@20": 1.0,
+      "ndcg@10": 0.6112833214150002,
+      "mrr": 0.5,
+      "token_f1": 0.010582010582010583,
+      "rouge_l": 0.010582010582010583,
+      "bleu": 0.006662355423526071
+    },
+    {
+      "id": "list_18",
+      "categoria": "listagem",
+      "resposta": "[Modo extrativo — LLM indisponível] Passagem mais relevante encontrada:\n**Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**      1   **Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**          2   **Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**              3   **Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**            4   **Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**...\n\n(Erro do LLM: Erro do Gemini: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 58.686893372s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '58s'}]}})",
+      "recall@5": 0.0,
+      "recall@20": 0.0,
+      "ndcg@10": 0.0,
+      "mrr": 0.0,
+      "token_f1": 0.0375586854460094,
+      "rouge_l": 0.0375586854460094,
+      "bleu": 0.007768176639267048
+    },
+    {
+      "id": "restr_11",
+      "categoria": "restricao",
+      "resposta": "[Modo extrativo — LLM indisponível] Passagem mais relevante encontrada:\n**Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**      1   **Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**          2   **Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**              3   **Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**            4   **Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**...\n\n(Erro do LLM: Erro do Gemini: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 58.562472738s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '58s'}]}})",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 0.6787622294601761,
+      "mrr": 0.5,
+      "token_f1": 0.049019607843137254,
+      "rouge_l": 0.0392156862745098,
+      "bleu": 0.00966878499203574
+    },
+    {
+      "id": "restr_18",
+      "categoria": "restricao",
+      "resposta": "[Modo extrativo — LLM indisponível] Passagem mais relevante encontrada:\nEAF - Exames : Época de Avaliação Final SI - Semana Integração F - Feriado ER - Exames : Época de Recurso N - Natal EEA - Exames : Época Especial de Avaliação P - Páscoa PA - Pausa Académica.\n\n(Erro do LLM: Erro do Gemini: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 58.615340211s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '58s'}]}})",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "token_f1": 0.01092896174863388,
+      "rouge_l": 0.01092896174863388,
+      "bleu": 0.006662355423526071
+    },
+    {
+      "id": "restr_20",
+      "categoria": "restricao",
+      "resposta": "[Modo extrativo — LLM indisponível] Passagem mais relevante encontrada:\nBragança podem depois efetuar candidatura para ingressar no ensino superior, de acordo com o seguinte calendário: **CONCURSO LOCAL para Maiores de 23 anos, DETENTORES de classificação positiva em Prova** **especialmente adequada para Frequência de Ensino Superior.** **2025/2026** **1ª FASE** **[Informações detalhadas em www.ipb.pt/m23](http://www.ipb.pt/m23)** Afixação de vagas disponíveis: www.ip...\n\n(Erro do LLM: Erro do Gemini: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 58.517273968s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '58s'}]}})",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 0.6934264036172708,
+      "mrr": 0.5,
+      "token_f1": 0.01015228426395939,
+      "rouge_l": 0.01015228426395939,
+      "bleu": 0.006177803497101088
+    },
+    {
+      "id": "count_11",
+      "categoria": "contagem",
+      "resposta": "[Modo extrativo — LLM indisponível] Passagem mais relevante encontrada:\n**Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**      1   **Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**          2   **Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**              3   **Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**            4   **Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**...\n\n(Erro do LLM: Erro do Gemini: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 58.622845657s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '58s'}]}})",
+      "num_sistema": 1,
+      "num_ref": 20,
+      "exato": false,
+      "tol1": false
+    },
+    {
+      "id": "count_12",
+      "categoria": "contagem",
+      "resposta": "O ano letivo tem 2 semestres.\n\n*(Nota: este documento tem 48 registos; foram analisados 20 devido ao limite de contexto do modelo. Para maior precisão, filtra por departamento, dia ou outro critério — ou define a variável de ambiente `MAX_AGGREGATION_CHUNKS` para um valor superior.)*",
+      "num_sistema": 2,
+      "num_ref": 2,
+      "exato": true,
+      "tol1": true
+    },
+    {
+      "id": "count_15",
+      "categoria": "contagem",
+      "resposta": "[Modo extrativo — LLM indisponível] Passagem mais relevante encontrada:\nEAF - Exames : Época de Avaliação Final SI - Semana Integração F - Feriado ER - Exames : Época de Recurso N - Natal EEA - Exames : Época Especial de Avaliação P - Páscoa PA - Pausa Académica.\n\n(Erro do LLM: Erro do Gemini: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 58.539389073s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '58s'}]}})",
+      "num_sistema": 429,
+      "num_ref": 3,
+      "exato": false,
+      "tol1": false
+    },
+    {
+      "id": "count_16",
+      "categoria": "contagem",
+      "resposta": "[Modo extrativo — LLM indisponível] Passagem mais relevante encontrada:\nsemestre letivo. Estas edições não têm acesso à época especial de avaliação de setembro (7) Os Dirigentes Associativos podem requerer até cinco exames em cada ano letivo (máximo de dois por unidade curricular), de 1 a 5 de cada um dos meses de outubro, novembro, dezembro, março, abril e maio. **IPB Calendário Académico 2025/26** **03-02-2025** ANEXO 2 **CALENDÁRIO INTERNO DE PROCEDIMENTOS ACADÉMIC...\n\n(Erro do LLM: Erro do Gemini: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 58.710778236s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '58s'}]}})",
+      "num_sistema": 7,
+      "num_ref": 2,
+      "exato": false,
+      "tol1": false
+    },
+    {
+      "id": "count_17",
+      "categoria": "contagem",
+      "resposta": "[Modo extrativo — LLM indisponível] Passagem mais relevante encontrada:\n**Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**      1   **Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**          2   **Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**              3   **Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**            4   **Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**...\n\n(Erro do LLM: Erro do Gemini: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 58.54447573s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '58s'}]}})",
+      "num_sistema": 1,
+      "num_ref": 2,
+      "exato": false,
+      "tol1": true
+    },
+    {
+      "id": "count_18",
+      "categoria": "contagem",
+      "resposta": "[Modo extrativo — LLM indisponível] Passagem mais relevante encontrada:\n**Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**      1   **Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**          2   **Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**              3   **Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**            4   **Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**...\n\n(Erro do LLM: Erro do Gemini: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 58.692554302s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.5-flash', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '58s'}]}})",
+      "num_sistema": 1,
+      "num_ref": 2,
+      "exato": false,
+      "tol1": true
+    },
+    {
+      "id": "count_19",
+      "categoria": "contagem",
+      "resposta": "[Modo extrativo — LLM indisponível] Passagem mais relevante encontrada:\n**Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**      1   **Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**          2   **Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**              3   **Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**            4   **Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**...\n\n(Erro do LLM: Erro do Gemini: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 58.571225804s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '58s'}]}})\n\n*(Nota: este documento tem 199 registos; foram analisados 20 devido ao limite de contexto do modelo. Para maior precisão, filtra por departamento, dia ou outro critério — ou define a variável de ambiente `MAX_AGGREGATION_CHUNKS` para um valor superior.)*",
+      "num_sistema": 1,
+      "num_ref": 40,
+      "exato": false,
+      "tol1": false
+    },
+    {
+      "id": "count_20",
+      "categoria": "contagem",
+      "resposta": "[Modo extrativo — LLM indisponível] Passagem mais relevante encontrada:\n**Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**      1   **Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**          2   **Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**              3   **Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**            4   **Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**...\n\n(Erro do LLM: Erro do Gemini: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 58.558729941s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '58s'}]}})",
+      "num_sistema": 1,
+      "num_ref": 4,
+      "exato": false,
+      "tol1": false
+    },
+    {
+      "id": "conv_19",
+      "categoria": "conversacional",
+      "resposta": "[Modo extrativo — LLM indisponível] Passagem mais relevante encontrada:\n**Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**      1   **Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**          2   **Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**              3   **Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**            4   **Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**...\n\n(Erro do LLM: Erro do Gemini: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 58.613681143s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '58s'}]}})",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 0.9860433320650158,
+      "mrr": 1.0,
+      "token_f1": 0.03,
+      "rouge_l": 0.03,
+      "bleu": 0.008736733491276287,
+      "topic_change": true
+    },
+    {
+      "id": "conv_11",
+      "categoria": "conversacional",
+      "resposta": "[Modo extrativo — LLM indisponível] Passagem mais relevante encontrada:\nExames de Melhoria e de Melhoria Desfasados:(2).\n\n(Erro do LLM: Erro do Gemini: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 58.620760349s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '58s'}]}})",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 0.38685280723454163,
+      "mrr": 0.2,
+      "token_f1": 0.02564102564102564,
+      "rouge_l": 0.01282051282051282,
+      "bleu": 0.008983701983608008
+    },
+    {
+      "id": "conv_12",
+      "categoria": "conversacional",
+      "resposta": "[Modo extrativo — LLM indisponível] Passagem mais relevante encontrada:\nEAF - Exames : Época de Avaliação Final SI - Semana Integração F - Feriado ER - Exames : Época de Recurso N - Natal EEA - Exames : Época Especial de Avaliação P - Páscoa PA - Pausa Académica.\n\n(Erro do LLM: Erro do Gemini: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 58.699784123s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '58s'}]}})",
+      "recall@5": 0.0,
+      "recall@20": 1.0,
+      "ndcg@10": 0.3562071871080222,
+      "mrr": 0.16666666666666666,
+      "token_f1": 0.031914893617021274,
+      "rouge_l": 0.010638297872340427,
+      "bleu": 0.007922920472334173
+    },
+    {
+      "id": "conv_13",
+      "categoria": "conversacional",
+      "resposta": "[Modo extrativo — LLM indisponível] Passagem mais relevante encontrada:\nJoão da Rocha e Silva (DEP.: DTM, email: jrocha@ipb.pt, Gab.: 25/FabLab). Horário de atendimento: terça-feira 09:00 - 11:00; quarta-feira 09:00 - 11:00.\n\n(Erro do LLM: Erro do Gemini: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 58.716671194s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.5-flash', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '58s'}]}})",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 0.7328286204777911,
+      "mrr": 0.5,
+      "token_f1": 0.011494252873563218,
+      "rouge_l": 0.011494252873563218,
+      "bleu": 0.0072293895623802085
+    },
+    {
+      "id": "conv_14",
+      "categoria": "conversacional",
+      "resposta": "[Modo extrativo — LLM indisponível] Passagem mais relevante encontrada:\n1º SEMESTRE (2º SEMESTRE).\n\n(Erro do LLM: Erro do Gemini: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 58.69913509s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.5-flash', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '58s'}]}})",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 0.6934264036172708,
+      "mrr": 0.5,
+      "token_f1": 0.026315789473684213,
+      "rouge_l": 0.013157894736842106,
+      "bleu": 0.009235891387154287
+    },
+    {
+      "id": "conv_15",
+      "categoria": "conversacional",
+      "resposta": "[Modo extrativo — LLM indisponível] Passagem mais relevante encontrada:\nano letivo). (8) Candidatos aos concursos especiais e outros regimes de acesso aos ciclos de estudos de Licenciatura (inclui os titulares de um curso de especialização tecnológica DETs, os Titulares de Cursos Superiores e Médios e os regimes de Reingresso, Mudança de Par Instituição/ Curso no Ensino Superior). O processo de creditação deve obrigatoriamente ser efetuado no ato da candidatura, uma v...\n\n(Erro do LLM: Erro do Gemini: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 58.694295666s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '58s'}]}})",
+      "recall@5": 0.0,
+      "recall@20": 1.0,
+      "ndcg@10": 0.3333333333333333,
+      "mrr": 0.14285714285714285,
+      "token_f1": 0.009615384615384616,
+      "rouge_l": 0.009615384615384616,
+      "bleu": 0.005931299772665814
+    },
+    {
+      "id": "conv_16",
+      "categoria": "conversacional",
+      "resposta": "[Modo extrativo — LLM indisponível] Passagem mais relevante encontrada:\nExames de Melhoria e de Melhoria Desfasados:(2).\n\n(Erro do LLM: Erro do Gemini: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 58.703052279s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '58s'}]}})",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 0.5012658353418871,
+      "mrr": 0.25,
+      "token_f1": 0.05031446540880503,
+      "rouge_l": 0.025157232704402514,
+      "bleu": 0.0121387795109914
+    },
+    {
+      "id": "conv_17",
+      "categoria": "conversacional",
+      "resposta": "[Modo extrativo — LLM indisponível] Passagem mais relevante encontrada:\n13/09/2025 Renovação de matrículas (extraordinário): [(6)] 22/09/2025 a 11/10/2025 **SOLICITAÇÃO DE PROCESSOS DE CREDITAÇÃO:** **Processos de Creditação da Formação Certificada/Profissional:** Candidatos Concursos Locais : [(8)] No ato da Candidatura Outubro/2025 Todos os alunos: [(9)(10)] Março/2026 **SOLICITAÇÃO DE ESTATUTOS ESPECIAIS DE ESTUDANTE IPB** **[(11)]** **:** Para atribuição do estatu...\n\n(Erro do LLM: Erro do Gemini: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 58.680249055s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '58s'}]}})",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 0.8120032421377507,
+      "mrr": 0.5,
+      "token_f1": 0.0,
+      "rouge_l": 0.0,
+      "bleu": 0.005305133105127886
+    },
+    {
+      "id": "conv_18",
+      "categoria": "conversacional",
+      "resposta": "[Modo extrativo — LLM indisponível] Passagem mais relevante encontrada:\ncolocação **Processos de creditação de Formação Certificada e de Experiência Profissional submetidos após a** **matrícula online:** Submissão do processo nos SA: Outubro (1ºsem.); Março (2ºsem.) Envio dos processos dos SA às Escolas: até 05/11/2025; até 05/04/2026 Envio das respostas das Escolas aos SA: até 10/12/2025; até 10/05/2026 Notificação do aluno pelos SA: até 15/12/2025; até 15/05/2026 **...\n\n(Erro do LLM: Erro do Gemini: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 58.722775509s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.5-flash', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '58s'}]}})",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 0.6934264036172708,
+      "mrr": 0.5,
+      "token_f1": 0.03883495145631068,
+      "rouge_l": 0.02912621359223301,
+      "bleu": 0.007688295563015288
+    },
+    {
+      "id": "conv_20",
+      "categoria": "conversacional",
+      "resposta": "[Modo extrativo — LLM indisponível] Passagem mais relevante encontrada:\n**Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**      1   **Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**          2   **Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**              3   **Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**            4   **Horários de Atendimento**  **1.º semestre - ano letivo 2025/2026**...\n\n(Erro do LLM: Erro do Gemini: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 58.650011557s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '58s'}]}})",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 0.5498407734605131,
+      "mrr": 0.3333333333333333,
+      "token_f1": 0.04,
+      "rouge_l": 0.04,
+      "bleu": 0.009237970930014303,
+      "topic_change": true
+    },
+    {
+      "id": "mh_01",
+      "categoria": "multi_hop",
+      "resposta": "Durante o período de exames do 1.º semestre (19/01 a 14/02/2026), Edite Martins Cordeiro (DM) atende nas seguintes datas e horários:\n- segunda-feira: 16:00 - 18:00\n- terça-feira: 14:00 - 16:00",
+      "recall@5": 0.6666666666666666,
+      "recall@20": 1.0,
+      "ndcg@10": 0.7717609143252694,
+      "mrr": 1.0,
+      "token_f1": 0.6129032258064516,
+      "rouge_l": 0.3548387096774193,
+      "bleu": 0.40236057392677443,
+      "ambos_docs": true
+    },
+    {
+      "id": "mh_02",
+      "categoria": "multi_hop",
+      "resposta": "Arezki Abderrahim Chellal atende na terça-feira das 10:00 - 12:00.",
+      "recall@5": 0.6666666666666666,
+      "recall@20": 1.0,
+      "ndcg@10": 0.7890424563070345,
+      "mrr": 1.0,
+      "token_f1": 0.47058823529411764,
+      "rouge_l": 0.47058823529411764,
+      "bleu": 0.11917286127486612,
+      "ambos_docs": true
+    },
+    {
+      "id": "mh_03",
+      "categoria": "multi_hop",
+      "resposta": "Durante o período de exames do 1.º semestre (19/01 a 14/02/2026), Alexandra Sofia Rosa Jerónimo (DTM) atende na segunda-feira das 09:00 - 11:00.",
+      "recall@5": 0.6666666666666666,
+      "recall@20": 1.0,
+      "ndcg@10": 0.8395700624665824,
+      "mrr": 1.0,
+      "token_f1": 0.816326530612245,
+      "rouge_l": 0.4489795918367347,
+      "bleu": 0.5907443983739291,
+      "ambos_docs": true
+    },
+    {
+      "id": "mh_04",
+      "categoria": "multi_hop",
+      "resposta": "Durante o período de exames do 2.º semestre (15/06 a 11/07/2026), Paula Maria Pereira de Barros (DM) atende nas seguintes horas:\n- segunda-feira: 14:30 - 16:00\n- quarta-feira: 10:00 - 12:30",
+      "recall@5": 0.6666666666666666,
+      "recall@20": 1.0,
+      "ndcg@10": 0.7774950961074903,
+      "mrr": 1.0,
+      "token_f1": 0.65625,
+      "rouge_l": 0.34375,
+      "bleu": 0.4681939286568287,
+      "ambos_docs": true
+    },
+    {
+      "id": "mh_05",
+      "categoria": "multi_hop",
+      "resposta": "Amélia Maria Martins Pires atende nas seguintes horas:\n- segunda-feira: 18:00 - 19:00\n- terça-feira: 18:00 - 19:00\n- quinta-feira: 16:00 - 18:00",
+      "recall@5": 0.6666666666666666,
+      "recall@20": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "token_f1": 0.3666666666666667,
+      "rouge_l": 0.3666666666666667,
+      "bleu": 0.12541073059502375,
+      "ambos_docs": true
+    },
+    {
+      "id": "mh_06",
+      "categoria": "multi_hop",
+      "resposta": "Durante o período de exames do 2.º semestre (15/06 a 11/07/2026), Carla Sofia Veiga Fernandes (DM) atende nas seguintes horas:\n- Terça-feira: 09:30 - 12:00\n- Quinta-feira: 09:30 - 11:00",
+      "recall@5": 0.6666666666666666,
+      "recall@20": 1.0,
+      "ndcg@10": 0.7438924904678291,
+      "mrr": 1.0,
+      "token_f1": 0.6451612903225806,
+      "rouge_l": 0.35483870967741943,
+      "bleu": 0.4496498086372828,
+      "ambos_docs": true
+    },
+    {
+      "id": "mh_07",
+      "categoria": "multi_hop",
+      "resposta": "Os docentes do DM que atendem na segunda-feira são:\n* Edite Martins Cordeiro (16:00 - 18:00)\n* Maria de Fátima Moreira da Silva Pacheco (não tem atendimento marcado para essa data específica, mas tem atendimento na quarta-feira e quinta-feira)\n* Carla Sofia Veiga Fernandes (não tem atendimento marcado para essa data específica, mas tem atendimento na terça-feira e quinta-feira)\n* João Carlos Oliveira Nunes (não tem atendimento marcado para essa data específica, mas tem atendimento na quarta-feira e quinta-feira)\n* Paula Maria Pereira de Barros (não tem atendimento marcado para essa data específica, mas tem atendimento na segunda-feira das 14:30 - 16:00)\n\nNo entanto, apenas dois docentes do DM atendem na segunda-feira:\n* Edite Martins Cordeiro (16:00 - 18:00)\n* Paula Maria Pereira de Barros (14:30 - 16:00)",
+      "recall@5": 0.6666666666666666,
+      "recall@20": 0.6666666666666666,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "token_f1": 0.18181818181818182,
+      "rouge_l": 0.13986013986013984,
+      "bleu": 0.05138791316463487,
+      "ambos_docs": true
+    },
+    {
+      "id": "mh_08",
+      "categoria": "multi_hop",
+      "resposta": "Os docentes do DMA que atendem na segunda-feira são:\n* Valdemar Raul Ramos Garcia (18:00 - 19:00)\n* Manuel Teixeira Brás César (16:00 - 18:00)\n* Hugo Miguel Andrade Lopes Figueiredo da Silva (16:00 - 18:00)\n* Matheus Henrique Alves não atende na segunda-feira, mas sim na quinta-feira.\n* Pedro Leonel Pamplona Folhento não atende na segunda-feira, mas sim na quarta-feira.\n* Sérgio Manuel de Sousa Rosa não atende na segunda-feira, mas sim na terça-feira.\n* João Carlos Almendra Roque não atende na segunda-feira, mas sim na terça-feira e quinta-feira.\n* Pedro Nuno Gonçalves Nogueiro não atende na segunda-feira, mas sim na terça-feira e quinta-feira.",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "token_f1": 0.1951219512195122,
+      "rouge_l": 0.08130081300813007,
+      "bleu": 0.06299194246470433,
+      "ambos_docs": true
+    },
+    {
+      "id": "mh_09",
+      "categoria": "multi_hop",
+      "resposta": "Os seguintes docentes do DTM atendem na segunda-feira:\n* Alexandra Sofia Rosa Jerónimo\n* Hugo Miguel Andrade Lopes Figueiredo da Silva\n* Jorge Henrique de Carvalho Santos\n* Cristovão Lucas dos Santos\n* Luísa Maria da Silva Barreira não atende na segunda-feira, mas Gabriel de Arruda Leite e Evandro Pires Alves sim, apesar de não serem mencionados no excerto [1], são do DIC, mas também há outros do DTM.\n* Além dos mencionados, também atendem na segunda-feira: \n + Gabriel de Arruda Leite (DIC)\n + Evandro Pires Alves (DIC)\n\nNo entanto, apenas os seguintes são do DTM:\n* Alexandra Sofia Rosa Jerónimo\n* Hugo Miguel Andrade Lopes Figueiredo da Silva\n* Jorge Henrique de Carvalho Santos\n* Cristovão Lucas dos Santos",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "token_f1": 0.36619718309859156,
+      "rouge_l": 0.29577464788732394,
+      "bleu": 0.16813580243917503,
+      "ambos_docs": true
+    },
+    {
+      "id": "mh_10",
+      "categoria": "multi_hop",
+      "resposta": "O 1.º semestre termina a 14/02/2026. Paula Maria Pereira de Barros (DM) atende nas seguintes datas e horários: segunda-feira das 14:30 - 16:00 e quarta-feira das 10:00 - 12:30.",
+      "recall@5": 0.5,
+      "recall@20": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "token_f1": 0.7636363636363636,
+      "rouge_l": 0.7636363636363636,
+      "bleu": 0.49614858773984216,
+      "ambos_docs": true
+    },
+    {
+      "id": "mh_11",
+      "categoria": "multi_hop",
+      "resposta": "O 2.º semestre começa a 16/02/2026. Arezki Abderrahim Chellal atende à terça-feira das 10:00 às 12:00.",
+      "recall@5": 0.6666666666666666,
+      "recall@20": 1.0,
+      "ndcg@10": 0.7903864795495061,
+      "mrr": 1.0,
+      "token_f1": 1.0,
+      "rouge_l": 1.0,
+      "bleu": 1.0,
+      "ambos_docs": true
+    },
+    {
+      "id": "mh_12",
+      "categoria": "multi_hop",
+      "resposta": "Durante a Pausa Académica do 1.º semestre (12 a 17/01/2026), Edite Martins Cordeiro (DM) atenderia na segunda-feira (16:00 - 18:00) e na terça-feira (14:00 - 16:00).",
+      "recall@5": 0.5,
+      "recall@20": 1.0,
+      "ndcg@10": 0.8175295903539445,
+      "mrr": 1.0,
+      "token_f1": 0.6909090909090909,
+      "rouge_l": 0.32727272727272727,
+      "bleu": 0.314849666707477,
+      "ambos_docs": true
+    },
+    {
+      "id": "mh_13",
+      "categoria": "multi_hop",
+      "resposta": "As pautas do 1.º semestre abrem em 21/01/2026. Alexandra Sofia Rosa Jerónimo (DTM) atende na segunda-feira das 09:00 - 11:00.",
+      "recall@5": 0.6666666666666666,
+      "recall@20": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "token_f1": 0.8292682926829269,
+      "rouge_l": 0.8292682926829269,
+      "bleu": 0.5526778778205866,
+      "ambos_docs": true
+    },
+    {
+      "id": "mh_14",
+      "categoria": "multi_hop",
+      "resposta": "* António Miguel Verdelho Paula (DEP.: DMA, email: mpaula@ipb.pt, Gab.: 4). Horário de atendimento: segunda-feira 11:00 - 13:00; \n* Manuel Teixeira Brás César (DEP.: DMA, email: brazcesar@ipb.pt, Gab.: 11). Horário de atendimento: segunda-feira 16:00 - 18:00; \n* Valdemar Raul Ramos Garcia (DEP.: DMA, email: valdemar@ipb.pt, Gab.: 20). Horário de atendimento: segunda-feira 18:00 - 19:00; \n* Débora Rodrigues de Sousa Macanjo Ferreira (DEP.: DMA, email: debora@ipb.pt, Gab.: 107). Horário de atendimento: terça-feira 11:00 - 13:00; quinta-feira 11:00 - 13:00 (não atende à segunda-feira);\n* Sérgio Manuel de Sousa Rosa (DEP.: DMA, email: srosa@ipb.pt, Gab.: 88). Horário de atendimento: terça-feira 11:00 - 13:00 14:00 - 16:00 (não atende à segunda-feira);\n* Matheus Henrique Alves (DEP.: DMA, email: matheus.alves@ipb.pt, Gab.: 13). Horário de atendimento: quinta-feira 16:00 - 18:00 (não atende à segunda-feira);\n* Paulo Alexandre Gonçalves Piloto (DEP.: DMA, email: ppiloto@ipb.pt, Gab.: 9). Horário de atendimento: quarta-feira 14:00 - 18:00 (não atende à segunda-feira);\n* Pedro Leonel Pamplona Folhento (DEP.: DMA, email: pedrofolhento@ipb.pt, Gab.: 13). Horário de atendimento: quarta-feira 14:00 - 16:00 (não atende à segunda-feira);\n* João Carlos Almendra Roque (DEP.: DMA, email: jroque@ipb.pt, Gab.: 28). Horário de atendimento: terça-feira 17:00 - 19:00; quinta-feira 17:00 - 19:00 (não atende à segunda-feira);\n* Pedro Nuno Gonçalves Nogueiro (DEP.: DMA, email: nogueiro@ipb.pt, Gab.: 1). Horário de atendimento: terça-feira 09:00 - 11:00; quinta-feira 11:00 - 13:00 (não atende à segunda-feira);\n* Carlos Liberal Moreno Afonso (DEP.: DMA, email: c-moreno@ipb.pt, Gab.: 102). Horário de atendimento: terça-feira 09:00 - 11:00; quarta-feira 11:00 - 13:00 (não atende à segunda-feira).\n\nAssim, os docentes que atendem à segunda-feira são:\n* António Miguel Verdelho Paula \n* Manuel Teixeira Brás César \n* Valdemar Raul Ramos Garcia",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 0.958214983820857,
+      "mrr": 1.0,
+      "token_f1": 0.09696969696969697,
+      "rouge_l": 0.09696969696969697,
+      "bleu": 0.041007365603729536,
+      "ambos_docs": true
+    },
+    {
+      "id": "mh_15",
+      "categoria": "multi_hop",
+      "resposta": "A Pausa de Natal ocorre de 22/12/2025 a 03/01/2026. Amélia Maria Martins Pires (DCES) atende nas seguintes datas e horários: segunda-feira 18:00 - 19:00; terça-feira 18:00 - 19:00; quinta-feira 16:00 - 18:00.",
+      "recall@5": 0.5,
+      "recall@20": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "token_f1": 0.71875,
+      "rouge_l": 0.6875,
+      "bleu": 0.3607442374649342,
+      "ambos_docs": true
+    },
+    {
+      "id": "mh_16",
+      "categoria": "multi_hop",
+      "resposta": "O 1.º semestre dura aproximadamente 18 semanas, de 15 de setembro de 2025 a 14 de fevereiro de 2026. Carla Sofia Veiga Fernandes (DM) atende nas terças-feiras das 09:30 às 12:00 e nas quintas-feiras das 09:30 às 11:00.",
+      "recall@5": 0.5,
+      "recall@20": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "token_f1": 0.5901639344262295,
+      "rouge_l": 0.5573770491803278,
+      "bleu": 0.24015615768255297,
+      "ambos_docs": true
+    },
+    {
+      "id": "mh_17",
+      "categoria": "multi_hop",
+      "resposta": "Edite Martins Cordeiro atende nas seguintes horas:\n- segunda-feira: 16:00 - 18:00\n- terça-feira: 14:00 - 16:00",
+      "recall@5": 0.5,
+      "recall@20": 1.0,
+      "ndcg@10": 0.7903864795495061,
+      "mrr": 1.0,
+      "token_f1": 0.39024390243902435,
+      "rouge_l": 0.39024390243902435,
+      "bleu": 0.1542776912721843,
+      "ambos_docs": true
+    },
+    {
+      "id": "mh_18",
+      "categoria": "multi_hop",
+      "resposta": "* Cristovão Lucas dos Santos (DEP.: DTM, email: cristovao.santos@ipb.pt, Gab.: 13) - segunda-feira 17:00 - 19:00\n* Alexandra Sofia Rosa Jerónimo (DEP.: DTM, email: alexandra.jeronimo@ipb.pt, Gab.: 13) - segunda-feira 09:00 - 11:00\n* Jorge Henrique de Carvalho Santos (DEP.: DTM, email: jsantos@ipb.pt, Gab.: FabLab) - segunda-feira 10:00 - 12:00\n* Hugo Miguel Andrade Lopes Figueiredo da Silva (DEP.: DTM, email: hugo.silva@ipb.pt, Gab.: 13) - segunda-feira 16:00 - 18:00\n* Evandro Pires Alves (DEP.: DIC, não é do DTM, mas Bernardo Farrero não atende à segunda-feira) \n* Bernardo não atende à segunda-feira, mas atende à terça-feira.",
+      "recall@5": 0.8,
+      "recall@20": 1.0,
+      "ndcg@10": 0.9838048780283076,
+      "mrr": 1.0,
+      "token_f1": 0.35211267605633806,
+      "rouge_l": 0.18309859154929578,
+      "bleu": 0.14099420063147472,
+      "ambos_docs": true
+    },
+    {
+      "id": "mh_19",
+      "categoria": "multi_hop",
+      "resposta": "O 2.º semestre termina em 11/07/2026. Arezki Abderrahim Chellal atende na terça-feira das 10:00 às 12:00.",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 0.9134015924715543,
+      "mrr": 1.0,
+      "token_f1": 0.8823529411764706,
+      "rouge_l": 0.8823529411764706,
+      "bleu": 0.667278568794606,
+      "ambos_docs": true
+    },
+    {
+      "id": "mh_20",
+      "categoria": "multi_hop",
+      "resposta": "Os exames da Época Especial de setembro não têm uma data específica mencionada nos excertos fornecidos. No entanto, é mencionado que as edições não têm acesso à época especial de avaliação de setembro.\n\nPaula Maria Pereira de Barros atende nas seguintes datas e horários:\n- Segunda-feira: 14:30 - 16:00\n- Quarta-feira: 10:00 - 12:30",
+      "recall@5": 1.0,
+      "recall@20": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "token_f1": 0.4197530864197531,
+      "rouge_l": 0.3950617283950617,
+      "bleu": 0.1802476121150135,
+      "ambos_docs": true
+    }
+  ],
+  "agregado": {
+    "factual": {
+      "n": 20,
+      "recall@5": 0.9,
+      "recall@20": 1.0,
+      "ndcg@10": 0.7641829522675256,
+      "mrr": 0.7175595238095238,
+      "token_f1": 0.47458152977008944,
+      "rouge_l": 0.4703542658569616,
+      "bleu": 0.2223496044850556
+    },
+    "listagem": {
+      "n": 20,
+      "recall@5": 0.4597852212206471,
+      "recall@20": 0.8034255528557808,
+      "ndcg@10": 0.7391030403092093,
+      "mrr": 0.6847222222222222,
+      "token_f1": 0.49523702193932334,
+      "rouge_l": 0.33168874306032226,
+      "bleu": 0.23928702394698487
+    },
+    "restricao": {
+      "n": 20,
+      "recall@5": 0.8583333333333332,
+      "recall@20": 1.0,
+      "ndcg@10": 0.8679483761280897,
+      "mrr": 0.8154761904761905,
+      "token_f1": 0.3411621942140267,
+      "rouge_l": 0.30085031089618675,
+      "bleu": 0.18122322225379467
+    },
+    "desconhecido": {
+      "n": 20,
+      "taxa_recusa": 1.0
+    },
+    "anti_alucinacao": {
+      "n": 20,
+      "taxa_recusa": 1.0
+    },
+    "contagem": {
+      "n": 20,
+      "acerto_exato": 0.1,
+      "acerto_tol1": 0.2
+    },
+    "conversacional": {
+      "n": 20,
+      "recall@5": 0.8,
+      "recall@20": 0.9038461538461539,
+      "ndcg@10": 0.6501155926479878,
+      "mrr": 0.5427678571428571,
+      "token_f1": 0.1805087351898266,
+      "rouge_l": 0.14261972431885298,
+      "bleu": 0.11210595920812409
+    },
+    "multi_hop": {
+      "n": 20,
+      "recall@5": 0.715,
+      "recall@20": 0.9833333333333334,
+      "ndcg@10": 0.908774251172394,
+      "mrr": 1.0,
+      "token_f1": 0.5522596624777121,
+      "rouge_l": 0.44846894036049234,
+      "bleu": 0.329321496268281
+    }
+  }
+}

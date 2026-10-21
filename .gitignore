@@ -1,0 +1,40 @@
+# Secrets — nunca commitar
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+env/
+venv/
+.venv/
+*.sqlite3
+*.db
+/db/
+
+# Node
+node_modules/
+/dist/
+/out-tsc/
+/npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+"npm-debug.log*"
+
+# IDE
+.vscode/
+.DS_Store
+
+**/.angular/
+# Dados e índices locais (PDFs institucionais, ChromaDB, BM25)
+backend/data/
+backend/db/
+backend/backend/
+
+# Builds e logs
+frontend/dist/
+*.log
+*_log.txt
+*_err.txt

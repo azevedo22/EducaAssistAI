@@ -1,0 +1,209 @@
+{
+  "version": 1,
+  "description": "Gold set de avaliação do EducaAssistAI. Cobre 6 categorias de perguntas: factuais, listagens, restritivas, semânticas, desconhecidas (anti-alucinação) e edge cases. Pressupõe que estão indexados o PDF da proposta e o PDF dos horários de atendimento do 1º semestre 2025/2026.",
+  "questions": [
+    {
+      "id": "fact_001",
+      "category": "factual",
+      "question": "Quem é o orientador do projeto?",
+      "must_contain": ["Rui Pedro Lopes"],
+      "expected_sources": ["25_26_PT_PropostaProjeto.pdf"],
+      "notes": "Pergunta factual direta sobre o PDF da proposta"
+    },
+    {
+      "id": "fact_002",
+      "category": "factual",
+      "question": "Qual é o nome do projeto?",
+      "must_contain": ["EducaAssistAI"],
+      "expected_sources": ["25_26_PT_PropostaProjeto.pdf"]
+    },
+    {
+      "id": "fact_003",
+      "category": "factual",
+      "question": "A que ano letivo é referente o projeto?",
+      "must_contain": ["2025/2026"],
+      "expected_sources": ["25_26_PT_PropostaProjeto.pdf"]
+    },
+    {
+      "id": "fact_004",
+      "category": "factual",
+      "question": "Em que ano do curso é desenvolvido este projeto?",
+      "must_contain": ["3"],
+      "expected_sources": ["25_26_PT_PropostaProjeto.pdf"]
+    },
+    {
+      "id": "fact_010",
+      "category": "factual",
+      "question": "Qual é o gabinete da Adélia Marlene Teixeira Matos?",
+      "must_contain": ["13"],
+      "expected_sources": ["horários_de_atendimento_1º_sem__2025_2026.pdf"]
+    },
+    {
+      "id": "fact_011",
+      "category": "factual",
+      "question": "Qual o email do Adriano Manuel Alves Ferreira?",
+      "must_contain": ["a.ferreira@ipb.pt"],
+      "expected_sources": ["horários_de_atendimento_1º_sem__2025_2026.pdf"]
+    },
+    {
+      "id": "fact_012",
+      "category": "factual",
+      "question": "Em que dias atende a Amélia Maria Martins Pires?",
+      "must_contain": ["segunda", "quarta", "sexta"],
+      "expected_sources": ["horários_de_atendimento_1º_sem__2025_2026.pdf"]
+    },
+    {
+      "id": "fact_013",
+      "category": "factual",
+      "question": "Qual o departamento do António Borges Fernandes?",
+      "must_contain": ["DCES"],
+      "expected_sources": ["horários_de_atendimento_1º_sem__2025_2026.pdf"]
+    },
+    {
+      "id": "fact_014",
+      "category": "factual",
+      "question": "A que horas atende o Adriano Ferreira à terça-feira?",
+      "must_contain": ["16:00", "18:00"],
+      "expected_sources": ["horários_de_atendimento_1º_sem__2025_2026.pdf"]
+    },
+    {
+      "id": "list_001",
+      "category": "listing",
+      "question": "Quem atende à sexta-feira?",
+      "must_contain": ["Amélia"],
+      "min_results": 15,
+      "expected_sources": ["horários_de_atendimento_1º_sem__2025_2026.pdf"]
+    },
+    {
+      "id": "list_002",
+      "category": "listing",
+      "question": "Quem atende à terça-feira?",
+      "min_results": 30,
+      "expected_sources": ["horários_de_atendimento_1º_sem__2025_2026.pdf"]
+    },
+    {
+      "id": "list_003",
+      "category": "listing",
+      "question": "Quem atende ao sábado?",
+      "max_results": 5,
+      "expected_sources": ["horários_de_atendimento_1º_sem__2025_2026.pdf"],
+      "notes": "Vendo o PDF, ninguém atende ao sábado — esperado é vazio ou muito poucos"
+    },
+    {
+      "id": "list_004",
+      "category": "listing",
+      "question": "Quem atende à sexta-feira ou ao sábado?",
+      "must_contain": ["Amélia"],
+      "min_results": 15,
+      "expected_sources": ["horários_de_atendimento_1º_sem__2025_2026.pdf"],
+      "notes": "Combinação OR de dias"
+    },
+    {
+      "id": "restr_001",
+      "category": "restrictive",
+      "question": "Que docentes do DIC atendem à quinta-feira?",
+      "must_contain": ["DIC"],
+      "must_not_contain": ["DCES,", "DTM,", "DGI,"],
+      "min_results": 3,
+      "expected_sources": ["horários_de_atendimento_1º_sem__2025_2026.pdf"],
+      "notes": "Filtro composto: dep + dia"
+    },
+    {
+      "id": "restr_002",
+      "category": "restrictive",
+      "question": "Quem na sala 13 atende à terça-feira?",
+      "min_results": 1,
+      "expected_sources": ["horários_de_atendimento_1º_sem__2025_2026.pdf"],
+      "notes": "Filtro composto: gab + dia"
+    },
+    {
+      "id": "restr_003",
+      "category": "restrictive",
+      "question": "Que docentes do DCES atendem ao sábado?",
+      "expected_sources": ["horários_de_atendimento_1º_sem__2025_2026.pdf"],
+      "notes": "Resultado provavelmente vazio; testa robustez do AND quando interseção é nula"
+    },
+    {
+      "id": "restr_004",
+      "category": "restrictive",
+      "question": "Quem está no gabinete LCAR?",
+      "min_results": 1,
+      "must_contain": ["Adriano"],
+      "expected_sources": ["horários_de_atendimento_1º_sem__2025_2026.pdf"],
+      "notes": "Filtro só por gabinete (sem dia) com valor alfanumérico"
+    },
+    {
+      "id": "sem_001",
+      "category": "semantic",
+      "question": "Quem atende à sexta-feira de manhã?",
+      "must_contain": ["António Borges Fernandes"],
+      "must_not_contain": ["Berta Isabel", "Catarina Bragança"],
+      "expected_sources": ["horários_de_atendimento_1º_sem__2025_2026.pdf"],
+      "notes": "Refinamento semântico: 'de manhã' = horários < 12:00. António tem 8:30; Berta tem 18-20 (não devia aparecer)"
+    },
+    {
+      "id": "sem_002",
+      "category": "semantic",
+      "question": "Quem atende à quarta-feira depois das 18h?",
+      "must_not_contain": ["09:00", "10:00", "11:00"],
+      "expected_sources": ["horários_de_atendimento_1º_sem__2025_2026.pdf"],
+      "notes": "Refinamento numérico: hora > 18:00"
+    },
+    {
+      "id": "sem_003",
+      "category": "semantic",
+      "question": "Quem na sala 13 atende à quinta-feira de manhã?",
+      "expected_sources": ["horários_de_atendimento_1º_sem__2025_2026.pdf"],
+      "notes": "Combinação extrema: gab + dia + manhã"
+    },
+    {
+      "id": "unk_001",
+      "category": "unknown",
+      "question": "Qual é o valor da propina da licenciatura em Engenharia Informática?",
+      "expected_answer_phrase": "Não encontrei",
+      "must_not_contain": ["€", "1500", "2000", "750"],
+      "expected_sources": [],
+      "notes": "Anti-alucinação: nenhuma das fontes tem esta informação"
+    },
+    {
+      "id": "unk_002",
+      "category": "unknown",
+      "question": "Quem é o presidente do IPB?",
+      "expected_answer_phrase": "Não encontrei",
+      "expected_sources": [],
+      "notes": "Não está no corpus"
+    },
+    {
+      "id": "unk_003",
+      "category": "unknown",
+      "question": "Qual é o horário da cantina da ESTiG?",
+      "expected_answer_phrase": "Não encontrei",
+      "expected_sources": []
+    },
+    {
+      "id": "unk_004",
+      "category": "unknown",
+      "question": "Quantos alunos tem a licenciatura em Engenharia Informática?",
+      "expected_answer_phrase": "Não encontrei",
+      "must_not_contain": ["50", "100", "200"],
+      "expected_sources": []
+    },
+    {
+      "id": "hall_001",
+      "category": "anti_hallucination",
+      "question": "Qual é o gabinete do docente João Pessoa Inexistente?",
+      "expected_answer_phrase": "Não encontrei",
+      "must_not_contain": ["13", "57", "112"],
+      "expected_sources": [],
+      "notes": "Nome inventado: sistema deve recusar"
+    },
+    {
+      "id": "hall_002",
+      "category": "anti_hallucination",
+      "question": "Em que dia atende a Maria Fictícia Santos do departamento DXX?",
+      "expected_answer_phrase": "Não encontrei",
+      "expected_sources": [],
+      "notes": "Nome e departamento inventados"
+    }
+  ]
+}

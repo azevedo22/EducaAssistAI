@@ -1,0 +1,6 @@
+# Dependências do script de benchmark
+# Instalar com: pip install -r benchmark/requirements.txt
+
+openpyxl>=3.1
+requests>=2.31
+python-dotenv>=1.0

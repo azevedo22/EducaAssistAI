@@ -1,0 +1,943 @@
+<div class="admin-page">
+
+  <!-- ── Header ─────────────────────────────────────────────── -->
+  <header class="admin-header">
+    <button type="button" class="back-btn" (click)="goBack()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="19" y1="12" x2="5" y2="12"/>
+        <polyline points="12 19 5 12 12 5"/>
+      </svg>
+      Voltar
+    </button>
+
+    <div class="header-brand">
+      <div class="header-logo-ring">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+          <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+        </svg>
+      </div>
+      <div class="header-brand-text">
+        <span class="header-brand-ipb">IPB</span>
+        <span class="header-brand-sep">/</span>
+        <strong class="header-brand-name">EducaAssistAI</strong>
+        <span class="header-brand-sep header-brand-sep-dim">/</span>
+        <span class="header-brand-section">Administração</span>
+      </div>
+    </div>
+
+    <div class="sys-status">
+      <span class="sys-dot"></span>
+      <span>Online</span>
+    </div>
+
+    <div class="header-right">
+      <button type="button" class="theme-toggle" (click)="toggleDarkMode()"
+              [title]="darkMode ? 'Mudar para tema claro' : 'Mudar para tema escuro'"
+              aria-label="Alternar tema">
+        <svg *ngIf="!darkMode" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg *ngIf="darkMode" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ── Loading ──────────────────────────────────────────────── -->
+  <div class="page-loading" *ngIf="adminConfigLoading">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="spinning" aria-hidden="true">
+      <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
+    </svg>
+    A carregar configuração...
+  </div>
+
+  <ng-container *ngIf="!adminConfigLoading">
+
+    <!-- ── Stats row ─────────────────────────────────────────── -->
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-icon stat-icon-blue">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+          </svg>
+        </div>
+        <div class="stat-body">
+          <span class="stat-value">{{ documents.length }}</span>
+          <span class="stat-label">Documentos</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon stat-icon-green">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="9 11 12 14 22 4"/>
+            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+          </svg>
+        </div>
+        <div class="stat-body">
+          <span class="stat-value">{{ indexedDocuments.length }}</span>
+          <span class="stat-label">Indexados</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon stat-icon-purple">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+            <line x1="8" y1="21" x2="16" y2="21"/>
+            <line x1="12" y1="17" x2="12" y2="21"/>
+          </svg>
+        </div>
+        <div class="stat-body">
+          <span class="stat-value">{{ totalIndexedChunks }}</span>
+          <span class="stat-label">Chunks</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon stat-icon-orange">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+        </div>
+        <div class="stat-body">
+          <span class="stat-value">{{ scrapers.length }}</span>
+          <span class="stat-label">Web Scrapers</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Tab navigation ────────────────────────────────────── -->
+    <nav class="admin-tabs" aria-label="Secções de administração">
+      <div class="tabs-track">
+        <button type="button" class="tab-btn" [class.active]="activeTab === 'upload'" (click)="activeTab = 'upload'">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="17 8 12 3 7 8"/>
+            <line x1="12" y1="3" x2="12" y2="15"/>
+          </svg>
+          Upload
+        </button>
+        <button type="button" class="tab-btn" [class.active]="activeTab === 'documents'" (click)="activeTab = 'documents'">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+          </svg>
+          Documentos
+          <span class="tab-count" *ngIf="documents.length">{{ documents.length }}</span>
+        </button>
+        <button type="button" class="tab-btn" [class.active]="activeTab === 'config'" (click)="activeTab = 'config'">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+          </svg>
+          Configuração
+        </button>
+        <button type="button" class="tab-btn" [class.active]="activeTab === 'scraping'" (click)="activeTab = 'scraping'">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+          Web Scraping
+          <span class="tab-count" *ngIf="scrapers.length">{{ scrapers.length }}</span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- ── Main content ──────────────────────────────────────── -->
+    <main class="admin-main">
+
+      <!-- ════ Tab: Upload ════ -->
+      <section class="tab-panel" *ngIf="activeTab === 'upload'">
+        <div class="panel-hero">
+          <div class="panel-hero-text">
+            <h2 class="panel-title">Upload de Documentos</h2>
+            <p class="panel-subtitle">Carregue ficheiros PDF, DOCX ou HTML. Os documentos são processados e indexados automaticamente no corpus do assistente.</p>
+          </div>
+        </div>
+
+        <div class="upload-layout">
+          <!-- Drop zone -->
+          <div class="drop-zone-wrap">
+            <div class="batch-drop-zone"
+                 role="button" tabindex="0"
+                 [class.drag-over]="isDragOver"
+                 (click)="batchInput.click()"
+                 (keydown.enter)="batchInput.click()"
+                 (dragenter)="isDragOver = true"
+                 (dragover)="$event.preventDefault()"
+                 (dragleave)="isDragOver = false"
+                 (drop)="onBatchDrop($event)">
+              <div class="drop-zone-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                  <polyline points="17 8 12 3 7 8"/>
+                  <line x1="12" y1="3" x2="12" y2="15"/>
+                </svg>
+              </div>
+              <p class="drop-zone-title">Arraste ficheiros aqui</p>
+              <p class="drop-zone-sub">ou clique para selecionar</p>
+              <div class="drop-zone-types">
+                <span class="type-chip">PDF</span>
+                <span class="type-chip">DOCX</span>
+                <span class="type-chip">HTML</span>
+              </div>
+            </div>
+            <input type="file" accept=".pdf,.docx,.html" multiple
+                   (change)="onBatchFilesSelected($event)" #batchInput hidden />
+            <button type="button" class="select-files-btn" (click)="batchInput.click()">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="17 8 12 3 7 8"/>
+                <line x1="12" y1="3" x2="12" y2="15"/>
+              </svg>
+              Selecionar Ficheiros
+            </button>
+          </div>
+
+          <!-- File queue -->
+          <div class="file-queue-wrap">
+            <div class="file-queue-empty" *ngIf="!batchFiles.length">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M9 11l3 3L22 4"/>
+                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+              </svg>
+              <p>Nenhum ficheiro selecionado</p>
+              <small>Selecione ou arraste ficheiros para a área à esquerda</small>
+            </div>
+
+            <ng-container *ngIf="batchFiles.length">
+              <div class="file-queue-header">
+                <span class="file-queue-title">Fila de processamento</span>
+                <button type="button" class="link-btn" (click)="batchFiles = []" [disabled]="batchUploading">
+                  Limpar tudo
+                </button>
+              </div>
+
+              <ul class="batch-file-list">
+                <li *ngFor="let entry of batchFiles; let i = index"
+                    class="batch-file"
+                    [class.batch-status-pending]="entry.status === 'pending'"
+                    [class.batch-status-uploading]="entry.status === 'uploading'"
+                    [class.batch-status-done]="entry.status === 'done'"
+                    [class.batch-status-error]="entry.status === 'error'">
+
+                  <span class="batch-file-icon" aria-hidden="true">
+                    <svg *ngIf="entry.status === 'pending'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="9"/>
+                    </svg>
+                    <svg *ngIf="entry.status === 'uploading'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="spinning">
+                      <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
+                    </svg>
+                    <svg *ngIf="entry.status === 'done'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                    <svg *ngIf="entry.status === 'error'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                  </span>
+
+                  <div class="batch-file-info">
+                    <span class="batch-file-name" [title]="entry.file.name">{{ entry.file.name }}</span>
+                    <span class="batch-file-meta">
+                      {{ formatSize(entry.file.size) }}
+                      <ng-container *ngIf="entry.status === 'done' && entry.result">
+                        · <span class="meta-success">{{ entry.result.chunks_added }} chunks · {{ entry.result.extraction_mode }}</span>
+                      </ng-container>
+                      <ng-container *ngIf="entry.status === 'error' && entry.error">
+                        · <span class="meta-error" [title]="entry.error">{{ entry.error }}</span>
+                      </ng-container>
+                    </span>
+                  </div>
+
+                  <span class="batch-file-status">{{ batchStatusLabel(entry.status) }}</span>
+
+                  <button type="button" class="icon-btn" (click)="removeBatchFile(i)"
+                          [disabled]="entry.status === 'uploading'" title="Remover">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                  </button>
+                </li>
+              </ul>
+
+              <div class="file-queue-actions">
+                <button type="button" class="primary-btn" (click)="startBatchUpload()"
+                        [disabled]="batchUploading || !hasPendingFiles()">
+                  <svg *ngIf="batchUploading" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="spinning">
+                    <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
+                  </svg>
+                  <svg *ngIf="!batchUploading" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polygon points="5 3 19 12 5 21 5 3"/>
+                  </svg>
+                  {{ batchUploading ? 'A processar…' : 'Fazer Embeddings (' + pendingCount() + ')' }}
+                </button>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════ Tab: Documentos ════ -->
+      <section class="tab-panel" *ngIf="activeTab === 'documents'">
+        <div class="panel-hero">
+          <div class="panel-hero-text">
+            <h2 class="panel-title">Documentos</h2>
+            <p class="panel-subtitle">Gerencie os ficheiros carregados no corpus do assistente.</p>
+          </div>
+          <div class="panel-hero-actions">
+            <button type="button" class="ghost-btn" (click)="refreshDocuments()" [disabled]="documentsLoading" title="Atualizar">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" [class.spinning]="documentsLoading">
+                <polyline points="23 4 23 10 17 10"/>
+                <polyline points="1 20 1 14 7 14"/>
+                <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+              </svg>
+              Atualizar
+            </button>
+          </div>
+        </div>
+
+        <div class="inline-alert inline-alert-ok" *ngIf="actionStatus && !actionError">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          {{ actionStatus }}
+        </div>
+        <div class="inline-alert inline-alert-err" *ngIf="actionStatus && actionError">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+          </svg>
+          {{ actionStatus }}
+        </div>
+        <div class="inline-alert inline-alert-err" *ngIf="documentsError">{{ documentsError }}</div>
+
+        <div class="docs-loading-row" *ngIf="documentsLoading">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="spinning" aria-hidden="true">
+            <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
+          </svg>
+          A carregar documentos…
+        </div>
+
+        <div class="docs-empty-state" *ngIf="!documentsLoading && !documents.length && !documentsError">
+          <div class="empty-state-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+            </svg>
+          </div>
+          <p class="empty-state-title">Sem documentos</p>
+          <p class="empty-state-sub">Use o separador <strong>Upload</strong> para adicionar ficheiros PDF, DOCX ou HTML.</p>
+          <button type="button" class="primary-btn" (click)="activeTab = 'upload'">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="17 8 12 3 7 8"/>
+              <line x1="12" y1="3" x2="12" y2="15"/>
+            </svg>
+            Ir para Upload
+          </button>
+        </div>
+
+        <!-- Document grid -->
+        <ul class="docs-grid" *ngIf="documents.length">
+          <li *ngFor="let doc of documents" class="doc-card"
+              [class.is-pdf]="doc.filename.toLowerCase().endsWith('.pdf')"
+              [class.is-docx]="doc.filename.toLowerCase().endsWith('.docx')"
+              [class.is-html]="doc.filename.toLowerCase().endsWith('.html')">
+            <div class="doc-card-icon" [class.doc-card-icon-unindexed]="doc.chunks === 0" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M28 4H10a2 2 0 0 0-2 2v36a2 2 0 0 0 2 2h28a2 2 0 0 0 2-2V16z"/>
+                <polyline points="28 4 28 16 40 16"/>
+              </svg>
+              <span class="doc-card-ext">{{ doc.filename.split('.').pop()!.toUpperCase() }}</span>
+            </div>
+
+            <div class="doc-card-body">
+              <ng-container *ngIf="editingFilename !== doc.filename">
+                <span class="doc-card-name" [title]="doc.filename">{{ doc.filename }}</span>
+                <div class="doc-card-summary">
+                  <span class="badge"
+                      [class.badge-table]="doc.mode === 'table'"
+                      [class.badge-markdown]="doc.mode === 'markdown'"
+                      [class.badge-vision]="doc.mode === 'vision'"
+                      [class.badge-hybrid]="doc.mode === 'hybrid'">
+                    {{ doc.mode === 'table' ? 'tabela' : doc.mode === 'markdown' ? 'markdown' : doc.mode === 'vision' ? 'vision' : doc.mode === 'hybrid' ? 'híbrido' : 'texto' }}
+                  </span>
+                  <span>{{ formatSize(doc.size) }}</span>
+                  <span class="dot">·</span>
+                  <span class="badge badge-unindexed" *ngIf="doc.chunks === 0">Não indexado</span>
+                  <span *ngIf="doc.chunks > 0">{{ doc.chunks }} excerto{{ doc.chunks === 1 ? '' : 's' }}</span>
+                  <span class="dot" *ngIf="doc.chunks > 0">·</span>
+                  <span class="doc-card-date">{{ formatDate(doc.modified_at) }}</span>
+                </div>
+              </ng-container>
+
+              <div class="doc-card-rename" *ngIf="editingFilename === doc.filename">
+                <input type="text" class="rename-input"
+                       [(ngModel)]="editingNameDraft"
+                       (keydown.enter)="saveRename(doc)"
+                       (keydown.escape)="cancelRename()"
+                       [disabled]="renamingFilename === doc.filename"
+                       autocomplete="off" placeholder="novo nome (sem .pdf)" />
+                <span class="rename-suffix">.pdf</span>
+                <button type="button" class="icon-btn confirm"
+                        (click)="saveRename(doc)"
+                        [disabled]="renamingFilename === doc.filename" title="Guardar (Enter)">
+                  <svg *ngIf="renamingFilename !== doc.filename" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                  <svg *ngIf="renamingFilename === doc.filename" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="spinning">
+                    <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
+                  </svg>
+                </button>
+                <button type="button" class="icon-btn" (click)="cancelRename()"
+                        [disabled]="renamingFilename === doc.filename" title="Cancelar (Esc)">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="doc-card-actions" *ngIf="editingFilename !== doc.filename">
+              <ng-container *ngIf="doc.filename.toLowerCase().endsWith('.pdf')">
+                <button type="button" class="icon-btn" (click)="viewDocument(doc)" title="Pré-visualizar">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                    <circle cx="12" cy="12" r="3"/>
+                  </svg>
+                </button>
+                <button type="button" class="icon-btn" (click)="openDocumentInTab(doc)" title="Abrir noutra aba">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                    <polyline points="15 3 21 3 21 9"/>
+                    <line x1="10" y1="14" x2="21" y2="3"/>
+                  </svg>
+                </button>
+                <button type="button" class="icon-btn" (click)="startRename(doc)" title="Renomear">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M12 20h9"/>
+                    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+                  </svg>
+                </button>
+                <button type="button" class="icon-btn icon-btn-hybrid"
+                        (click)="reextractDocument(doc, 'hybrid')"
+                        [disabled]="reextractingFilename === doc.filename" title="Re-extrair como híbrido (texto + tabelas)">
+                  <svg *ngIf="reextractingFilename !== doc.filename" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <line x1="3" y1="9" x2="21" y2="9"/>
+                    <line x1="3" y1="15" x2="21" y2="15"/>
+                    <line x1="12" y1="3" x2="12" y2="21"/>
+                  </svg>
+                  <svg *ngIf="reextractingFilename === doc.filename" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="spinning">
+                    <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
+                  </svg>
+                </button>
+                <button type="button" class="icon-btn"
+                        (click)="reextractDocument(doc, 'markdown')"
+                        [disabled]="reextractingFilename === doc.filename" title="Re-extrair como markdown (só texto)">
+                  <svg *ngIf="reextractingFilename !== doc.filename" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                  </svg>
+                  <svg *ngIf="reextractingFilename === doc.filename" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="spinning">
+                    <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
+                  </svg>
+                </button>
+                <button type="button" class="icon-btn icon-btn-vision"
+                        (click)="reextractDocument(doc, 'vision')"
+                        [disabled]="reextractingFilename === doc.filename" title="Re-extrair com Gemini Vision">
+                  <svg *ngIf="reextractingFilename !== doc.filename" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M2 12C2 12 5 5 12 5s10 7 10 7-3 7-10 7S2 12 2 12z"/>
+                    <circle cx="12" cy="12" r="3"/>
+                    <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42"/>
+                  </svg>
+                  <svg *ngIf="reextractingFilename === doc.filename" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="spinning">
+                    <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
+                  </svg>
+                </button>
+              </ng-container>
+              <button type="button" class="icon-btn danger"
+                      (click)="deleteDocument(doc)"
+                      [disabled]="deletingFilename === doc.filename" title="Apagar">
+                <svg *ngIf="deletingFilename !== doc.filename" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="3 6 5 6 21 6"/>
+                  <path d="M19 6l-2 14a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L5 6"/>
+                  <path d="M10 11v6"/><path d="M14 11v6"/>
+                  <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/>
+                </svg>
+                <svg *ngIf="deletingFilename === doc.filename" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="spinning">
+                  <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
+                </svg>
+              </button>
+            </div>
+          </li>
+        </ul>
+
+        <!-- Indexed summary table -->
+        <div class="indexed-section" *ngIf="indexedDocuments.length > 0">
+          <h3 class="section-subheading">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="9 11 12 14 22 4"/>
+              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+            </svg>
+            Documentos Indexados
+            <span class="section-count">{{ indexedDocuments.length }}</span>
+          </h3>
+          <table class="indexed-table">
+            <thead>
+              <tr>
+                <th>Documento</th>
+                <th>Tipo</th>
+                <th class="col-num">Excertos</th>
+                <th class="col-date">Última atualização</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let doc of indexedDocuments" class="indexed-row">
+                <td class="indexed-name">
+                  {{ doc.filename }}
+                </td>
+                <td>
+                  <span class="badge"
+                      [class.badge-table]="doc.mode === 'table'"
+                      [class.badge-markdown]="doc.mode === 'markdown'"
+                      [class.badge-vision]="doc.mode === 'vision'"
+                      [class.badge-hybrid]="doc.mode === 'hybrid'">
+                    {{ doc.mode === 'table' ? 'tabela' : doc.mode === 'markdown' ? 'markdown' : doc.mode === 'vision' ? 'vision' : doc.mode === 'hybrid' ? 'híbrido' : 'texto' }}
+                  </span>
+                </td>
+                <td class="col-num indexed-chunks">{{ doc.chunks }}</td>
+                <td class="col-date indexed-date">{{ formatDate(doc.modified_at) }}</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr class="indexed-total">
+                <td colspan="2">Total</td>
+                <td class="col-num">{{ totalIndexedChunks }}</td>
+                <td></td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </section>
+
+      <!-- ════ Tab: Configuração ════ -->
+      <section class="tab-panel" *ngIf="activeTab === 'config'">
+        <div class="panel-hero">
+          <div class="panel-hero-text">
+            <h2 class="panel-title">Configuração do Modelo</h2>
+            <p class="panel-subtitle">Escolha o fornecedor de linguagem e de embeddings utilizados pelo assistente.</p>
+          </div>
+        </div>
+
+        <div class="config-layout">
+          <!-- LLM section -->
+          <div class="config-section">
+            <h3 class="config-section-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                <line x1="8" y1="21" x2="16" y2="21"/>
+                <line x1="12" y1="17" x2="12" y2="21"/>
+              </svg>
+              Modelo de Linguagem (LLM)
+            </h3>
+
+            <div class="provider-cards">
+              <label class="provider-card" [class.selected]="configLlmProvider === 'ollama'">
+                <input type="radio" [(ngModel)]="configLlmProvider" value="ollama" name="llmProvider" hidden />
+                <div class="provider-card-check" aria-hidden="true">
+                  <svg *ngIf="configLlmProvider === 'ollama'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                </div>
+                <div class="provider-card-body">
+                  <strong>Ollama</strong>
+                  <span>Local — sem custo, requer instalação</span>
+                </div>
+                <span class="provider-tag">Local</span>
+              </label>
+              <label class="provider-card" [class.selected]="configLlmProvider === 'groq'">
+                <input type="radio" [(ngModel)]="configLlmProvider" value="groq" name="llmProvider" hidden />
+                <div class="provider-card-check" aria-hidden="true">
+                  <svg *ngIf="configLlmProvider === 'groq'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                </div>
+                <div class="provider-card-body">
+                  <strong>Groq</strong>
+                  <span>Cloud — rápido, requer API key</span>
+                </div>
+                <span class="provider-tag provider-tag-cloud">Cloud</span>
+              </label>
+              <label class="provider-card" [class.selected]="configLlmProvider === 'gemini'">
+                <input type="radio" [(ngModel)]="configLlmProvider" value="gemini" name="llmProvider" hidden />
+                <div class="provider-card-check" aria-hidden="true">
+                  <svg *ngIf="configLlmProvider === 'gemini'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                </div>
+                <div class="provider-card-body">
+                  <strong>Gemini</strong>
+                  <span>Cloud Google — 1M TPM, sem rate limits</span>
+                </div>
+                <span class="provider-tag provider-tag-cloud">Cloud</span>
+              </label>
+            </div>
+
+            <ng-container *ngIf="configLlmProvider === 'ollama'">
+              <div class="config-field">
+                <label class="field-label" for="ollamaUrl">URL do Ollama</label>
+                <input type="text" id="ollamaUrl" class="field-input"
+                       [(ngModel)]="configOllamaUrl" placeholder="http://localhost:11434">
+              </div>
+              <div class="config-field">
+                <label class="field-label" for="ollamaModel">Modelo</label>
+                <input type="text" id="ollamaModel" class="field-input"
+                       [(ngModel)]="configOllamaModel" placeholder="gemma2:2b">
+              </div>
+            </ng-container>
+
+            <ng-container *ngIf="configLlmProvider === 'groq'">
+              <div class="config-field">
+                <label class="field-label" for="groqModel">Modelo Groq</label>
+                <input type="text" id="groqModel" class="field-input"
+                       [(ngModel)]="configGroqModel" placeholder="llama-3.1-8b-instant">
+              </div>
+              <div class="config-field">
+                <label class="field-label" for="groqKey">
+                  API Key
+                  <span class="key-status" [class.key-ok]="adminConfig?.groq_api_key_set">
+                    <svg *ngIf="adminConfig?.groq_api_key_set" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                    {{ adminConfig?.groq_api_key_set ? 'Configurada' : 'Não configurada' }}
+                  </span>
+                </label>
+                <input type="password" id="groqKey" class="field-input"
+                       [(ngModel)]="configGroqApiKey"
+                       [placeholder]="adminConfig?.groq_api_key_set ? 'deixe em branco para manter' : 'gsk_...'">
+                <span class="field-hint" *ngIf="adminConfig?.groq_api_key_preview">
+                  Atual: <code>{{ adminConfig?.groq_api_key_preview }}</code>
+                </span>
+              </div>
+            </ng-container>
+
+            <ng-container *ngIf="configLlmProvider === 'gemini'">
+              <div class="config-field">
+                <label class="field-label" for="geminiLlmModel">Modelo Gemini</label>
+                <input type="text" id="geminiLlmModel" class="field-input"
+                       [(ngModel)]="configGeminiLlmModel" placeholder="gemini-2.0-flash">
+                <span class="field-hint">Recomendado: <code>gemini-2.0-flash</code> (free tier: 1 000 000 TPM)</span>
+              </div>
+              <div class="config-field">
+                <label class="field-label" for="geminiLlmKey">
+                  API Key
+                  <span class="key-status" [class.key-ok]="adminConfig?.gemini_llm_api_key_set">
+                    <svg *ngIf="adminConfig?.gemini_llm_api_key_set" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                    {{ adminConfig?.gemini_llm_api_key_set ? 'Configurada' : 'Não configurada' }}
+                  </span>
+                </label>
+                <input type="password" id="geminiLlmKey" class="field-input"
+                       [(ngModel)]="configGeminiLlmApiKey"
+                       [placeholder]="adminConfig?.gemini_llm_api_key_set ? 'deixe em branco para manter' : 'AIzaSy...'">
+                <span class="field-hint" *ngIf="adminConfig?.gemini_llm_api_key_preview">
+                  Atual: <code>{{ adminConfig?.gemini_llm_api_key_preview }}</code>
+                </span>
+              </div>
+            </ng-container>
+          </div>
+
+          <!-- Embeddings section -->
+          <div class="config-section">
+            <h3 class="config-section-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+              Fornecedor de Embeddings
+            </h3>
+
+            <div class="provider-cards">
+              <label class="provider-card" [class.selected]="configEmbedProvider === 'local'">
+                <input type="radio" [(ngModel)]="configEmbedProvider" value="local" name="embedProvider" hidden />
+                <div class="provider-card-check" aria-hidden="true">
+                  <svg *ngIf="configEmbedProvider === 'local'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                </div>
+                <div class="provider-card-body">
+                  <strong>Local</strong>
+                  <span>sentence-transformers — sem custo</span>
+                </div>
+                <span class="provider-tag">Local</span>
+              </label>
+              <label class="provider-card" [class.selected]="configEmbedProvider === 'gemini'">
+                <input type="radio" [(ngModel)]="configEmbedProvider" value="gemini" name="embedProvider" hidden />
+                <div class="provider-card-check" aria-hidden="true">
+                  <svg *ngIf="configEmbedProvider === 'gemini'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                </div>
+                <div class="provider-card-body">
+                  <strong>Gemini</strong>
+                  <span>Google — alta qualidade, requer API key</span>
+                </div>
+                <span class="provider-tag provider-tag-cloud">Cloud</span>
+              </label>
+            </div>
+
+            <ng-container *ngIf="configEmbedProvider === 'gemini'">
+              <div class="config-field">
+                <label class="field-label" for="googleKey">
+                  API Key (Google)
+                  <span class="key-status" [class.key-ok]="adminConfig?.google_api_key_set">
+                    <svg *ngIf="adminConfig?.google_api_key_set" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                    {{ adminConfig?.google_api_key_set ? 'Configurada' : 'Não configurada' }}
+                  </span>
+                </label>
+                <input type="password" id="googleKey" class="field-input"
+                       [(ngModel)]="configGoogleApiKey"
+                       [placeholder]="adminConfig?.google_api_key_set ? 'deixe em branco para manter' : 'AIza...'">
+                <span class="field-hint" *ngIf="adminConfig?.google_api_key_preview">
+                  Atual: <code>{{ adminConfig?.google_api_key_preview }}</code>
+                </span>
+              </div>
+              <div class="config-warning">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                  <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+                </svg>
+                <span>Ao mudar o fornecedor de embeddings, o índice fica incompatível. Defina <code>REINDEX=1</code> no backend após guardar.</span>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+
+        <div class="config-save-bar">
+          <button type="button" class="primary-btn" (click)="saveAdminConfig()" [disabled]="adminConfigSaving">
+            <svg *ngIf="adminConfigSaving" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="spinning">
+              <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
+            </svg>
+            <svg *ngIf="!adminConfigSaving" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+              <polyline points="17 21 17 13 7 13 7 21"/>
+              <polyline points="7 3 7 8 15 8"/>
+            </svg>
+            {{ adminConfigSaving ? 'A guardar…' : 'Guardar Configuração' }}
+          </button>
+          <span class="save-ok" *ngIf="adminConfigSaved">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            Configuração guardada
+          </span>
+          <span class="save-err" *ngIf="adminConfigError">{{ adminConfigError }}</span>
+        </div>
+      </section>
+
+      <!-- ════ Tab: Web Scraping ════ -->
+      <section class="tab-panel" *ngIf="activeTab === 'scraping'">
+        <div class="panel-hero">
+          <div class="panel-hero-text">
+            <h2 class="panel-title">Web Scraping</h2>
+            <p class="panel-subtitle">Adicione URLs de páginas oficiais. O scraping extrai e indexa o texto automaticamente no corpus.</p>
+          </div>
+          <div class="panel-hero-actions">
+            <button type="button" class="ghost-btn" (click)="refreshScrapers()" [disabled]="scrapersLoading" title="Atualizar">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" [class.spinning]="scrapersLoading">
+                <polyline points="23 4 23 10 17 10"/>
+                <polyline points="1 20 1 14 7 14"/>
+                <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+              </svg>
+              Atualizar
+            </button>
+          </div>
+        </div>
+
+        <!-- Scraping toggle -->
+        <div class="scraping-toggle-card" [class.scraping-disabled]="scrapingEnabled === false">
+          <div class="scraping-toggle-info">
+            <div class="scraping-toggle-status">
+              <span class="scraping-status-dot" [class.dot-active]="scrapingEnabled" [class.dot-inactive]="scrapingEnabled === false"></span>
+              <strong>Web Scraping</strong>
+              <span class="scraping-status-label" *ngIf="scrapingEnabled === true">Ativo</span>
+              <span class="scraping-status-label scraping-status-off" *ngIf="scrapingEnabled === false">Desativado</span>
+              <span class="scraping-status-label" *ngIf="scrapingEnabled === null">—</span>
+            </div>
+            <p class="scraping-toggle-desc" *ngIf="scrapingEnabled !== false">
+              {{ scrapingWebChunks }} chunk{{ scrapingWebChunks === 1 ? '' : 's' }} web indexados.
+              Desativar remove-os todos e reserva o índice exclusivamente para PDFs.
+            </p>
+            <p class="scraping-toggle-desc scraping-toggle-desc-off" *ngIf="scrapingEnabled === false">
+              Todos os chunks web foram removidos. O índice está reservado para PDFs.
+              Ao ativar, execute os scrapers manualmente para re-indexar.
+            </p>
+          </div>
+          <div class="scraping-toggle-actions">
+            <button *ngIf="scrapingEnabled !== false" type="button"
+                    class="danger-btn"
+                    [disabled]="scrapingToggling || scrapingEnabled === null"
+                    (click)="toggleScraping(false)">
+              <svg *ngIf="!scrapingToggling" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/>
+              </svg>
+              <svg *ngIf="scrapingToggling" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="spinning">
+                <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
+              </svg>
+              {{ scrapingToggling ? 'A desativar…' : 'Desativar Scraping' }}
+            </button>
+            <button *ngIf="scrapingEnabled === false" type="button"
+                    class="primary-btn"
+                    [disabled]="scrapingToggling"
+                    (click)="toggleScraping(true)">
+              <svg *ngIf="!scrapingToggling" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              <svg *ngIf="scrapingToggling" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="spinning">
+                <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
+              </svg>
+              {{ scrapingToggling ? 'A ativar…' : 'Ativar Scraping' }}
+            </button>
+          </div>
+          <p class="save-err" *ngIf="scrapingToggleError">{{ scrapingToggleError }}</p>
+        </div>
+
+        <!-- Add URL form -->
+        <div class="scraper-add-card" [class.scraper-add-card-disabled]="scrapingEnabled === false">
+          <h3 class="scraper-add-title">Adicionar URL</h3>
+          <form class="scraper-add-form" (submit)="$event.preventDefault(); addScraper()">
+            <input type="url" class="field-input" [(ngModel)]="scraperNewUrl" name="scraperUrl"
+                   placeholder="https://ipb.pt/pt" [disabled]="scraperAdding" required />
+            <input type="text" class="field-input" [(ngModel)]="scraperNewLabel" name="scraperLabel"
+                   placeholder="Etiqueta (ex: IPB Principal)" [disabled]="scraperAdding" />
+            <input type="number" class="field-input scraper-maxpages-input"
+                   [(ngModel)]="scraperNewMaxPages" name="scraperMaxPages"
+                   placeholder="Máx. páginas (100)" min="1" max="500"
+                   [disabled]="scraperAdding" />
+            <button type="submit" class="primary-btn" [disabled]="scraperAdding || !scraperNewUrl.trim()">
+              <svg *ngIf="scraperAdding" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="spinning">
+                <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
+              </svg>
+              <svg *ngIf="!scraperAdding" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+              </svg>
+              {{ scraperAdding ? 'A adicionar…' : 'Adicionar' }}
+            </button>
+          </form>
+          <p class="save-err" *ngIf="scraperAddError">{{ scraperAddError }}</p>
+        </div>
+
+        <div class="inline-alert inline-alert-err" *ngIf="scrapersError">{{ scrapersError }}</div>
+
+        <div class="docs-loading-row" *ngIf="scrapersLoading">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="spinning" aria-hidden="true">
+            <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
+          </svg>
+          A carregar scrapers…
+        </div>
+
+        <div class="docs-empty-state" *ngIf="!scrapersLoading && !scrapers.length && !scrapersError">
+          <div class="empty-state-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+          </div>
+          <p class="empty-state-title">Sem URLs configuradas</p>
+          <p class="empty-state-sub">Adicione URLs acima para fazer scraping automático de páginas oficiais.</p>
+        </div>
+
+        <ul class="scrapers-list" *ngIf="scrapers.length">
+          <li *ngFor="let s of scrapers"
+              class="scraper-item"
+              [class.scraper-ok]="s.status === 'ok'"
+              [class.scraper-error]="s.status === 'error'"
+              [class.scraper-pending]="s.status === 'pending'">
+
+            <div class="scraper-status-badge" aria-hidden="true">
+              <svg *ngIf="s.status === 'ok'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              <svg *ngIf="s.status === 'error'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+              </svg>
+              <svg *ngIf="s.status === 'pending'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
+
+            <div class="scraper-info">
+              <span class="scraper-label">{{ s.label || s.url }}</span>
+              <span class="scraper-url" *ngIf="s.label">{{ s.url }}</span>
+              <span class="scraper-meta" [title]="s.status === 'error' ? scraperErrorFull(s) : ''">
+                {{ scraperStatusLabel(s) }}
+                <ng-container *ngIf="s.last_scraped">· {{ formatDate(s.last_scraped) }}</ng-container>
+              </span>
+            </div>
+
+            <div class="scraper-actions">
+              <button type="button" class="ghost-btn ghost-btn-sm"
+                      (click)="runScraper(s)"
+                      [disabled]="runningScraperId === s.id || scrapingEnabled === false"
+                      [title]="scrapingEnabled === false ? 'Ative o scraping para executar' : 'Executar agora'">
+                <svg *ngIf="runningScraperId !== s.id" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polygon points="5 3 19 12 5 21 5 3"/>
+                </svg>
+                <svg *ngIf="runningScraperId === s.id" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="spinning">
+                  <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
+                </svg>
+                {{ runningScraperId === s.id ? 'A correr…' : 'Correr' }}
+              </button>
+              <button type="button" class="icon-btn danger"
+                      (click)="deleteScraper(s)" [disabled]="deletingScraperId === s.id" title="Remover">
+                <svg *ngIf="deletingScraperId !== s.id" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="3 6 5 6 21 6"/>
+                  <path d="M19 6l-2 14a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L5 6"/>
+                  <path d="M10 11v6"/><path d="M14 11v6"/>
+                  <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/>
+                </svg>
+                <svg *ngIf="deletingScraperId === s.id" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="spinning">
+                  <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
+                </svg>
+              </button>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+    </main>
+  </ng-container>
+</div>
+
+<!-- ── Preview overlay ─────────────────────────────────────── -->
+<div class="preview-overlay" *ngIf="previewUrl" (click)="closePreview()">
+  <div class="preview-modal" (click)="$event.stopPropagation()">
+    <div class="preview-modal-header">
+      <strong>{{ previewFilename }}</strong>
+      <div class="preview-modal-actions">
+        <button type="button" class="action-btn"
+                (click)="previewFilename && openDocumentInTab({ filename: previewFilename, size: 0, chunks: 0, mode: 'text', modified_at: '' })">
+          Abrir noutra aba
+        </button>
+        <button type="button" class="action-btn" (click)="closePreview()">Fechar</button>
+      </div>
+    </div>
+    <iframe class="preview-iframe" [src]="previewUrl" title="Pré-visualização do documento"></iframe>
+  </div>
+</div>

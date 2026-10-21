@@ -1,0 +1,736 @@
+{
+  "linhas": [
+    {
+      "id": "conv_01",
+      "categoria": "conversacional",
+      "etiqueta": "incorreto",
+      "justificacao": "A resposta afirma não ter encontrado a informação, embora a referência indique claramente o departamento DCCP.",
+      "raw": "We need to compare generated answer with reference. Reference says: \"António Jorge Ferreira Vaz pertence ao departamento DCCP.\" Generated answer says: \"Não encontrei essa informação nos documentos fornecidos.\" That's factually incorrect because reference provides the department. So label should be \"incorreto\". Justification: answer says info not found, but reference contains it.\n{\"etiqueta\":\"incorreto\",\"justificacao\":\"A resposta afirma não ter encontrado a informação, embora a referência indique claramente o departamento DCCP.\"}"
+    },
+    {
+      "id": "conv_02",
+      "categoria": "conversacional",
+      "etiqueta": "incorreto",
+      "justificacao": "Inclui nomes que não constam na resposta de referência, apesar de conter os dois corretos.",
+      "raw": "We need to compare generated answer with reference answer. Reference: \"No DM atendem à segunda-feira Edite Martins Cordeiro e Paula Maria Pereira de Barros.\"\n\nThus correct answer should list only those two in DM department. Generated answer includes many entries, including Edite Martins Cordeiro and Paula Maria Pereira de Barros, but also many others (António Miguel Verdelho Paula, etc.) which are not asked. The reference only expects those two. The generated answer includes extra irrelevant info, thus not correct. It's partially correct because it includes the two correct names, but adds many extra. According to labeling: \"parcial\" if at least one fact correct but missing elements or extra? The rule: parcial → at least one fact correct, but missing elements or minor imprecision. Here extra elements (incorrect) maybe considered incorrect overall? The answer includes correct facts but also incorrect ones, which makes it not matching reference. Likely label \"parcial\" because it contains correct info but also extra irrelevant info, which is not correct answer. The instruction: \"os factos essenciais estão todos presentes e sem erro\" for correto. Here extra facts are errors (they are not asked). So not correct. \"parcial\" if at least one fact correct, but missing elements or minor imprecision. Here extra elements are not just missing, they are extra. That could be considered incorrect rather than partial? Usually partial includes extra irrelevant info? Might be considered incorrect because includes false statements (they do not attend Monday? Actually they do attend Monday, but the question: \"Desses, quais atendem à segunda-feira?\" The reference says only Edite and Paula. The generated includes many others that also attend Monday, but maybe they are not part of \"Desses\"? The context likely a list of people, and we need to select those who attend Monday. The generated includes many that attend Monday, maybe correct if the list includes them. But reference only mentions two, so generated is over-inclusive. That is factually incorrect relative to reference. So label \"incorreto\".\n{\"etiqueta\":\"incorreto\",\"justificacao\":\"Inclui nomes que não constam na resposta de referência, apesar de conter os dois corretos.\"}"
+    },
+    {
+      "id": "conv_03",
+      "categoria": "conversacional",
+      "etiqueta": "correto",
+      "justificacao": "A resposta reproduz exatamente o horário e o nome indicados na referência.",
+      "raw": "We need to compare generated answer with reference. Reference: \"À terça-feira, Edite Martins Cordeiro atende das 14:00 às 16:00.\" Generated: \"À terça-feira, Edite Martins Cordeiro atende de 14:00 - 16:00.\"\n\nFacts: same day, same person, same time interval. Slight wording difference: \"de 14:00 - 16:00\" vs \"das 14:00 às 16:00\". Both convey same meaning. No factual error. So it's correct. According to rules, \"correto\" if all essential facts present and no error. Yes.\n\nReturn JSON with label \"correto\" and short justification.\n{\"etiqueta\":\"correto\",\"justificacao\":\"A resposta reproduz exatamente o horário e o nome indicados na referência.\"}"
+    },
+    {
+      "id": "conv_04",
+      "categoria": "conversacional",
+      "etiqueta": "incorreto",
+      "justificacao": "A resposta não fornece o número solicitado, contradizendo a resposta de referência que indica 11 docentes.",
+      "raw": "We need to compare generated answer with reference answer. Reference: \"O departamento DMA tem 11 docentes na lista.\" The question: \"Quantos são ao todo?\" So answer should be 11. Generated answer: \"Não encontrei essa informação nos documentos fornecidos.\" That's incorrect, as reference provides answer. So label \"incorreto\". Justification: answer does not provide the correct number.\n{\"etiqueta\":\"incorreto\",\"justificacao\":\"A resposta não fornece o número solicitado, contradizendo a resposta de referência que indica 11 docentes.\"}"
+    },
+    {
+      "id": "conv_05",
+      "categoria": "conversacional",
+      "etiqueta": "incorreto",
+      "justificacao": "A resposta gera um número de gabinete que não consta na referência, que apenas indica onde encontrar a informação.",
+      "raw": "We need to compare generated answer with reference. Reference says: \"Essa informação (gabinete) consta da lista de horários; ver coluna Gab. para Ana Isabel Pinheiro Nunes Pereira.\" It does not give the actual cabinet number, just says to check column Gab. The generated answer says \"Ana Isabel Pinheiro Nunes Pereira tem gabinete 54.\" That provides a specific number, which is not in reference. Since reference does not confirm that it's 54, the generated answer is not supported; it's possibly incorrect. So label should be \"incorreto\". Justification: answer provides specific cabinet number not present in reference.\n{\"etiqueta\":\"incorreto\",\"justificacao\":\"A resposta gera um número de gabinete que não consta na referência, que apenas indica onde encontrar a informação.\"}"
+    },
+    {
+      "id": "conv_06",
+      "categoria": "conversacional",
+      "etiqueta": "incorreto",
+      "justificacao": "A resposta gerada afirma que não encontrou a informação, mas a referência indica claramente que Arezki Abderrahim Chellal atende na terça-feira.",
+      "raw": "We need to compare generated answer with reference. Reference says: \"Arezki Abderrahim Chellal atende à terça-feira.\" (He attends on Tuesday). Generated answer: \"Não encontrei essa informação nos documentos fornecidos.\" That's incorrect because reference contains the info. So label should be \"incorreto\". Justification: answer says info not found while reference provides it.\n{\"etiqueta\":\"incorreto\",\"justificacao\":\"A resposta gerada afirma que não encontrou a informação, mas a referência indica claramente que Arezki Abderrahim Chellal atende na terça-feira.\"}"
+    },
+    {
+      "id": "conv_07",
+      "categoria": "conversacional",
+      "etiqueta": "incorreto",
+      "justificacao": "A resposta não fornece os docentes listados na referência, falhando em apresentar os fatos corretos.",
+      "raw": "We need to compare generated answer with reference. Reference lists many faculty names. Generated answer says \"Não encontrei essa informação nos documentos fornecidos.\" That's incorrect because reference provides the answer. So label should be \"incorreto\". Justification: answer missing information, factually wrong.\n{\"etiqueta\":\"incorreto\",\"justificacao\":\"A resposta não fornece os docentes listados na referência, falhando em apresentar os fatos corretos.\"}"
+    },
+    {
+      "id": "conv_08",
+      "categoria": "conversacional",
+      "etiqueta": "incorreto",
+      "justificacao": "A resposta não fornece a informação solicitada, ao contrário da referência que indica verificar os docentes do DMA que atendem no mesmo dia.",
+      "raw": "We need to compare generated answer with reference answer. Reference answer: \"Ver docentes do DMA que atendem no mesmo dia.\" That is the expected answer: basically instruct to see teachers of DMA that attend same day. The generated answer: \"Não encontrei essa informação nos documentos fornecidos.\" That's incorrect because it says not found, while reference says to check teachers. So it's factually incorrect. So label \"incorreto\". Justification: answer does not provide the requested info.\n{\"etiqueta\":\"incorreto\",\"justificacao\":\"A resposta não fornece a informação solicitada, ao contrário da referência que indica verificar os docentes do DMA que atendem no mesmo dia.\"}"
+    },
+    {
+      "id": "conv_09",
+      "categoria": "conversacional",
+      "etiqueta": "incorreto",
+      "justificacao": "A resposta não fornece o número de departamentos, contradizendo a informação correta da referência.",
+      "raw": "We need to compare generated answer with reference. Reference says: \"Existem 12 departamentos na lista de horários.\" Generated answer says: \"Não encontrei essa informação nos documentos fornecidos.\" That's incorrect because reference provides answer. So label should be \"incorreto\". Justification: answer does not provide the correct fact.\n{\"etiqueta\":\"incorreto\",\"justificacao\":\"A resposta não fornece o número de departamentos, contradizendo a informação correta da referência.\"}"
+    },
+    {
+      "id": "conv_10",
+      "categoria": "conversacional",
+      "etiqueta": "incorreto",
+      "justificacao": "A resposta indica 9 docentes, divergindo do número correto de 75 docentes da referência.",
+      "raw": "We need to compare generated answer to reference. Reference says 75 docentes have attendance on Tuesday. Generated answer says 9 docentes, listing them, and notes limited context. That's incorrect factually. So label \"incorreto\". Justification: answer gives wrong number (9 vs 75).\n{\"etiqueta\":\"incorreto\",\"justificacao\":\"A resposta indica 9 docentes, divergindo do número correto de 75 docentes da referência.\"}"
+    },
+    {
+      "id": "conv_11",
+      "categoria": "conversacional",
+      "etiqueta": "incorreto",
+      "justificacao": "Não fornece a data correta do início do 2.º semestre.",
+      "raw": "We need to compare generated answer with reference. Reference: \"As aulas do 2.º semestre começam a 16/02/2026.\" The generated answer is an error message about LLM unavailable, showing irrelevant extraction about \"Horários de Atendimento 1.º semestre\". It does not contain the correct fact. So it's incorrect. Return JSON with label \"incorreto\" and justification: \"Não fornece a data correta do início do 2.º semestre.\"\n{\"etiqueta\":\"incorreto\",\"justificacao\":\"Não fornece a data correta do início do 2.º semestre.\"}"
+    },
+    {
+      "id": "conv_12",
+      "categoria": "conversacional",
+      "etiqueta": "incorreto",
+      "justificacao": "A resposta gerada não fornece as datas da pausa da Páscoa, apenas um erro e informação genérica.",
+      "raw": "We need to compare generated answer with reference. Reference: \"A Pausa da Páscoa decorre de 30/03/2026 a 06/04/2026.\" The generated answer is an error message and some generic legend, not providing the dates. So it's incorrect. Label \"incorreto\". Justification: does not provide the required dates, only error message.\n{\"etiqueta\":\"incorreto\",\"justificacao\":\"A resposta gerada não fornece as datas da pausa da Páscoa, apenas um erro e informação genérica.\"}"
+    },
+    {
+      "id": "conv_13",
+      "categoria": "conversacional",
+      "etiqueta": "incorreto",
+      "justificacao": "A resposta não contém a data correta e apenas apresenta um erro de taxa limite, não respondendo à pergunta.",
+      "raw": "We need to compare generated answer with reference. Reference: \"Os exames do 1.º semestre terminam a 14/02/2026.\"\n\nGenerated answer: It shows an error message, no answer, just a passage about \"Horários de Atendimento\" and a rate limit error. It does not provide the correct date. So it's incorrect. Return JSON with label \"incorreto\" and justification: \"Não fornece a data correta, apenas erro do modelo.\"\n{\"etiqueta\":\"incorreto\",\"justificacao\":\"A resposta não contém a data correta e apenas apresenta um erro de taxa limite, não respondendo à pergunta.\"}"
+    },
+    {
+      "id": "conv_14",
+      "categoria": "conversacional",
+      "etiqueta": "incorreto",
+      "justificacao": "A resposta gerada não contém a informação correta da data de abertura das pautas do 2.º semestre.",
+      "raw": "We need to compare generated answer to reference. Reference: \"As pautas do 2.º semestre abrem a 17/06/2026.\" The generated answer is an error message about LLM unavailable, showing irrelevant extraction about \"Horários de Atendimento 1.º semestre - ano letivo 2025/2026\". It does not contain the correct fact. So it's incorrect. Return JSON with label \"incorreto\" and justification short.\n{\"etiqueta\":\"incorreto\",\"justificacao\":\"A resposta gerada não contém a informação correta da data de abertura das pautas do 2.º semestre.\"}"
+    },
+    {
+      "id": "conv_15",
+      "categoria": "conversacional",
+      "etiqueta": "incorreto",
+      "justificacao": "A resposta gerada não contém o fato correto da data de início do 2.º semestre.",
+      "raw": "We need to compare generated answer to reference. Reference: \"O 2.º semestre começa a 16/02/2026.\" The generated answer is an error message about LLM unavailable, showing irrelevant extracted text about \"Horários de Atendimento\". It does not contain the correct fact. So it's incorrect. Return JSON with label \"incorreto\" and justification short.\n{\"etiqueta\":\"incorreto\",\"justificacao\":\"A resposta gerada não contém o fato correto da data de início do 2.º semestre.\"}"
+    },
+    {
+      "id": "conv_16",
+      "categoria": "conversacional",
+      "etiqueta": "incorreto",
+      "justificacao": "A resposta gerada não fornece a informação correta sobre a pausa académica, apresentando apenas um erro de taxa limite.",
+      "raw": "We need to compare generated answer with reference. Reference: \"A Pausa Académica do 2.º semestre é de 08/06 a 13/06/2026.\"\n\nGenerated answer: It shows an error message, no relevant info, just a placeholder about extraction and rate limit error. It does not contain the correct fact. So it's incorrect. Return JSON with label \"incorreto\" and justification short.\n{\"etiqueta\":\"incorreto\",\"justificacao\":\"A resposta gerada não fornece a informação correta sobre a pausa académica, apresentando apenas um erro de taxa limite.\"}"
+    },
+    {
+      "id": "conv_17",
+      "categoria": "conversacional",
+      "etiqueta": "incorreto",
+      "justificacao": "A resposta gerada não indica que são 4 fases, apenas mostra um erro e informação irrelevante.",
+      "raw": "We need to compare generated answer to reference. Reference: \"O Concurso Local tem 4 fases.\" The question: \"Quantas são ao todo?\" So correct answer: 4. Generated answer: It shows an extraction placeholder, not giving number, includes error message. It does not provide the fact. So it's incorrect. Return label \"incorreto\". Justification: does not provide the correct number.\n{\"etiqueta\":\"incorreto\",\"justificacao\":\"A resposta gerada não indica que são 4 fases, apenas mostra um erro e informação irrelevante.\"}"
+    },
+    {
+      "id": "conv_18",
+      "categoria": "conversacional",
+      "etiqueta": "incorreto",
+      "justificacao": "A resposta gerada não contém a data correta da assinatura de termos e apresenta um erro de serviço.",
+      "raw": "We need to compare generated answer with reference. Reference: \"A assinatura de termos do 2.º semestre é a 26/07/2026.\" The generated answer is an error message, no relevant info, just says LLM unavailable, shows irrelevant passage about \"Horários de Atendimento\". It does not contain the correct date. So it's incorrect. Label \"incorreto\". Justification: does not provide the correct date, returns error.\n{\"etiqueta\":\"incorreto\",\"justificacao\":\"A resposta gerada não contém a data correta da assinatura de termos e apresenta um erro de serviço.\"}"
+    },
+    {
+      "id": "conv_19",
+      "categoria": "conversacional",
+      "etiqueta": "incorreto",
+      "justificacao": "A resposta não fornece a informação solicitada e apresenta um erro de serviço em vez de indicar as 4 pausas letivas.",
+      "raw": "We need to compare generated answer to reference. Reference: \"Há 4 pausas letivas no ano letivo.\" Generated answer is an error message about LLM unavailability, no factual answer. So it's incorrect. Label \"incorreto\". Justification: does not provide the correct fact, returns error.\n{\"etiqueta\":\"incorreto\",\"justificacao\":\"A resposta não fornece a informação solicitada e apresenta um erro de serviço em vez de indicar as 4 pausas letivas.\"}"
+    },
+    {
+      "id": "conv_20",
+      "categoria": "conversacional",
+      "etiqueta": "incorreto",
+      "justificacao": "A resposta não fornece a data pedida, apresentando apenas um erro de serviço.",
+      "raw": "We need to compare generated answer with reference. Reference: \"O 2.º semestre termina a 11/07/2026.\" The generated answer is an error message about LLM unavailable, no answer to the question. So it's incorrect. Label \"incorreto\". Justification: does not provide the correct date, returns error.\n{\"etiqueta\":\"incorreto\",\"justificacao\":\"A resposta não fornece a data pedida, apresentando apenas um erro de serviço.\"}"
+    },
+    {
+      "id": "fact_01",
+      "categoria": "factual",
+      "etiqueta": "correto",
+      "justificacao": "Fornece exatamente o mesmo horário e dia que a resposta de referência.",
+      "raw": "We need to compare generated answer with reference. Reference: \"António Jorge Ferreira Vaz (DCCP) atende à terça-feira das 11:00 às 13:00 e das 16:00 às 18:00.\" Generated: \"O horário de atendimento de António Jorge Ferreira Vaz é terça-feira, das 11:00 às 13:00 e das 16:00 às 18:00.\" This matches facts, same times, same day. It's correct. So label \"correto\". Justification: matches reference exactly.\n{\"etiqueta\":\"correto\",\"justificacao\":\"Fornece exatamente o mesmo horário e dia que a resposta de referência.\"}"
+    },
+    {
+      "id": "fact_02",
+      "categoria": "factual",
+      "etiqueta": "correto",
+      "justificacao": "Fornece exatamente os mesmos dias e horários de atendimento que a referência.",
+      "raw": "We need to compare generated answer with reference. Reference: \"Ana Isabel Pinheiro Nunes Pereira (DM) atende à terça-feira das 09:00 às 11:00; à quinta-feira das 09:00 às 11:00.\"\n\nGenerated: \"Ana Isabel Pinheiro Nunes Pereira tem horário de atendimento nas seguintes datas e horários: terça-feira 09:00 - 11:00; quinta-feira 09:00 - 11:00.\"\n\nContent matches: same days and times. Slight wording differences but factual content correct. So label \"correto\". Justification: factual info matches reference.\n{\"etiqueta\":\"correto\",\"justificacao\":\"Fornece exatamente os mesmos dias e horários de atendimento que a referência.\"}"
+    },
+    {
+      "id": "fact_03",
+      "categoria": "factual",
+      "etiqueta": "correto",
+      "justificacao": "Forneceu os horários corretos para segunda e terça-feira.",
+      "raw": "We need to compare generated answer with reference. Reference: \"António Miguel Verdelho Paula (DMA) atende à segunda-feira das 11:00 às 13:00; à terça-feira das 11:00 às 13:00.\" Generated: \"Segunda-feira 11:00 - 13:00; terça-feira 11:00 - 13:00.\" It includes same schedule, missing the name and DMA but the question asks \"Qual o horário de atendimento de António Miguel Verdelho Paula?\" So only schedule needed. The generated answer provides correct schedule. It's essentially correct, though missing mention of DMA but not required. So label \"correto\". Justification: includes correct times for both days.\n{\"etiqueta\":\"correto\",\"justificacao\":\"Forneceu os horários corretos para segunda e terça-feira.\"}"
+    },
+    {
+      "id": "fact_04",
+      "categoria": "factual",
+      "etiqueta": "correto",
+      "justificacao": "Forneceu exatamente os mesmos horários de atendimento indicados na referência.",
+      "raw": "We need to compare generated answer with reference. Reference: \"António Jorge da Silva Trindade Duarte (DGI) atende à terça-feira das 09:00 às 11:00; à sexta-feira das 09:00 às 11:00.\"\n\nGenerated: \"Terça-feira 09:00 - 11:00; Sexta-feira 09:00 - 11:00.\"\n\nIt includes the same schedule, albeit missing the name and DGI, but the question asks \"Qual o horário de atendimento de António Jorge da Silva Trindade Duarte?\" So only the schedule is needed. The generated answer provides the schedule correctly. It's essentially correct, though formatting slightly different but content matches. So label \"correto\". Justification: includes correct days and times.\n{\"etiqueta\":\"correto\",\"justificacao\":\"Forneceu exatamente os mesmos horários de atendimento indicados na referência.\"}"
+    },
+    {
+      "id": "fact_05",
+      "categoria": "factual",
+      "etiqueta": "correto",
+      "justificacao": "Fornece o dia e horário corretos de atendimento.",
+      "raw": "We need to compare generated answer with reference. Reference: \"Alexandra Sofia Rosa Jerónimo (DTM) atende à segunda-feira das 09:00 às 11:00.\" Generated: \"Segunda-feira 09:00 - 11:00.\" It includes the same info: day Monday, time 09:00-11:00. It omits the name and DTM, but the question: \"Qual o horário de atendimento de Alexandra Sofia Rosa Jerónimo?\" So answer should give the schedule. The generated answer gives schedule, correct. It lacks mention of name but not required. So essential facts present, correct. So label \"correto\". Justification: includes correct day and times.\n{\"etiqueta\":\"correto\",\"justificacao\":\"Fornece o dia e horário corretos de atendimento.\"}"
+    },
+    {
+      "id": "fact_06",
+      "categoria": "factual",
+      "etiqueta": "correto",
+      "justificacao": "Fornece o horário exato de atendimento solicitado.",
+      "raw": "We need to compare generated answer with reference. Reference: \"Ana Maria Alves Queiroz da Silva (DTQB) atende à quarta-feira das 10:00 às 12:00 e das 14:00 às 16:00.\"\n\nGenerated: \"Quarta-feira, 10:00 - 12:00 e 14:00 - 16:00.\"\n\nIt includes day and times, but omits name and maybe institution. The essential fact is the schedule. The question: \"Qual o horário de atendimento de Ana Maria Alves Queiroz da Silva?\" So answer should give schedule. Generated gives schedule correctly. It lacks name but question asks schedule, so it's fine. It's correct factual info. So label \"correto\". Justification: provides exact schedule.\n{\"etiqueta\":\"correto\",\"justificacao\":\"Fornece o horário exato de atendimento solicitado.\"}"
+    },
+    {
+      "id": "fact_07",
+      "categoria": "factual",
+      "etiqueta": "correto",
+      "justificacao": "A resposta reproduz exatamente o dia e horário indicados na referência.",
+      "raw": "We need to compare generated answer with reference. Reference: \"Adriano Manuel Alves Ferreira (DE) atende à terça-feira das 16:00 às 18:00.\" Generated: \"O horário de atendimento de Adriano Manuel Alves Ferreira é terça-feira, das 16:00 às 18:00.\" It contains the same factual info: day Tuesday, 16:00-18:00. It matches. So label \"correto\". Justification: factual info matches reference.\n{\"etiqueta\":\"correto\",\"justificacao\":\"A resposta reproduz exatamente o dia e horário indicados na referência.\"}"
+    },
+    {
+      "id": "fact_08",
+      "categoria": "factual",
+      "etiqueta": "correto",
+      "justificacao": "Fornece o dia e horário corretos de atendimento.",
+      "raw": "We need to compare generated answer with reference. Reference: \"Adélia Marlene Teixeira Matos (DCES) atende à quarta-feira das 19:00 às 21:00.\" Generated: \"Quarta-feira 19:00 - 21:00.\" It includes day and time, matches essential facts. It's correct, though missing \"DCES\" and \"atende à\". But essential fact is schedule. So it's correct. Return label \"correto\".\n{\"etiqueta\":\"correto\",\"justificacao\":\"Fornece o dia e horário corretos de atendimento.\"}"
+    },
+    {
+      "id": "fact_09",
+      "categoria": "factual",
+      "etiqueta": "correto",
+      "justificacao": "Fornece o horário correto de atendimento (sexta-feira 18:00-20:00).",
+      "raw": "We need to compare generated answer with reference. Reference: \"Adília Isabel Domingues da Cruz Alves (DIC) atende à sexta-feira das 18:00 às 20:00.\" Generated: \"Sexta-feira, das 18:00 às 20:00.\" The generated includes the essential fact: the schedule (Friday 18:00-20:00). It omits the name, but the question asks \"Qual o horário de atendimento de Adília Isabel Domingues da Cruz Alves?\" So only the schedule is needed. The generated answer provides that correctly. It's concise but correct. So label \"correto\". Justification: provides the correct schedule.\n{\"etiqueta\":\"correto\",\"justificacao\":\"Fornece o horário correto de atendimento (sexta-feira 18:00-20:00).\"}"
+    },
+    {
+      "id": "fact_10",
+      "categoria": "factual",
+      "etiqueta": "correto",
+      "justificacao": "Forneceu corretamente os dois dias e horários de atendimento indicados na referência.",
+      "raw": "We need to compare generated answer with reference. Reference: \"Carla Alexandra Soares Geraldes (DGI) atende à quarta-feira das 11:00 às 13:00; à quinta-feira das 18:00 às 20:00.\"\n\nGenerated: \"O horário de atendimento de Carla Alexandra Soares Geraldes é quarta-feira 11:00 - 13:00 e quinta-feira 18:00 - 20:00.\"\n\nIt includes both days and times correctly. It omits \"(DGI)\" but that's not essential fact about schedule. The essential facts are days and times. Those are present and correct. So label \"correto\". Justification: includes both days and times correctly.\n{\"etiqueta\":\"correto\",\"justificacao\":\"Forneceu corretamente os dois dias e horários de atendimento indicados na referência.\"}"
+    },
+    {
+      "id": "fact_11",
+      "categoria": "factual",
+      "etiqueta": "correto",
+      "justificacao": "A resposta contém exatamente a data correta indicada na referência.",
+      "raw": "We need to compare generated response with reference. Reference: \"As aulas do 1.º semestre começam a 15/09/2025.\" Generated: \"De acordo com o excerto [4], as aulas do 1.º semestre de 2025/2026 começam a 15/09/2025.\"\n\nThe generated includes the same factual info, adds citation phrase but still correct. No errors. So label \"correto\". Justification: factual answer matches reference.\n{\"etiqueta\":\"correto\",\"justificacao\":\"A resposta contém exatamente a data correta indicada na referência.\"}"
+    },
+    {
+      "id": "fact_12",
+      "categoria": "factual",
+      "etiqueta": "correto",
+      "justificacao": "A resposta coincide exatamente com a referência, contendo o fato correto.",
+      "raw": "We compare generated response to reference. Both say same date. So correct.\n{\"etiqueta\":\"correto\",\"justificacao\":\"A resposta coincide exatamente com a referência, contendo o fato correto.\"}"
+    },
+    {
+      "id": "fact_13",
+      "categoria": "factual",
+      "etiqueta": "correto",
+      "justificacao": "A resposta contém a data correta e não introduz erros.",
+      "raw": "We need to compare generated response with reference. Reference: \"As aulas do 2.º semestre começam a 16/02/2026.\" Generated: \"De acordo com o excerto [8], as aulas do 2.º semestre começam a 16/02/2026.\" The generated includes the same factual content, just adds a citation phrase. That's fine, facts are correct and present. So label \"correto\". Justification: includes correct date, extra citation doesn't affect.\n{\"etiqueta\":\"correto\",\"justificacao\":\"A resposta contém a data correta e não introduz erros.\"}"
+    },
+    {
+      "id": "fact_14",
+      "categoria": "factual",
+      "etiqueta": "incorreto",
+      "justificacao": "A resposta não fornece a data correta do término do 2.º semestre, contradizendo a referência.",
+      "raw": "We need to compare generated answer with reference. Reference says: \"O 2.º semestre termina a 11/07/2026.\" Generated answer: \"Não encontrei essa informação nos documentos fornecidos.\" That's incorrect because it fails to provide the correct fact. So label \"incorreto\". Justification: answer does not contain the correct date.\n{\"etiqueta\":\"incorreto\",\"justificacao\":\"A resposta não fornece a data correta do término do 2.º semestre, contradizendo a referência.\"}"
+    },
+    {
+      "id": "fact_15",
+      "categoria": "factual",
+      "etiqueta": "correto",
+      "justificacao": "Fornece as datas corretas do período, coincidindo com a referência.",
+      "raw": "We need to compare generated answer with reference. Reference: \"A Semana de Integração decorre de 08/09/2025 a 13/09/2025.\" Generated: \"08/09/2025 a 13/09/2025.\" The essential fact (period) is present, same dates. The generated answer includes the dates but omits the phrase \"A Semana de Integração decorre de\". However the essential fact is present, no error. So it's correct (essential facts present). According to rules, \"correto\" if all essential facts present and no error. The essential fact is the period. It's present. So label \"correto\". Justification: \"Contains the correct dates, matching reference.\"\n{\"etiqueta\":\"correto\",\"justificacao\":\"Fornece as datas corretas do período, coincidindo com a referência.\"}"
+    },
+    {
+      "id": "fact_16",
+      "categoria": "factual",
+      "etiqueta": "correto",
+      "justificacao": "A resposta fornece a data correta indicada na referência.",
+      "raw": "We need to compare generated answer with reference. Reference: \"As pautas eletrónicas do 1.º semestre abrem a 21/01/2026.\" Generated: \"21/01/2026.\" The essential fact is the date. The generated answer provides the date, which matches. It's concise but includes the essential fact. So it's correct. Return JSON with label \"correto\".\n{\"etiqueta\":\"correto\",\"justificacao\":\"A resposta fornece a data correta indicada na referência.\"}"
+    },
+    {
+      "id": "fact_17",
+      "categoria": "factual",
+      "etiqueta": "correto",
+      "justificacao": "Fornece a data correta, que é o facto essencial da resposta.",
+      "raw": "We need to compare generated response with reference. Reference: \"As pautas do 1.º semestre fecham a 21/02/2026.\" Generated: \"21/02/2026.\" The essential fact is the date. The generated includes the date but omits context. The question: \"Quando fecham as pautas eletrónicas do 1.º semestre?\" The answer should give date. The generated gives date, which is correct fact. It's concise but includes essential fact. According to criteria: essential facts present and no error. So label \"correto\". Justification: provides correct date.\n{\"etiqueta\":\"correto\",\"justificacao\":\"Fornece a data correta, que é o facto essencial da resposta.\"}"
+    },
+    {
+      "id": "fact_18",
+      "categoria": "factual",
+      "etiqueta": "correto",
+      "justificacao": "A resposta reproduz exatamente a data correta indicada na referência.",
+      "raw": "We need to compare generated response with reference. Reference: \"A assinatura de termos do 1.º semestre é a 01/03/2026.\" Generated: \"De acordo com o excerto [3], a data de assinatura de termos do 1.º semestre é 01/03/2026.\" It contains the same fact, correct date, adds citation but that's fine. So it's correct. Return JSON with label \"correto\".\n{\"etiqueta\":\"correto\",\"justificacao\":\"A resposta reproduz exatamente a data correta indicada na referência.\"}"
+    },
+    {
+      "id": "fact_19",
+      "categoria": "factual",
+      "etiqueta": "correto",
+      "justificacao": "A resposta contém a data correta indicada na referência.",
+      "raw": "We need to compare generated answer with reference. Reference: \"As pautas do 2.º semestre abrem a 17/06/2026.\" Generated: \"17/06/2026\". The essential fact is the date. The generated answer provides the date, which matches. It's correct, though missing the phrasing but factually correct. So label \"correto\". Justification: provides the correct date.\n{\"etiqueta\":\"correto\",\"justificacao\":\"A resposta contém a data correta indicada na referência.\"}"
+    },
+    {
+      "id": "fact_20",
+      "categoria": "factual",
+      "etiqueta": "incorreto",
+      "justificacao": "A resposta não contém a informação correta sobre as datas dos exames, contradizendo a referência.",
+      "raw": "We need to compare generated answer with reference. Reference says exams are from 01/09 to 12/09/2026. Generated answer says \"Não encontrei essa informação nos documentos fornecidos.\" That's incorrect (doesn't provide correct fact). So label \"incorreto\". Justification: answer fails to provide correct info.\n{\"etiqueta\":\"incorreto\",\"justificacao\":\"A resposta não contém a informação correta sobre as datas dos exames, contradizendo a referência.\"}"
+    },
+    {
+      "id": "list_01",
+      "categoria": "listagem",
+      "etiqueta": "correto",
+      "justificacao": "A resposta gerada contém exatamente todos os docentes listados na referência, sem erros ou omissões.",
+      "raw": "We compare generated response to reference. Reference lists 7 names: António Jorge Ferreira Vaz, Eduarda Cristina Pires Luso, Flora Cristina Meireles Silva, Maria Isabel Lopes Marcelino Dias de Abreu, Pedro Miguel Rodrigues Oliveira, Rui Alexandre Figueiredo de Oliveira, Silvia Maria Afonso Fernandes.\n\nGenerated response lists same 7 names, just bullet points, order slightly different (Flora placed after Pedro? Actually order: António, Eduarda, Maria, Pedro, Flora, Silvia, Rui). All names present, no extra or missing. So it's correct. Return label \"correto\".\n{\"etiqueta\":\"correto\",\"justificacao\":\"A resposta gerada contém exatamente todos os docentes listados na referência, sem erros ou omissões.\"}"
+    },
+    {
+      "id": "list_02",
+      "categoria": "listagem",
+      "etiqueta": "parcial",
+      "justificacao": "A resposta gerada omite o docente João Paulo Pais de Almeida, embora inclua os demais.",
+      "raw": "We need to compare generated answer with reference answer. The question: \"Quais os docentes do departamento DM com atendimento marcado?\" Reference answer lists 9 names: Ana Isabel Pinheiro Nunes Pereira, Carla Sofia Veiga Fernandes, Edite Martins Cordeiro, Florbela Alexandra Pires Fernandes, João Carlos Oliveira Nunes, João Paulo Pais de Almeida, Maria de Fátima Moreira da Silva Pachec... actually includes João Paulo Pais de Almeida also. The reference list: \n- Ana Isabel Pinheiro Nunes Pereira\n- Carla Sofia Veiga Fernandes\n- Edite Martins Cordeiro\n- Florbela Alexandra Pires Fernandes\n- João Carlos Oliveira Nunes\n- João Paulo Pais de Almeida\n- Maria de Fátima Moreira da Silva Pacheco\n- Mário António Rodrigues Grande Abrantes\n- Paula Maria Pereira de Barros\n\nSo 9 names.\n\nGenerated answer lists 8 names: Edite Martins Cordeiro, Paula Maria Pereira de Barros, Ana Isabel Pinheiro Nunes Pereira, João Carlos Oliveira Nunes, Carla Sofia Veiga Fernandes, Florbela Alexandra Pires Fernandes, Mário António Rodrigues Grande Abrantes, Maria de Fátima Moreira da Silva Pacheco. Missing João Paulo Pais de Almeida. Also includes extra info (email, gab) but that's fine. So missing one name => partial. So label \"parcial\". Justification: missing one docente.\n{\"etiqueta\":\"parcial\",\"justificacao\":\"A resposta gerada omite o docente João Paulo Pais de Almeida, embora inclua os demais.\"}"
+    },
+    {
+      "id": "list_03",
+      "categoria": "listagem",
+      "etiqueta": "parcial",
+      "justificacao": "Falta o docente Paulo Alexandre Gonçalves Piloto na lista gerada.",
+      "raw": "We need to compare generated answer with reference answer. The question: \"Quais os docentes do departamento DMA com atendimento marcado?\" The reference answer lists the docentes of DMA: list of names (same as generated?). Let's compare.\n\nReference list:\n- António Miguel Verdelho Paula\n- Carlos Liberal Moreno Afonso\n- Débora Rodrigues de Sousa Macanjo Ferreira\n- João Carlos Almendra Roque\n- Manuel Teixeira Brás César\n- Matheus Henrique Alves\n- Paulo Alexandre Gonçalves Piloto\n- Pedro Leonel Pamplona Folhento\n- Pedro Nuno Gonçalves Nogueiro\n- Sérgio Manuel de Sousa Rosa\n- Valdemar Raul Ramos Garcia.\n\nGenerated list:\n- Pedro Leonel Pamplona Folhento\n- António Miguel Verdelho Paula\n- Matheus Henrique Alves\n- João Carlos Almendra Roque\n- Sérgio Manuel de Sousa Rosa\n- Carlos Liberal Moreno Afonso\n- Débora Rodrigues de Sousa Macanjo Ferreira\n- Pedro Nuo Gonçalves Nogueiro (typo? Actually \"Pedro Nuno Gonçalves Nogueiro\")\n- Manuel Teixeira Brás César\n- Valdemar Raul Ramos Garcia\n\nMissing \"Paulo Alexandre Gonçalves Piloto\". All other names present. So missing one name. Therefore answer is partially correct. Return JSON with label \"parcial\". Justification: missing one docente.\n{\"etiqueta\":\"parcial\",\"justificacao\":\"Falta o docente Paulo Alexandre Gonçalves Piloto na lista gerada.\"}"
+    },
+    {
+      "id": "list_04",
+      "categoria": "listagem",
+      "etiqueta": "parcial",
+      "justificacao": "A resposta inclui alguns docentes corretos, mas omite três nomes presentes na referência.",
+      "raw": "We need to compare generated answer with reference answer. Reference lists 12 names: António Jorge da Silva Trindade Duarte, Carla Alexandra Soares Geraldes, Elisa Margarida Marcos Correia de Barros, Francisco José Basilio Pimentel Pires Peito, Helena Isabel Martins Santos Paulo, João Manuel Carvalho Sobrinho Teixeira, José Mário Escudeiro Aguiar, Lucas Fernando Alves da Silva Zafanelli, Maria Clara Rodrigues Bento Vaz Fernandes, Maria Prudência Gonçalves Martins, Osman\n\nWait reference: \"Osman o Manuel Fins Morais\"? Actually \"Osmano Manuel Fins Morais\". And \"Ricardo Alexandre Tavares Lopes Saraiva Gomes\". So total 12 names.\n\nGenerated answer lists 9 names: Maria Prudência Gonçalves Martins, Carla Alexandra Soares Geraldes, Francisco José Basilio Pimentel Pires Peito, José Mário Escudeiro Aguiar, Maria Clara Rodrigues Bento Vaz Fernandes, Osmano Manuel Fins Morais, João Manuel Carvalho Sobrinho Teixeira, Lucas Fernando Alves da Silva Zafanelli, Helena Isabel Martins Santos Paulo.\n\nMissing: António Jorge da Silva Trindade Duarte, Elisa Margarida Marcos Correia de Barros, Ricardo Alexandre Tavares Lopes Saraiva Gomes. So incomplete. But all listed are correct names from reference. So partial. Return JSON with label \"parcial\".\n{\"etiqueta\":\"parcial\",\"justificacao\":\"A resposta inclui alguns docentes corretos, mas omite três nomes presentes na referência.\"}"
+    },
+    {
+      "id": "list_05",
+      "categoria": "listagem",
+      "etiqueta": "parcial",
+      "justificacao": "A resposta gerada omite vários docentes listados na referência, embora inclua alguns com horários.",
+      "raw": "We need to compare generated answer with reference answer. Reference lists all docentes of DTM (names). Generated answer lists a subset with schedule info. The question: \"Quais os docentes do departamento DTM com atendimento marcado?\" So they ask which teachers have scheduled office hours. Reference answer just lists all docentes (maybe all have attendance?). Generated answer lists some with times. The reference answer includes names: Alexandra Sofia Rosa Jerónimo, Bernardo Farrero, Carlos Alberto Rodrigues Andrade, Cristovão Lucas dos Santos, Hugo Miguel Andrade Lopes Figueiredo da Silva, João da Rocha e Silva, Jorge Alexandre Rente Paulo, Jorge Henrique de Carvalho Santos, Luís Manuel Frölén Ribeiro, Luís Miguel Cavaleiro Queijo, Luís Miguel Silva Correia, Luísa Maria da Silva Barreira, Manuel Luís Pires Clara.\n\nGenerated answer includes: Bernardo Farrero, Luís Miguel Silva Correia, Jorge Alexandre Rente Paulo, João da Rocha e Silva, Manuel Luís Pires Clara, Alexandra Sofia Rosa Jerónimo, Hugo Miguel Andrade Lopes Figueiredo da Silva, Cristovão Lucas dos Santos, Luís Manuel Frölén Ribeiro. It misses: Carlos Alberto Rodrigues Andrade, Jorge Henrique de Carvalho Santos, Luís Miguel Cavaleiro Queijo, Luísa Maria da Silva Barreira. Also includes schedule info not in reference. The reference answer may be considered correct answer (list of all). The generated answer is missing some names, so it's incomplete. Therefore label \"parcial\". Justification: missing several docentes.\n{\"etiqueta\":\"parcial\",\"justificacao\":\"A resposta gerada omite vários docentes listados na referência, embora inclua alguns com horários.\"}"
+    },
+    {
+      "id": "list_06",
+      "categoria": "listagem",
+      "etiqueta": "parcial",
+      "justificacao": "Faltou o docente Rosemary Maria Pimentel Coutinho na lista gerada.",
+      "raw": "We compare generated answer to reference. Reference lists 14 names: Ana Maria Alves Queiroz da Silva, António Manuel Esteves Ribeiro, Helter? Actually Helder Teixeira Gomes, Joana Andrêa Soares Amaral, José António Correia Silva, Maria Filomena Filipe Barreiro, Mónia Andreia Rodrigues Martins, Paulo Miguel Pereira de Brito, Pedro Jorge Louro Crugeira, Ramiro José Espinheira Martins, Ricardo Frederico Pereira Dias, Rolando Carlos Pereira Simões Dias, Rosemary Maria Pimentel Coutinho, Simão Pedro de Almeida Pinho.\n\nGenerated answer lists 13 names: Joana Andrêa Soares Amaral, Maria Filomena Filipe Barreiro, Helder Teixeira Gomes, Ricardo Frederico Pereira Dias, Pedro Jorge Louro Crugeira, Ana Maria Alves Queiroz da Silva, Mónia Andreia Rodrigues Martins, José António Correia Silva, Rolando Carlos Pereira Simões Dias, António Manuel Esteves Ribeiro, Paulo Miguel Pereira de Brito, Ramiro José Espinheira Martins, Simão Pedro de Almeida Pinho.\n\nMissing: Rosemary Maria Pimentel Coutinho. All others present. So partial.\n{\"etiqueta\":\"parcial\",\"justificacao\":\"Faltou o docente Rosemary Maria Pimentel Coutinho na lista gerada.\"}"
+    },
+    {
+      "id": "list_07",
+      "categoria": "listagem",
+      "etiqueta": "parcial",
+      "justificacao": "Inclui alguns docentes corretos, mas omite vários e contém nomes que não constam na lista de referência.",
+      "raw": "We need to compare generated answer with reference. Reference lists many names (around 27). Generated answer lists a subset (maybe 17) and includes \"Fernando Jorge Teixeira\" which is not exactly in reference (reference has \"Fernando Jorge Teixeira\"? Actually reference has \"Fernando Jorge Teixeira\"? Let's check: reference includes \"Fernando Jorge Teixeira\"? It lists \"Fernando Jorge Teixeira\"? The reference list: Adriano Manuel Alves Ferreira, Américo Vicente Teixeira Leite, Ângela Paula Barbosa de Silva Ferreira, Arezki Abderrahim Chellal, Fernando Jorge Coutinho Monteiro, Fernando Jorge Teiga Teixeira, Flávia Georgina da Silva Pires, Getúlio Paulo Peixoto Igrejas, Guido Szekir Berger, Gustavo Silva Funchal, Inês Cristina Vinhas de Seixas, João Afonso Braun Neto, João Paulo Coelho, João Paulo Ramos Teixeira, José Alexandre de Carvalho Gonçalves, José Augusto de Almeida Pinheiro de Carvalho, José dos Santos Teixeira Baptista, José Luís Sousa de Magalhães Lima, Laiany Suganuma Brancalião, Luís Fernando Piardi, Orlando Manuel de Castro Ferreira Soares, Paulo Jorge Pinto Leitão, Rebeca Baron Kalbermatter, Ruben Alexandre Moreno Clemente, Rui Victor Pires Fernandes, Susana Sofia Alves Freitas.\n\nGenerated includes many but missing many (e.g., Ângela Paula Barbosa..., Flávia..., Gustavo..., João Paulo Coelho, João Paulo Ramos Teixeira, José dos Santos..., Orlando..., Rui Victor..., Susana...). Also includes \"Fernando Jorge Teixeira\" which is not exactly in reference (reference has \"Fernando Jorge Teiga Teixeira\" maybe a different name). So generated answer is incomplete and has an incorrect name. Therefore label \"incorreto\" or \"parcial\"? Since missing many and includes a wrong name, it's not correct. According to rules, \"parcial\" is at least one fact correct but missing elements or minor imprecision. Here missing many elements and includes a wrong name (maybe more than minor). But still some correct names present. The overall answer is incomplete and partially wrong. The classification likely \"parcial\" because some correct facts present, but not all. However \"incorreto\" is for factually wrong, irrelevant, or system refused. Here it's partially correct but incomplete. So \"parcial\". Provide justification: missing many docentes and includes an incorrect name.\n{\"etiqueta\":\"parcial\",\"justificacao\":\"Inclui alguns docentes corretos, mas omite vários e contém nomes que não constam na lista de referência.\"}"
+    },
+    {
+      "id": "list_09",
+      "categoria": "listagem",
+      "etiqueta": "parcial",
+      "justificacao": "A resposta inclui alguns docentes corretos, mas omite a maioria listada na referência.",
+      "raw": "We need to compare generated answer with reference answer. The reference lists many names (a long list). The generated answer lists a subset of names with schedule times. The question: \"Quais os docentes do departamento DIC com atendimento marcado?\" The reference answer includes all such docentes (full list). The generated answer includes only some of them, missing many. Therefore it's incomplete. So label should be \"parcial\" because some correct facts (some names are present) but many missing. Also includes schedule info not in reference but that's extra, but not wrong. So partial. Provide justification: missing many docentes.\n{\"etiqueta\":\"parcial\",\"justificacao\":\"A resposta inclui alguns docentes corretos, mas omite a maioria listada na referência.\"}"
+    },
+    {
+      "id": "list_10",
+      "categoria": "listagem",
+      "etiqueta": "parcial",
+      "justificacao": "A resposta inclui alguns departamentos corretos, mas omite DCCP, ESAB, ESEB e ESTiG.",
+      "raw": "We compare generated answer to reference. Reference lists departments: DCCP, DCES, DE, DGI, DIC, DM, DMA, DTM, DTQB, ESAB, ESEB, ESTiG. Generated answer lists: DTQB, DM, DCES, DTM, DIC, DE, DMA, DGI. It includes 8 of them, missing DCCP, ESAB, ESEB, ESTiG. So it's missing some. Therefore partial.\n{\"etiqueta\":\"parcial\",\"justificacao\":\"A resposta inclui alguns departamentos corretos, mas omite DCCP, ESAB, ESEB e ESTiG.\"}"
+    },
+    {
+      "id": "list_11",
+      "categoria": "listagem",
+      "etiqueta": "correto",
+      "justificacao": "A resposta reproduz exatamente as duas pausas e as datas indicadas na referência.",
+      "raw": "We need to compare generated response with reference. Reference: \"Pausa de Natal (22/12/2025 a 03/01/2026) e Pausa Académica (12/01 a 17/01/2026).\" Generated: \"Pausa Natal: 22/12/2025 a 03/01/2026\\nPausa Académica: 12/01 a 17/01/2026\". This matches content, same dates, same names (Pausa Natal vs Pausa de Natal). So it's correct. Return label \"correto\".\n{\"etiqueta\":\"correto\",\"justificacao\":\"A resposta reproduz exatamente as duas pausas e as datas indicadas na referência.\"}"
+    },
+    {
+      "id": "list_12",
+      "categoria": "listagem",
+      "etiqueta": "incorreto",
+      "justificacao": "A resposta não fornece nenhuma das pausas letivas listadas na referência.",
+      "raw": "We need to compare generated answer with reference. Reference lists four pauses: Pausa de Natal, Pausa Académica do 1.º sem, Pausa da Páscoa e Pausa Académica do 2.º sem. Generated answer says \"Não encontrei essa informação nos documentos fornecidos.\" That's incorrect because it fails to provide the facts. So label \"incorreto\". Justification: answer does not contain the required facts.\n{\"etiqueta\":\"incorreto\",\"justificacao\":\"A resposta não fornece nenhuma das pausas letivas listadas na referência.\"}"
+    },
+    {
+      "id": "list_13",
+      "categoria": "listagem",
+      "etiqueta": "incorreto",
+      "justificacao": "A resposta não fornece as fases nem os prazos, contrariando a informação da referência.",
+      "raw": "We need to compare generated answer with reference. Reference lists phases and dates. Generated answer says \"Não encontrei essa informação nos documentos fornecidos.\" That's incorrect because reference has info. So label \"incorreto\". Justification: answer fails to provide the required phases and dates.\n{\"etiqueta\":\"incorreto\",\"justificacao\":\"A resposta não fornece as fases nem os prazos, contrariando a informação da referência.\"}"
+    },
+    {
+      "id": "list_14",
+      "categoria": "listagem",
+      "etiqueta": "correto",
+      "justificacao": "Fornece exatamente as mesmas datas‑chave que a referência.",
+      "raw": "We need to compare generated response with reference. Reference: \"Início 15/09/2025; exames 19/01 a 14/02/2026; fim 14/02/2026.\"\n\nGenerated: lists same dates: Início 15/09/2025, exames 19/01 a 14/02/2026, fim 14/02/2026. It's correct, includes same info, no errors. So label \"correto\". Justification: matches reference exactly.\n{\"etiqueta\":\"correto\",\"justificacao\":\"Fornece exatamente as mesmas datas‑chave que a referência.\"}"
+    },
+    {
+      "id": "list_15",
+      "categoria": "listagem",
+      "etiqueta": "correto",
+      "justificacao": "A resposta reproduz exatamente as datas‑chave do semestre conforme a referência.",
+      "raw": "We compare generated response to reference. Reference: \"Início 16/02/2026; exames 15/06 a 11/07/2026; fim 11/07/2026.\" Generated: lists same dates, includes same info, matches. So correct.\n{\"etiqueta\":\"correto\",\"justificacao\":\"A resposta reproduz exatamente as datas‑chave do semestre conforme a referência.\"}"
+    },
+    {
+      "id": "list_16",
+      "categoria": "listagem",
+      "etiqueta": "incorreto",
+      "justificacao": "A resposta não fornece as épocas e datas especificadas na referência.",
+      "raw": "We need to compare generated answer with reference. Reference lists specific dates. Generated says \"Não encontrei essa informação nos documentos fornecidos.\" That's incorrect because reference has info. So label \"incorreto\". Justification: answer missing required info.\n{\"etiqueta\":\"incorreto\",\"justificacao\":\"A resposta não fornece as épocas e datas especificadas na referência.\"}"
+    },
+    {
+      "id": "list_17",
+      "categoria": "listagem",
+      "etiqueta": "correto",
+      "justificacao": "Fornece as mesmas datas e semestres da resposta de referência.",
+      "raw": "We need to compare generated response with reference. Reference: \"1.º semestre: 19/01 a 14/02/2026; 2.º semestre: 15/06 a 11/07/2026.\"\n\nGenerated: \"1º Semestre: 19/01 a 14/02/2026\\n2º Semestre: 15/06 a 11/07/2026\"\n\nEssential facts: same dates, same semesters. Minor differences: punctuation (º vs .º) and formatting (semicolon vs newline). But content matches. So label \"correto\". Justification: matches reference exactly in facts.\n{\"etiqueta\":\"correto\",\"justificacao\":\"Fornece as mesmas datas e semestres da resposta de referência.\"}"
+    },
+    {
+      "id": "list_18",
+      "categoria": "listagem",
+      "etiqueta": "incorreto",
+      "justificacao": "A resposta não fornece as fases e prazos solicitados, contradizendo a referência.",
+      "raw": "We need to compare generated answer with reference. Reference lists four phases with dates. Generated answer says \"Não encontrei essa informação nos documentos fornecidos.\" That's incorrect because reference has info. So label \"incorreto\". Justification: answer missing required info.\n{\"etiqueta\":\"incorreto\",\"justificacao\":\"A resposta não fornece as fases e prazos solicitados, contradizendo a referência.\"}"
+    },
+    {
+      "id": "list_19",
+      "categoria": "listagem",
+      "etiqueta": "correto",
+      "justificacao": "A resposta reproduz exatamente as datas e semestres indicados na referência.",
+      "raw": "We need to compare generated answer with reference. Reference: \"1.º sem 12/01 a 17/01/2026; 2.º sem 08/06 a 13/06/2026.\" Generated: \"Pausa Académica: 12/01 a 17/01/2026 (1º semestre); 08/06 a 13/06/2026 (2º semestre).\" This matches exactly the dates and semesters. So it's correct. Return JSON with label \"correto\".\n{\"etiqueta\":\"correto\",\"justificacao\":\"A resposta reproduz exatamente as datas e semestres indicados na referência.\"}"
+    },
+    {
+      "id": "list_20",
+      "categoria": "listagem",
+      "etiqueta": "correto",
+      "justificacao": "Forneceu ambas as datas corretas, correspondendo à abertura e ao fecho.",
+      "raw": "We need to compare generated answer with reference. Reference: \"Abertura 21/01/2026; fecho 21/02/2026.\" Generated: \"21/01/2026 e 21/02/2026.\" It includes both dates, but does not label which is opening and which is closing, but the question: \"Quais as datas de abertura e fecho das pautas do 1.º semestre?\" The generated answer gives both dates but not specifying which is which. However the dates are correct and order implies opening then closing? It says \"21/01/2026 e 21/02/2026.\" Could be interpreted as opening and closing respectively. The essential facts are present, no error. Might be considered correct enough. According to criteria: essential facts all present and without error => correct. The labeling missing maybe minor but still correct. I'd label \"correto\".\n{\"etiqueta\":\"correto\",\"justificacao\":\"Forneceu ambas as datas corretas, correspondendo à abertura e ao fecho.\"}"
+    },
+    {
+      "id": "mh_01",
+      "categoria": "multi_hop",
+      "etiqueta": "correto",
+      "justificacao": "Fornece os dias e horários corretos de atendimento de Edite Martins Cordeiro.",
+      "raw": "We need to compare generated answer with reference. Reference: Edite Martins Cordeiro attends Monday 16:00-18:00; Tuesday 14:00-16:00; period of exams is 19/01 to 14/02/2026. The question: \"Durante o período de exames do 1.º semestre (19/01 a 14/02/2026), em que dia(s) e hora(s) atende Edite Martins Cordeiro (DM)?\" So answer should give days and times. The generated answer: It shows the same schedule: Monday 16:00-18:00; Tuesday 14:00-16:00. It also includes an error message about LLM unavailability, but the extracted passage includes correct info. The answer includes the schedule, which matches reference. The extra error message is irrelevant but does not affect correctness of factual content. The answer provides the needed info. So it's correct (essential facts present). So label \"correto\". Justification: contains correct days and times.\n{\"etiqueta\":\"correto\",\"justificacao\":\"Fornece os dias e horários corretos de atendimento de Edite Martins Cordeiro.\"}"
+    },
+    {
+      "id": "mh_02",
+      "categoria": "multi_hop",
+      "etiqueta": "correto",
+      "justificacao": "Fornece o dia e horário corretos de atendimento (terça-feira 10:00-12:00).",
+      "raw": "We need to compare generated answer with reference. Reference: \"Arezki Abderrahim Chellal atende à terça-feira das 10:00 às 12:00; o período de exames do 1.º semestre (19/01 a 14/02/2026) decorre nesse período.\"\n\nGenerated answer: It shows extracted passage: \"Arezki Abderrahim Chellal (DEP.: DE, email: arezki@ipb.pt, Gab.: LI&I). Horário de atendimento: terça-feira 10:00 - 12:00.\" It also includes error message about LLM unavailability. The answer includes the correct day and time. It does not explicitly mention the exam period dates, but the question asks: \"Durante o período de exames do 1.º semestre (19/01 a 14/02/2026), em que dia(s) e hora(s) atende Arezki Abderrahim Chellal (DE)?\" The answer should give day and hour, and maybe mention that it's within that period. The generated answer gives day and hour correctly. It also includes extraneous error message, but the factual info is correct. According to criteria: essential facts present and without error? The essential fact is day and hour. That is present. The extra error message is irrelevant but not incorrect. So likely \"parcial\" because includes extra noise but still correct info. However rule: \"correto\" if all essential facts present and without error. The essential fact is day and hour; that is present. The reference also mentions that period occurs in that period, but that's not a fact needed to answer? The question: \"Durante o período de exames ... em que dia(s) e hora(s) atende?\" So answer should give day and hour. The generated answer does that. The extra error message is irrelevant but not factually wrong. Might still be considered correct. But the presence of error message could be considered noise but not incorrect. I'd lean \"correto\". However guidelines: \"os factos essenciais estão todos presentes e sem erro.\" Yes they are. So label \"correto\".\n{\"etiqueta\":\"correto\",\"justificacao\":\"Fornece o dia e horário corretos de atendimento (terça-feira 10:00-12:00).\"}"
+    },
+    {
+      "id": "mh_03",
+      "categoria": "multi_hop",
+      "etiqueta": "correto",
+      "justificacao": "Fornece o dia e horário corretos de atendimento (segunda‑feira 09:00‑11:00) conforme a referência, apesar de incluir mensagem de erro extra.",
+      "raw": "We need to compare generated answer with reference. Reference: \"Alexandra Sofia Rosa Jerónimo atende à segunda-feira das 09:00 às 11:00; o período de exames do 1.º semestre (19/01 a 14/02/2026) decorre nesse período.\"\n\nGenerated answer: It includes passage: \"Alexandra Sofia Rosa Jerónimo (DEP.: DTM, email: alexandra.jeronimo@ipb.pt, Gab.: 13). Horário de atendimento: segunda-feira 09:00 - 11:00.\" It also includes an error message about LLM unavailability. The answer provides the correct day and time. It does not explicitly mention the exam period, but the question asks: \"Durante o período de exames do 1.º semestre (19/01 a 14/02/2026), em que dia(s) e hora(s) atende Alexandra Sofia Rosa Jerónimo (DTM)?\" The answer should state that she attends Monday 09:00-11:00 during that period. The generated answer gives that info, albeit with extra error message. The essential fact is present and correct. The extra error message is irrelevant but does not make it incorrect. So label: parcial? The reference also mentions that the exam period occurs in that period, but that's just context. The generated answer includes the correct schedule. It lacks explicit mention that this schedule applies during the exam period, but it's implied. I'd say it's correct enough. According to criteria, \"correto\" if all essential facts present and no error. The essential fact is day and time. That's present. The extra error message is noise but not factual error. Might still be considered correct. I'd choose \"correto\".\n{\"etiqueta\":\"correto\",\"justificacao\":\"Fornece o dia e horário corretos de atendimento (segunda‑feira 09:00‑11:00) conforme a referência, apesar de incluir mensagem de erro extra.\"}"
+    },
+    {
+      "id": "mh_04",
+      "categoria": "multi_hop",
+      "etiqueta": "correto",
+      "justificacao": "Fornece corretamente os dias e horários de atendimento (segunda 14:30-16:00 e quarta 10:00-12:30).",
+      "raw": "We need to compare generated answer with reference. Reference: \"Paula Maria Pereira de Barros atende à segunda-feira das 14:30 às 16:00; à quarta-feira das 10:00 às 12:30; o período de exames do 2.º semestre (15/06 a 11/07/2026) decorre nesse período.\"\n\nThe question: \"Durante o período de exames do 2.º semestre (15/06 a 11/07/2026), em que dia(s) e hora(s) atende Paula Maria Pereira de Barros (DM)?\"\n\nWe need answer: days and times she attends. The reference gives Monday 14:30-16:00; Wednesday 10:00-12:30. The generated answer includes: \"Paula Maria Pereira de Barros (DEP.: DM, email: pbarros@ipb.pt, Gab.: 2). Horário de atendimento: segunda-feira 14:30 - 16:00; quarta-feira 10:00 - 12:30.\" That matches the essential facts. It also includes extra info about email and lab, but that's fine. It does not mention the exam period, but the question asks \"During the exam period, which days and times does she attend?\" The answer gives the schedule, which is correct. So it's correct. No factual errors. So label \"correto\". Justification: provides correct days and times.\n{\"etiqueta\":\"correto\",\"justificacao\":\"Fornece corretamente os dias e horários de atendimento (segunda 14:30-16:00 e quarta 10:00-12:30).\"}"
+    },
+    {
+      "id": "mh_05",
+      "categoria": "multi_hop",
+      "etiqueta": "correto",
+      "justificacao": "Forneceu os dias e horários corretos de atendimento, coincidindo com a referência.",
+      "raw": "We need to compare generated answer with reference. Reference: \"Amélia Maria Martins Pires atende à segunda-feira das 18:00 às 19:00; à terça-feira das 18:00 às 19:00; à quinta-feira das 16:00 às 18:00; o período de exames do 2.º semestre (15/06 a 11/07/2026) decorre nesse período.\"\n\nGenerated answer: It shows the same schedule: \"segunda-feira 18:00 - 19:00; terça-feira 18:00 - 19:00; quinta-feira 16:00 - 18:00.\" It also includes a note about error and rate limit, but the schedule matches. The question: \"Durante o período de exames do 2.º semestre (15/06 a 11/07/2026), em que dia(s) e hora(s) atende Amélia Maria Martins Pires (DCES)?\" The answer should give days and times. The generated answer provides that schedule, which matches reference. It also includes extraneous error message but still contains correct info. The essential facts are present and correct. So label \"correto\". Justification: contains correct schedule despite extra error note.\n{\"etiqueta\":\"correto\",\"justificacao\":\"Forneceu os dias e horários corretos de atendimento, coincidindo com a referência.\"}"
+    },
+    {
+      "id": "mh_06",
+      "categoria": "multi_hop",
+      "etiqueta": "correto",
+      "justificacao": "Fornece os dias e horários corretos de atendimento de Carla Sofia Veiga Fernandes.",
+      "raw": "We need to compare generated answer with reference. Reference: Carla attends Tuesday 09:30-12:00; Thursday 09:30-11:00; period of exams is 15/06 to 11/07/2026. The question: \"Durante o período de exames do 2.º semestre (15/06 a 11/07/2026), em que dia(s) e hora(s) atende Carla Sofia Veiga Fernandes (DM)?\" So answer should give days and hours she attends during that period. The reference includes both days and times, and mentions period but not needed. The generated answer: It says \"Horário de atendimento: terça-feira 09:30 - 12:00; quinta-feira 09:30 - 11:00.\" It includes the same schedule. It also includes extra info about email, etc. It does not mention the exam period, but the question asks during that period, but schedule is same regardless. The reference includes period statement but not essential to answer. The generated answer provides correct days and times. So it's correct. No factual errors. So label \"correto\". Justification: provides the correct days and times.\n{\"etiqueta\":\"correto\",\"justificacao\":\"Fornece os dias e horários corretos de atendimento de Carla Sofia Veiga Fernandes.\"}"
+    },
+    {
+      "id": "mh_07",
+      "categoria": "multi_hop",
+      "etiqueta": "parcial",
+      "justificacao": "apresenta apenas Edite Martins Cordeiro, omitindo Paula Maria Pereira de Barros",
+      "raw": "We need to compare generated answer with reference. Reference: \"À segunda-feira atendem, no DM: Edite Martins Cordeiro, Paula Maria Pereira de Barros. (os exames do 1.º semestre começam a 19/01/2026.)\"\n\nGenerated answer: It extracts a passage: \"Edite Martins Cordeiro (DEP.: DM, email: emc@ipb.pt, Gab.: 101). Horário de atendimento: segunda-feira 16:00 - 18:00; terça-feira 14:00 - 16:00.\"\n\nIt only mentions Edite Martins Cordeiro, not Paula Maria Pereira de Barros. Also includes extra info about time and Tuesday, but the question: \"que docentes do DM atendem nesse dia da semana?\" i.e., which DM teachers attend on Monday (the exam day). The reference lists two teachers. Generated answer lists only one teacher, missing Paula. So it's missing a correct fact. It has at least one correct fact (Edite Martins Cordeiro). So it's partially correct. So label \"parcial\". Justification: missing Paula Maria Pereira de Barros.\n{\"etiqueta\":\"parcial\",\"justificacao\":\"apresenta apenas Edite Martins Cordeiro, omitindo Paula Maria Pereira de Barros\"}"
+    },
+    {
+      "id": "mh_08",
+      "categoria": "multi_hop",
+      "etiqueta": "parcial",
+      "justificacao": "A resposta menciona apenas um dos docentes corretos, omitindo os demais listados na referência.",
+      "raw": "We need to compare generated answer with reference. Reference lists three teachers: António Miguel Verdelho Paula, Manuel Teixeira Brás César, Valdemar Raul Ramos Garcia. The generated answer only mentions Valdemar Raul Ramos Garcia and gives his schedule, but does not list the other two. Also includes error message about LLM unavailability. So it's missing facts, incomplete. So label \"parcial\"? It has at least one correct fact (Valdemar is indeed one). But missing others, so partial. Provide justification.\n{\"etiqueta\":\"parcial\",\"justificacao\":\"A resposta menciona apenas um dos docentes corretos, omitindo os demais listados na referência.\"}"
+    },
+    {
+      "id": "mh_09",
+      "categoria": "multi_hop",
+      "etiqueta": "parcial",
+      "justificacao": "A resposta inclui apenas um dos docentes corretos e omite os demais listados na referência.",
+      "raw": "We need to compare generated answer with reference. Reference lists four teachers: Alexandra Sofia Rosa Jerónimo, Cristovão Lucas dos Santos, Hugo Miguel Andrade Lopes Figueiredo da Silva, Jorge Henrique de Carvalho Santos. Generated answer only mentions Hugo Miguel Andrade Lopes Figueiredo da Silva and includes error message about rate limit. So missing other three, incomplete. So label \"parcial\" because at least one correct fact (Hugo) but missing others. It's not fully correct. So partial. Provide justification.\n{\"etiqueta\":\"parcial\",\"justificacao\":\"A resposta inclui apenas um dos docentes corretos e omite os demais listados na referência.\"}"
+    },
+    {
+      "id": "mh_10",
+      "categoria": "multi_hop",
+      "etiqueta": "parcial",
+      "justificacao": "A resposta inclui corretamente o horário de atendimento, mas omite a data de término do 1.º semestre.",
+      "raw": "We need to compare generated answer with reference. Reference includes two facts: semester ends 14/02/2026, and Paula's schedule: Monday 14:30-16:00, Wednesday 10:00-12:30. Generated answer: It shows only schedule, not semester end date. It includes schedule correctly. It does not mention semester end. So missing essential fact => partial. Also includes error message about LLM unavailability, but schedule correct. So label \"parcial\". Justification: missing semester end date.\n{\"etiqueta\":\"parcial\",\"justificacao\":\"A resposta inclui corretamente o horário de atendimento, mas omite a data de término do 1.º semestre.\"}"
+    },
+    {
+      "id": "mh_11",
+      "categoria": "multi_hop",
+      "etiqueta": "parcial",
+      "justificacao": "Fornece o horário correto, mas omite a data de início do 2.º semestre.",
+      "raw": "We need to compare generated answer with reference. Reference: \"O 2.º semestre começa a 16/02/2026; Arezki Abderrahim Chellal atende à terça-feira das 10:00 às 12:00.\"\n\nGenerated answer: It shows extracted passage: \"Arezki Abderrahim Chellal (DEP.: DE, email: arezki@ipb.pt, Gab.: LI&I). Horário de atendimento: terça-feira 10:00 - 12:00.\" It does NOT mention the start date of 2nd semester. So missing that fact. It includes correct time info. So partially correct. Provide label \"parcial\". Justification: missing semester start date.\n{\"etiqueta\":\"parcial\",\"justificacao\":\"Fornece o horário correto, mas omite a data de início do 2.º semestre.\"}"
+    },
+    {
+      "id": "mh_12",
+      "categoria": "multi_hop",
+      "etiqueta": "correto",
+      "justificacao": "Forneceu os dias e horários corretos de atendimento de Edite Martins Cordeiro.",
+      "raw": "We need to compare generated answer with reference. Reference: \"Edite Martins Cordeiro atende à segunda-feira das 16:00 às 18:00; à terça-feira das 14:00 às 16:00; a Pausa Académica do 1.º sem é de 12 a 17/01/2026.\"\n\nQuestion: \"Durante a Pausa Académica do 1.º semestre (12 a 17/01/2026), em que dias atenderia Edite Martins Cordeiro (DM)?\"\n\nWe need answer: days and times she would attend during that period. Reference gives days and times. Generated answer: It shows the passage: \"Edite Martins Cordeiro (DEP.: DM, email: emc@ipb.pt, Gab.: 101). Horário de atendimento: segunda-feira 16:00 - 18:00; terça-feira 14:00 - 16:00.\" It does not mention the pause dates, but the question asks \"during the pause, which days would she attend?\" The answer includes days and times, which is sufficient. It doesn't explicitly mention the pause dates, but the question context already includes dates; answer just gives days. That likely is acceptable. The generated answer also includes an error message about LLM unavailability, but the relevant extracted passage is provided. The answer includes the needed factual info: Monday 16-18, Tuesday 14-16. So it's correct (essential facts present). The extra error message is irrelevant but does not affect correctness. So label \"correto\".\n{\"etiqueta\":\"correto\",\"justificacao\":\"Forneceu os dias e horários corretos de atendimento de Edite Martins Cordeiro.\"}"
+    },
+    {
+      "id": "mh_13",
+      "categoria": "multi_hop",
+      "etiqueta": "incorreto",
+      "justificacao": "A resposta não fornece nenhum dos factos solicitados, contradizendo a resposta de referência.",
+      "raw": "We need to compare generated answer with reference. Reference says: \"As pautas do 1.º semestre abrem a 21/01/2026; Alexandra Sofia Rosa Jerónimo atende à segunda-feira das 09:00 às 11:00.\"\n\nGenerated answer: \"Não encontrei essa informação nos documentos fornecidos.\"\n\nThat is incorrect because it fails to provide the facts. So label should be \"incorreto\". Justification: does not provide the required information.\n{\"etiqueta\":\"incorreto\",\"justificacao\":\"A resposta não fornece nenhum dos factos solicitados, contradizendo a resposta de referência.\"}"
+    },
+    {
+      "id": "mh_14",
+      "categoria": "multi_hop",
+      "etiqueta": "parcial",
+      "justificacao": "A resposta menciona apenas um dos docentes corretos e omite os demais indicados na referência.",
+      "raw": "We need to compare generated answer with reference. Reference lists three teachers: António Miguel Verdelho Paula, Manuel Teixeira Brás César, Valdemar Raul Ramos Garcia. Generated answer only mentions António Miguel Verdelho Paula and gives his schedule, but does not list the other two. Also includes error message about LLM unavailable. So it's missing essential facts, incomplete. So label \"parcial\"? It has at least one correct fact (António Miguel Verdelho Paula attends Monday). But missing others, so partial. Provide justification.\n{\"etiqueta\":\"parcial\",\"justificacao\":\"A resposta menciona apenas um dos docentes corretos e omite os demais indicados na referência.\"}"
+    },
+    {
+      "id": "mh_15",
+      "categoria": "multi_hop",
+      "etiqueta": "parcial",
+      "justificacao": "Forneceu o horário de atendimento correto, mas omitiu a informação da Pausa de Natal.",
+      "raw": "We need to compare generated answer with reference. Reference includes two pieces: Pausa de Natal dates (22/12/2025 to 03/01/2026) and attendance schedule (Mon 18-19, Tue 18-19, Thu 16-18). Generated answer only includes attendance schedule, no mention of Pausa de Natal. So missing essential fact. It does provide correct schedule. So it's partially correct. According to rules, partial if at least one fact correct but missing elements. So label \"parcial\". Justification: missing Pausa de Natal dates.\n{\"etiqueta\":\"parcial\",\"justificacao\":\"Forneceu o horário de atendimento correto, mas omitiu a informação da Pausa de Natal.\"}"
+    },
+    {
+      "id": "mh_16",
+      "categoria": "multi_hop",
+      "etiqueta": "parcial",
+      "justificacao": "Forneceu o horário correto, mas omitiu a informação de que o semestre tem 20 semanas.",
+      "raw": "We need to compare generated answer with reference. Reference: \"O semestre dura 20 semanas; Carla Sofia Veiga Fernandes atende à terça-feira das 09:30 às 12:00; à quinta-feira das 09:30 às 11:00.\"\n\nGenerated answer: It shows a passage: \"Carla Sofia Veiga Fernandes (DEP.: DM, email: cveiga@ipb.pt, Gab.: 39). Horário de atendimento: terça-feira 09:30 - 12:00; quinta-feira 09:30 - 11:00.\" It does not mention the semester duration. So missing the fact about 20 weeks. It includes correct schedule. So partially correct. Return JSON with label \"parcial\". Justification: missing semester duration.\n{\"etiqueta\":\"parcial\",\"justificacao\":\"Forneceu o horário correto, mas omitiu a informação de que o semestre tem 20 semanas.\"}"
+    },
+    {
+      "id": "mh_17",
+      "categoria": "multi_hop",
+      "etiqueta": "correto",
+      "justificacao": "Forneceu corretamente os dias e horários de atendimento de Edite Martins Cordeiro.",
+      "raw": "We need to compare generated answer with reference. Reference: \"Aulas do 2.º sem começam a 16/02/2026; Edite Martins Cordeiro atende à segunda-feira das 16:00 às 18:00; à terça-feira das 14:00 às 16:00.\"\n\nGenerated answer: It includes a passage: \"Edite Martins Cordeiro (DEP.: DM, email: emc@ipb.pt, Gab.: 101). Horário de atendimento: segunda-feira 16:00 - 18:00; terça-feira 14:00 - 16:00.\" It also includes an error message about LLM unavailability. The essential facts (days and hours) are present correctly. The extra error message is irrelevant but does not make facts wrong. The answer includes the correct schedule. So it's correct (essential facts present). According to criteria, \"correto\" if all essential facts present and no error. There's an extra error note but the factual answer is correct. Might be considered partially because includes extraneous error message? The essential answer is correct. The presence of error message might be considered noise but not incorrect. I'd label as \"correto\".\n{\"etiqueta\":\"correto\",\"justificacao\":\"Forneceu corretamente os dias e horários de atendimento de Edite Martins Cordeiro.\"}"
+    },
+    {
+      "id": "mh_18",
+      "categoria": "multi_hop",
+      "etiqueta": "parcial",
+      "justificacao": "A resposta menciona apenas um dos docentes corretos e omite os demais listados na referência.",
+      "raw": "We need to compare generated answer with reference. Reference lists four teachers: Alexandra Sofia Rosa Jerónimo, Cristovão Lucas dos Santos, Hugo Miguel Andrade Lopes Figueiredo da Silva, Jorge Henrique de Carvalho Santos. Generated answer only mentions Cristovão Lucas dos Santos and includes error message about rate limit, not providing full list. So it's missing most facts, incomplete. Therefore label \"parcial\" or \"incorreto\"? It has at least one correct fact (Cristovão Lucas dos Santos attends Monday). But missing other three and includes irrelevant error. According to rules: \"parcial\" if at least one fact correct but missing elements or minor imprecision. Here missing three teachers, so partial. Provide justification.\n{\"etiqueta\":\"parcial\",\"justificacao\":\"A resposta menciona apenas um dos docentes corretos e omite os demais listados na referência.\"}"
+    },
+    {
+      "id": "mh_19",
+      "categoria": "multi_hop",
+      "etiqueta": "parcial",
+      "justificacao": "Forneceu o horário de atendimento correto, mas omitiu a data de término do 2.º semestre.",
+      "raw": "We need to compare generated answer with reference. Reference includes two facts: semester ends 11/07/2026 and Arezki attends Tuesday 10:00-12:00. Generated answer only includes attendance info, not semester end date. So missing one fact. It has correct attendance info. So partial. Return JSON with label \"parcial\" and justification: missing semester end date.\n{\"etiqueta\":\"parcial\",\"justificacao\":\"Forneceu o horário de atendimento correto, mas omitiu a data de término do 2.º semestre.\"}"
+    },
+    {
+      "id": "mh_20",
+      "categoria": "multi_hop",
+      "etiqueta": "incorreto",
+      "justificacao": "A resposta gerada não fornece as datas dos exames nem os horários de atendimento de Paula, apresentando apenas um erro de serviço.",
+      "raw": "We need to compare generated answer with reference. Reference: Exams Sep: 01/09 to 12/09/2026; Paula attends Monday 14:30-16:00; Wednesday 10:00-12:30.\n\nGenerated answer: It shows an error message, no relevant info, just a snippet of academic calendar for 2025/2026, not matching reference. So it's incorrect. Return JSON with etiqueta \"incorreto\" and justification short.\n{\"etiqueta\":\"incorreto\",\"justificacao\":\"A resposta gerada não fornece as datas dos exames nem os horários de atendimento de Paula, apresentando apenas um erro de serviço.\"}"
+    },
+    {
+      "id": "restr_01",
+      "categoria": "restricao",
+      "etiqueta": "parcial",
+      "justificacao": "Inclui os dois docentes corretos mas adiciona muitos nomes que não têm atendimento na segunda‑feira.",
+      "raw": "We need to compare generated answer with reference. Reference: \"À segunda-feira têm atendimento, no DM: Edite Martins Cordeiro, Paula Maria Pereira de Barros.\" So only those two have Monday attendance. Generated answer lists many names, including the two correct ones but also many extra incorrect ones. So it's not correct; it's partially correct because includes the two correct but adds many wrong. According to rules, \"parcial\" if at least one fact correct but missing elements or minor imprecision. Here many extra incorrect facts, but still includes correct ones. That is partial. Provide JSON with label \"parcial\" and justification: includes extra names not in reference.\n{\"etiqueta\":\"parcial\",\"justificacao\":\"Inclui os dois docentes corretos mas adiciona muitos nomes que não têm atendimento na segunda‑feira.\"}"
+    },
+    {
+      "id": "restr_02",
+      "categoria": "restricao",
+      "etiqueta": "incorreto",
+      "justificacao": "A resposta gerada contém nomes diferentes dos listados na referência, faltando dois docentes corretos e adicionando vários incorretos.",
+      "raw": "We need to compare generated answer with reference. Reference lists three names: António Miguel Verdelho Paula, Manuel Teixeira Brás César, Valdemar Raul Ramos Garcia. Generated answer lists many different names, only includes António Miguel Verdelho Paula (present) but others are different, missing the two reference names and adding many incorrect ones. So factual correctness is not met. Therefore label \"incorreto\". Justification: many mismatched names, missing correct ones.\n{\"etiqueta\":\"incorreto\",\"justificacao\":\"A resposta gerada contém nomes diferentes dos listados na referência, faltando dois docentes corretos e adicionando vários incorretos.\"}"
+    },
+    {
+      "id": "restr_03",
+      "categoria": "restricao",
+      "etiqueta": "incorreto",
+      "justificacao": "A resposta inclui vários docentes que não constam na referência, fornecendo informações incorretas além dos dois corretos.",
+      "raw": "We need to compare generated answer with reference. Reference says: \"À segunda-feira têm atendimento, no DCCP: Flora Cristina Meireles Silva, Pedro Miguel Rodrigues Oliveira.\" So only those two have Monday. Generated answer lists many names, including those two plus many others, some marked \"não tem atendimento à segunda-feira\" (which is contradictory to reference) and also includes additional teachers with times on Monday (e.g., António Miguel Verdelho Paula, José Carlos Rufino Amaro, etc.) which are not in reference. So generated answer is incorrect (adds extra info, includes false statements). So label \"incorreto\". Justification: includes many teachers not in reference, providing wrong info.\n{\"etiqueta\":\"incorreto\",\"justificacao\":\"A resposta inclui vários docentes que não constam na referência, fornecendo informações incorretas além dos dois corretos.\"}"
+    },
+    {
+      "id": "restr_04",
+      "categoria": "restricao",
+      "etiqueta": "incorreto",
+      "justificacao": "Inclui vários docentes que não constam na resposta de referência, além dos três corretos.",
+      "raw": "We need to compare generated answer with reference. Reference lists three names: Francisco José Basilio Pimentel Pires Peito, João Manuel Carvalho Sobrinho Teixeira, Osmano Manuel Fins Morais. Generated answer includes those three plus many extra names not in reference. So it's incorrect (adds extra). The essential facts are present but extra incorrect info. According to rules: \"parcial\" if at least one fact correct but missing elements or minor imprecision. Here extra incorrect info is major error? The answer includes extra names that are not correct, making it factually wrong. The correct answer should only list those three. Adding many false names is incorrect. So label \"incorreto\". Justification: includes many teachers not in reference.\n{\"etiqueta\":\"incorreto\",\"justificacao\":\"Inclui vários docentes que não constam na resposta de referência, além dos três corretos.\"}"
+    },
+    {
+      "id": "restr_05",
+      "categoria": "restricao",
+      "etiqueta": "incorreto",
+      "justificacao": "Inclui nomes que não têm atendimento na segunda‑feira, adicionando informações erradas ao conjunto correto.",
+      "raw": "We need to compare generated answer with reference. Reference lists four names: Alexandra Sofia Rosa Jerónimo, Cristovão Lucas dos Santos, Hugo Miguel Andrade Lopes Figueiredo da Silva, Jorge Henrique de Carvalho Santos. Generated answer includes those four plus many extra names (Bernardo Farrero, etc.) which are not in reference. So generated answer contains extra incorrect items. The essential facts are present but also incorrect extra. According to rules: \"parcial\" if at least one fact correct but missing elements or minor imprecision. Here extra incorrect items are more than just missing; they add wrong info. Does that make it incorrect? The essential correct facts are present, but also includes false info. The instruction: \"parcial → pelo menos um facto correto, mas faltam elementos ou há imprecisão menor.\" Here there is extra false info, which is more than minor imprecision. Might be considered incorrect because includes incorrect facts. The essential answer should list only those four. Adding extra names is wrong. So label \"incorreto\".\n{\"etiqueta\":\"incorreto\",\"justificacao\":\"Inclui nomes que não têm atendimento na segunda‑feira, adicionando informações erradas ao conjunto correto.\"}"
+    },
+    {
+      "id": "restr_06",
+      "categoria": "restricao",
+      "etiqueta": "parcial",
+      "justificacao": "Inclui os três docentes corretos, mas adiciona nomes que não constam na resposta de referência.",
+      "raw": "We need to compare generated answer with reference. Reference lists three teachers: António Manuel Esteves Ribeiro, Mónia Andreia Rodrigues Martins, Ramiro José Espinheira Martins. Generated answer includes those three plus extra teachers (Ana Paula Carvalho do Monte, Américo Vicente Teixeira Leite, José Carlos Rufino Amaro, José Luís Padrão Exposto) which are not in reference. So generated answer contains incorrect extra facts. Therefore not fully correct. It's partially correct because includes the three correct ones, but adds incorrect ones. According to rules, \"parcial\" if at least one fact correct but missing elements or minor imprecision. Here extra incorrect facts are more than missing; but still includes correct ones. It's not fully correct, so label \"parcial\". Justification: includes extra teachers not in reference.\n{\"etiqueta\":\"parcial\",\"justificacao\":\"Inclui os três docentes corretos, mas adiciona nomes que não constam na resposta de referência.\"}"
+    },
+    {
+      "id": "restr_07",
+      "categoria": "restricao",
+      "etiqueta": "incorreto",
+      "justificacao": "Inclui docentes de outros departamentos que não têm atendimento na segunda‑feira, adicionando informação errada.",
+      "raw": "We need to compare generated answer with reference. Reference lists: Américo Vicente Teixeira Leite, Getúlio Paulo Peixoto Igrejas, João Afonso Braun Neto, João Paulo Coelho, Laiany Suganuma Brancalião, Ruben Alexandre Moreno Clemente. That's six names, all DE department.\n\nGenerated answer includes those six? Let's check: Laiany Suganuma Brancalião (DE) yes. Getúlio Paulo Peixoto Igrejas (DE) yes. Américo Vicente Teixeira Leite (DE) yes. João Afonso Braun Neto (DE) yes. João Paulo Coelho (DE) yes. Ruben Alexandre Moreno Clemente (DE) yes. So all six are present. Additionally, generated answer includes many extra names from other departments (DIC, DCES, DM, DTM, DCCP). Those are not part of reference. The question: \"Que docentes do departamento DE têm atendimento à segunda-feira?\" So only DE department. The generated answer includes extra irrelevant entries, which is incorrect because it adds extra names not asked. The essential facts are present, but extra incorrect info makes answer not fully correct. According to labeling: partial if at least one fact correct but missing elements or minor imprecision. Here extra incorrect info is more than minor; it's adding unrelated entries. That likely makes answer incorrect because it provides wrong information. The instruction: \"correto\" if all essential facts present and without error. Here there are errors (extra names). So label \"parcial\" or \"incorreto\"? The answer includes correct list plus extra noise. The essential answer is correct, but includes false info. That is a factual error (listing people who are not DE). So overall answer is not correct. Probably \"parcial\" because some correct info but also incorrect. The rule: parcial → at least one fact correct, but missing elements or minor imprecision. Here there are extra false facts, not just missing. Might be considered incorrect because includes false info. I'd choose \"parcial\" because core correct but polluted. But guidelines: \"incorreto\" if answer is factually wrong, irrelevant, or system refused. Since it includes false info, it's factually wrong. I'd go with \"incorreto\". However, the core answer is correct; the extra info is irrelevant but not contradictory to the question? It adds extra names not asked, which is misinformation. That is a factual error (they do not have attendance Monday). So answer is incorrect. I'll label \"incorreto\".\n{\"etiqueta\":\"incorreto\",\"justificacao\":\"Inclui docentes de outros departamentos que não têm atendimento na segunda‑feira, adicionando informação errada.\"}"
+    },
+    {
+      "id": "restr_08",
+      "categoria": "restricao",
+      "etiqueta": "parcial",
+      "justificacao": "Inclui três docentes corretos, mas falta António Borges Fernandes e adiciona docentes de outro departamento.",
+      "raw": "We need to compare generated answer with reference. Reference lists: António Borges Fernandes, Berta Isabel Gomes Gonçalves, Larysa Ribeiro, Luis Miguel da Paz Gonçalves. Generated answer includes Berta, Luis Miguel, Larysa, plus two extra (Nelson Alexandre Perdigão Figueiredo, Sandra Carvalho Dias) who are from DIC not DCES. Also missing António Borges Fernandes. So missing one correct, includes incorrect ones. So answer is partially correct? It has at least some correct (Berta, Luis, Larysa) but missing one and adds wrong. According to rules, \"parcial\" if at least one fact correct but missing elements or minor imprecision. Here missing one and includes extra wrong. That's still partial. So label \"parcial\". Justification: missing António and includes non-DCES staff.\n{\"etiqueta\":\"parcial\",\"justificacao\":\"Inclui três docentes corretos, mas falta António Borges Fernandes e adiciona docentes de outro departamento.\"}"
+    },
+    {
+      "id": "restr_09",
+      "categoria": "restricao",
+      "etiqueta": "parcial",
+      "justificacao": "Inclui alguns docentes corretos mas omite outros e adiciona nomes que não atendem na terça-feira.",
+      "raw": "We need to compare generated answer with reference. Reference list: Ana Isabel Pinheiro Nunes Pereira, Carla Sofia Veiga Fernandes, Edite Martins Cordeiro, Florbela Alexandra Pires Fernandes, João Paulo Pais de Almeida, Mário António Rodrigues Grande Abrantes.\n\nGenerated list: Edite Martins Cordeiro, João Paulo Pais de Almeida, Paula Maria Pereira de Barros, Maria de Fátima Moreira da Silva Pacheco, Florbela Alexandra Pires Fernandes.\n\nMatches: Edite, João, Florbela are correct. Missing: Ana Isabel, Carla Sofia, Mário António. Added two incorrect names not in reference. So partially correct. Return JSON with label \"parcial\".\n{\"etiqueta\":\"parcial\",\"justificacao\":\"Inclui alguns docentes corretos mas omite outros e adiciona nomes que não atendem na terça-feira.\"}"
+    },
+    {
+      "id": "restr_10",
+      "categoria": "restricao",
+      "etiqueta": "parcial",
+      "justificacao": "Inclui os docentes corretos, mas adiciona nomes que não têm atendimento à quarta-feira.",
+      "raw": "We need to compare generated answer with reference. Reference lists teachers with Wednesday attendance: Florbela Alexandra Pires Fernandes, João Carlos Oliveira Nunes, Maria de Fátima Moreira da Silva Pacheco, Mário António Rodrigues Grande Abrantes, Paula Maria Pereira de Barros.\n\nGenerated answer includes those five (Florbela, João Carlos, Maria de Fátima, Mário António, Paula Maria) plus many others, some marked \"não tem atendimento à quarta-feira\". The question: \"Que docentes do departamento DM têm atendimento à quarta-feira?\" So correct answer should list only those with attendance. The generated answer includes extra names that are not in reference, but also includes the correct ones. However includes extra names that are not correct (they either have no attendance or are not in reference). That makes answer contain incorrect information. According to evaluation criteria: If includes extra incorrect facts, it's not fully correct. It's partially correct because at least the correct ones are present, but extra incorrect entries make it not fully correct. So label \"parcial\". Justification: includes correct teachers but also adds others not having Wednesday attendance.\n{\"etiqueta\":\"parcial\",\"justificacao\":\"Inclui os docentes corretos, mas adiciona nomes que não têm atendimento à quarta-feira.\"}"
+    },
+    {
+      "id": "restr_11",
+      "categoria": "restricao",
+      "etiqueta": "incorreto",
+      "justificacao": "A resposta não fornece as datas corretas e afirma que a informação não foi encontrada, contradizendo a referência.",
+      "raw": "We need to compare generated answer with reference. Reference says exams dates: 15/06 to 11/07/2026. Generated answer says \"Não encontrei essa informação nos documentos fornecidos.\" That's incorrect because reference provides the dates. So label \"incorreto\". Justification: answer fails to provide the dates and says info not found.\n{\"etiqueta\":\"incorreto\",\"justificacao\":\"A resposta não fornece as datas corretas e afirma que a informação não foi encontrada, contradizendo a referência.\"}"
+    },
+    {
+      "id": "restr_12",
+      "categoria": "restricao",
+      "etiqueta": "correto",
+      "justificacao": "A resposta contém exatamente as mesmas datas da referência, apenas com um pequeno rótulo adicional.",
+      "raw": "We need to compare generated answer with reference. Reference: \"De 08/06 a 13/06/2026.\" Generated: \"Pausa Académica: 08/06 a 13/06/2026.\" Content matches dates, includes same info, just adds label. That's correct. So label \"correto\". Justification: matches reference dates.\n{\"etiqueta\":\"correto\",\"justificacao\":\"A resposta contém exatamente as mesmas datas da referência, apenas com um pequeno rótulo adicional.\"}"
+    },
+    {
+      "id": "restr_13",
+      "categoria": "restricao",
+      "etiqueta": "correto",
+      "justificacao": "A resposta reproduz exatamente as datas da referência, sem erros.",
+      "raw": "We need to compare generated answer with reference. Reference: \"De 30/03/2026 a 06/04/2026.\" Generated: \"A Pausa da Páscoa decorre de 30/03/2026 a 06/04/2026.\" This matches the dates, includes same info, just adds phrase. That's correct. So label \"correto\". Justification: matches reference exactly with correct dates.\n{\"etiqueta\":\"correto\",\"justificacao\":\"A resposta reproduz exatamente as datas da referência, sem erros.\"}"
+    },
+    {
+      "id": "restr_14",
+      "categoria": "restricao",
+      "etiqueta": "incorreto",
+      "justificacao": "A resposta não fornece os prazos corretos indicados na referência.",
+      "raw": "We need to compare generated answer with reference. Reference: \"De 11/08 a 22/08/2026.\" Generated answer: \"Não encontrei essa informação nos documentos fornecidos.\" That's incorrect because it fails to provide the correct dates. So label \"incorreto\". Justification: answer does not contain the correct dates.\n{\"etiqueta\":\"incorreto\",\"justificacao\":\"A resposta não fornece os prazos corretos indicados na referência.\"}"
+    },
+    {
+      "id": "restr_15",
+      "categoria": "restricao",
+      "etiqueta": "incorreto",
+      "justificacao": "A resposta fornece períodos diferentes dos indicados na referência.",
+      "raw": "We need to compare generated answer with reference. Reference: \"De 10/08/2025 a 13/09/2025.\" Generated answer gives different dates (2026). So it's incorrect. Label \"incorreto\". Justification: dates do not match reference.\n{\"etiqueta\":\"incorreto\",\"justificacao\":\"A resposta fornece períodos diferentes dos indicados na referência.\"}"
+    },
+    {
+      "id": "restr_16",
+      "categoria": "restricao",
+      "etiqueta": "correto",
+      "justificacao": "Fornece as mesmas datas exatas da resposta de referência.",
+      "raw": "We need to compare generated answer with reference. Reference: \"De 22/12/2025 a 03/01/2026.\" Generated: \"A Pausa de Natal decorre de 22/12/2025 a 03/01/2026.\" This matches the dates exactly, includes same info, just adds a phrase. That's correct. So label \"correto\". Justification: matches reference exactly.\n{\"etiqueta\":\"correto\",\"justificacao\":\"Fornece as mesmas datas exatas da resposta de referência.\"}"
+    },
+    {
+      "id": "restr_17",
+      "categoria": "restricao",
+      "etiqueta": "correto",
+      "justificacao": "A resposta gerada coincide exatamente com a resposta de referência.",
+      "raw": "We need to compare generated answer with reference. Both are identical: \"De 19/01 a 14/02/2026.\" So all essential facts present, correct. So label \"correto\". Justification: matches reference exactly.\n{\"etiqueta\":\"correto\",\"justificacao\":\"A resposta gerada coincide exatamente com a resposta de referência.\"}"
+    },
+    {
+      "id": "restr_18",
+      "categoria": "restricao",
+      "etiqueta": "incorreto",
+      "justificacao": "A resposta não contém a informação correta sobre as datas dos exames.",
+      "raw": "We need to compare generated answer with reference. Reference says: \"De 04/03 a 14/03/2026.\" Generated answer: \"Não encontrei essa informação nos documentos fornecidos.\" That's incorrect because it fails to provide the correct dates. So label \"incorreto\". Justification: didn't provide the correct dates.\n{\"etiqueta\":\"incorreto\",\"justificacao\":\"A resposta não contém a informação correta sobre as datas dos exames.\"}"
+    },
+    {
+      "id": "restr_19",
+      "categoria": "restricao",
+      "etiqueta": "correto",
+      "justificacao": "A resposta contém exatamente as mesmas datas que a referência, apenas omitindo a palavra inicial.",
+      "raw": "We need to compare generated answer with reference. Reference: \"De 22/09/2025 a 11/10/2025.\" Generated: \"22/09/2025 a 11/10/2025.\" The content matches, just missing \"De\" and period punctuation. Essential fact present, correct. So label \"correto\". Justification: matches dates.\n{\"etiqueta\":\"correto\",\"justificacao\":\"A resposta contém exatamente as mesmas datas que a referência, apenas omitindo a palavra inicial.\"}"
+    },
+    {
+      "id": "restr_20",
+      "categoria": "restricao",
+      "etiqueta": "incorreto",
+      "justificacao": "A resposta não fornece o prazo correto indicado na referência.",
+      "raw": "We need to compare generated answer with reference. Reference: \"De 15/09/2025 a 19/10/2025.\" Generated answer: \"Não encontrei essa informação nos documentos fornecidos.\" That's incorrect because it fails to provide the correct dates. So label \"incorreto\". Justification: did not provide the correct deadline.\n{\"etiqueta\":\"incorreto\",\"justificacao\":\"A resposta não fornece o prazo correto indicado na referência.\"}"
+    },
+    {
+      "id": "list_08",
+      "categoria": "listagem",
+      "etiqueta": "parcial",
+      "justificacao": "A resposta gerada lista vários docentes corretos, mas falta alguns em comparação com a resposta de referência.",
+      "raw": "\n{\"etiqueta\": \"parcial\", \"justificacao\": \"A resposta gerada lista vários docentes corretos, mas falta alguns em comparação com a resposta de referência.\"}"
+    }
+  ],
+  "agregado": {
+    "conversacional": {
+      "n": 20,
+      "correto": 0.05,
+      "parcial": 0.0,
+      "incorreto": 0.95
+    },
+    "factual": {
+      "n": 20,
+      "correto": 0.9,
+      "parcial": 0.0,
+      "incorreto": 0.1
+    },
+    "listagem": {
+      "n": 20,
+      "correto": 0.35,
+      "parcial": 0.45,
+      "incorreto": 0.2
+    },
+    "multi_hop": {
+      "n": 20,
+      "correto": 0.4,
+      "parcial": 0.5,
+      "incorreto": 0.1
+    },
+    "restricao": {
+      "n": 20,
+      "correto": 0.25,
+      "parcial": 0.25,
+      "incorreto": 0.5
+    }
+  }
+}

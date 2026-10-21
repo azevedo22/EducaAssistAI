@@ -1,0 +1,21 @@
+python-docx
+fastapi
+uvicorn[standard]
+python-multipart
+python-dotenv
+PyMuPDF
+# pymupdf4llm: extensão oficial do PyMuPDF que converte PDF → Markdown
+# unificado (cabeçalhos, tabelas, listas), ideal para RAG. Resolve PDFs
+# híbridos (texto + tabelas) que a extração tabular pura distorce.
+pymupdf4llm
+beautifulsoup4
+requests
+sentence-transformers
+chromadb
+# google-genai: SDK oficial Google para Gemini (geração multimodal via Vision).
+# Substitui o pacote deprecated 'google-generativeai'.
+# Embeddings continuam via REST directo (retrieval.py).
+google-genai
+# rank-bm25: índice BM25Okapi para pesquisa léxica (complementa vector search).
+# Combinado com ChromaDB via Reciprocal Rank Fusion → hybrid search.
+rank-bm25

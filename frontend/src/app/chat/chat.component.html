@@ -1,0 +1,401 @@
+<header>
+  <button class="drawer-toggle drawer-toggle-convs"
+          type="button"
+          (click)="toggleConvsDrawer()"
+          [class.active]="convsDrawerOpen"
+          title="Mostrar conversas"
+          aria-label="Mostrar conversas">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <line x1="3" y1="12" x2="21" y2="12"/>
+      <line x1="3" y1="6" x2="21" y2="6"/>
+      <line x1="3" y1="18" x2="21" y2="18"/>
+    </svg>
+  </button>
+  <div class="logo">
+    <span>ipb</span>
+    <strong>EducaAssistAI</strong>
+  </div>
+  <div class="header-actions">
+    <span *ngIf="llmHealth"
+          class="llm-badge"
+          [class.llm-badge-cloud]="llmHealth.provider === 'groq' || llmHealth.provider === 'gemini'"
+          [class.llm-badge-error]="!llmHealth.ok"
+          [title]="llmBadgeTitle()">
+      <span class="llm-badge-dot"></span>
+      {{ llmBadgeLabel() }}
+    </span>
+    <span *ngIf="embedHealth"
+          class="llm-badge"
+          [class.llm-badge-cloud]="embedHealth.provider === 'gemini'"
+          [class.llm-badge-error]="!embedHealth.ok"
+          [title]="embedBadgeTitle()">
+      <span class="llm-badge-dot"></span>
+      {{ embedBadgeLabel() }}
+    </span>
+    <button class="theme-toggle" type="button"
+            (click)="toggleDarkMode()"
+            [title]="darkMode ? 'Mudar para modo claro' : 'Mudar para modo escuro'"
+            [attr.aria-label]="darkMode ? 'Mudar para modo claro' : 'Mudar para modo escuro'">
+      <svg *ngIf="!darkMode" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+      <svg *ngIf="darkMode" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="5"/>
+        <line x1="12" y1="1" x2="12" y2="3"/>
+        <line x1="12" y1="21" x2="12" y2="23"/>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+        <line x1="1" y1="12" x2="3" y2="12"/>
+        <line x1="21" y1="12" x2="23" y2="12"/>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+      </svg>
+    </button>
+    <button class="admin-btn-header" type="button" (click)="goToAdmin()" title="Administração">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="3"/>
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+      </svg>
+      Admin
+    </button>
+  </div>
+</header>
+
+<!-- Backdrop semi-opaco quando o drawer de conversas está aberto (mobile/tablet) -->
+<div class="drawer-backdrop"
+     *ngIf="convsDrawerOpen"
+     (click)="convsDrawerOpen = false">
+</div>
+
+<main class="layout">
+  <!-- Sidebar esquerdo: histórico de conversas -->
+  <aside class="conversations-sidebar" [class.drawer-open]="convsDrawerOpen">
+    <div class="convs-panel">
+      <button type="button" class="new-conv-btn" (click)="newConversation()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="12" y1="5" x2="12" y2="19"/>
+          <line x1="5" y1="12" x2="19" y2="12"/>
+        </svg>
+        Nova conversa
+      </button>
+
+      <div class="convs-search">
+        <svg class="convs-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input type="text"
+               class="convs-search-input"
+               placeholder="Pesquisar conversas (Ctrl+K)..."
+               [value]="searchQuery"
+               (input)="onSearchInput($any($event.target).value)"
+               #searchInput />
+        <button *ngIf="searchQuery"
+                type="button"
+                class="convs-search-clear"
+                (click)="clearSearch()"
+                aria-label="Limpar pesquisa">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="convs-list">
+        <p *ngIf="conversationsLoading" class="convs-empty">A carregar...</p>
+
+        <ng-container *ngIf="searchResults !== null">
+          <p *ngIf="!searchResults.length" class="convs-empty">
+            Nenhum resultado para "{{ searchQuery }}".
+          </p>
+          <h4 *ngIf="searchResults.length" class="convs-group-title">
+            {{ searchResults.length }} resultado{{ searchResults.length === 1 ? '' : 's' }}
+          </h4>
+          <ng-container *ngFor="let c of searchResults">
+            <ng-container *ngTemplateOutlet="convItem; context: { $implicit: c, showSnippet: true }"></ng-container>
+          </ng-container>
+        </ng-container>
+
+        <ng-container *ngIf="searchResults === null && conversationsGrouped">
+          <ng-container *ngIf="conversationsGrouped.pinned.length">
+            <h4 class="convs-group-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="12" y1="17" x2="12" y2="22"/>
+                <path d="M5 17h14V6a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v11z"/>
+              </svg>
+              Fixadas
+            </h4>
+            <ng-container *ngFor="let c of conversationsGrouped.pinned">
+              <ng-container *ngTemplateOutlet="convItem; context: { $implicit: c }"></ng-container>
+            </ng-container>
+          </ng-container>
+
+          <ng-container *ngIf="conversationsGrouped.today.length">
+            <h4 class="convs-group-title">Hoje</h4>
+            <ng-container *ngFor="let c of conversationsGrouped.today">
+              <ng-container *ngTemplateOutlet="convItem; context: { $implicit: c }"></ng-container>
+            </ng-container>
+          </ng-container>
+
+          <ng-container *ngIf="conversationsGrouped.yesterday.length">
+            <h4 class="convs-group-title">Ontem</h4>
+            <ng-container *ngFor="let c of conversationsGrouped.yesterday">
+              <ng-container *ngTemplateOutlet="convItem; context: { $implicit: c }"></ng-container>
+            </ng-container>
+          </ng-container>
+
+          <ng-container *ngIf="conversationsGrouped.last_7_days.length">
+            <h4 class="convs-group-title">Últimos 7 dias</h4>
+            <ng-container *ngFor="let c of conversationsGrouped.last_7_days">
+              <ng-container *ngTemplateOutlet="convItem; context: { $implicit: c }"></ng-container>
+            </ng-container>
+          </ng-container>
+
+          <ng-container *ngIf="conversationsGrouped.last_30_days.length">
+            <h4 class="convs-group-title">Últimos 30 dias</h4>
+            <ng-container *ngFor="let c of conversationsGrouped.last_30_days">
+              <ng-container *ngTemplateOutlet="convItem; context: { $implicit: c }"></ng-container>
+            </ng-container>
+          </ng-container>
+
+          <ng-container *ngIf="conversationsGrouped.older.length">
+            <h4 class="convs-group-title">Mais antigas</h4>
+            <ng-container *ngFor="let c of conversationsGrouped.older">
+              <ng-container *ngTemplateOutlet="convItem; context: { $implicit: c }"></ng-container>
+            </ng-container>
+          </ng-container>
+
+          <p *ngIf="!conversationsLoading
+                    && !conversationsGrouped.pinned.length
+                    && !conversationsGrouped.today.length
+                    && !conversationsGrouped.yesterday.length
+                    && !conversationsGrouped.last_7_days.length
+                    && !conversationsGrouped.last_30_days.length
+                    && !conversationsGrouped.older.length"
+             class="convs-empty">
+            Sem conversas. Clica em "Nova conversa" para começar.
+          </p>
+        </ng-container>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Template reutilizável para cada item de conversa -->
+  <ng-template #convItem let-c let-showSnippet="showSnippet">
+    <div class="conv-item"
+         [class.conv-item-active]="selectedConversationId === c.id"
+         [class.conv-item-busy]="busyConversationId === c.id"
+         (click)="selectConversation(c)">
+      <div class="conv-item-main">
+        <div class="conv-item-title-row">
+          <span class="conv-item-title" [title]="c.title">{{ c.title }}</span>
+          <span class="conv-item-time">{{ formatRelativeTime(c.updated_at) }}</span>
+        </div>
+        <div class="conv-item-snippet" *ngIf="showSnippet && c.match">
+          <em *ngIf="c.match.where === 'title'">no título</em>
+          <em *ngIf="c.match.where === 'message'">em mensagem</em>
+          : {{ c.match.snippet }}
+        </div>
+        <div class="conv-item-meta" *ngIf="!showSnippet || !c.match">
+          {{ c.message_count || 0 }} mensagem{{ c.message_count === 1 ? '' : 's' }}
+          <span *ngIf="c.pinned" class="conv-pin-badge" title="Fixada">●</span>
+        </div>
+      </div>
+
+      <div class="conv-item-actions">
+        <button type="button" class="conv-action"
+                (click)="togglePin(c, $event)"
+                [class.active]="c.pinned"
+                [disabled]="busyConversationId === c.id"
+                [title]="c.pinned ? 'Desafixar' : 'Fixar'">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="12" y1="17" x2="12" y2="22"/>
+            <path d="M5 17h14V6a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v11z"/>
+          </svg>
+        </button>
+        <button type="button" class="conv-action"
+                (click)="autoTitleConversation(c, $event)"
+                [disabled]="busyConversationId === c.id || (c.message_count || 0) < 1"
+                title="Renomear automaticamente (LLM)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 2L9.5 8.5 3 9l5 4.5L6.5 20 12 17l5.5 3-1.5-6.5L21 9l-6.5-.5L12 2z"/>
+          </svg>
+        </button>
+        <button type="button" class="conv-action"
+                (click)="renameConversation(c, $event)"
+                [disabled]="busyConversationId === c.id"
+                title="Renomear manualmente">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 20h9"/>
+            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+          </svg>
+        </button>
+        <button type="button" class="conv-action danger"
+                (click)="deleteConversation(c, $event)"
+                [disabled]="busyConversationId === c.id"
+                title="Apagar conversa">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="3 6 5 6 21 6"/>
+            <path d="M19 6l-2 14a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L5 6"/>
+            <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </ng-template>
+
+  <!-- Coluna principal: vista de chat -->
+  <div class="main-column">
+    <section class="chat-card">
+      <div class="chat-header" *ngIf="selectedConversationId && getCurrentConversation() as conv">
+        <span class="chat-title" [title]="conv.title">{{ conv.title }}</span>
+        <span class="chat-meta">
+          {{ conv.message_count || currentMessages.length }} mensagem{{ (conv.message_count || currentMessages.length) === 1 ? '' : 's' }}
+        </span>
+      </div>
+
+      <div class="chat-messages" #messagesArea>
+        <div class="chat-welcome" *ngIf="!currentMessages.length && !loading && !messagesLoading">
+          <h1>Assistente de suporte documental do IPB</h1>
+          <p>Faça perguntas sobre regulamentos, calendários ou serviços institucionais. As respostas serão baseadas apenas em fontes oficiais e documentos carregados.</p>
+
+          <div class="quick-prompts">
+            <button *ngFor="let p of quickPrompts"
+                    type="button"
+                    class="quick-prompt"
+                    (click)="usePrompt(p)"
+                    [disabled]="loading">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              </svg>
+              <span>{{ p }}</span>
+            </button>
+          </div>
+        </div>
+
+        <p *ngIf="messagesLoading && !currentMessages.length" class="chat-loading-text">A carregar mensagens...</p>
+
+        <article *ngFor="let m of currentMessages"
+                 class="msg"
+                 [class.msg-user]="m.role === 'user'"
+                 [class.msg-assistant]="m.role === 'assistant'"
+                 [class.msg-system]="m.role === 'system'">
+
+          <div class="msg-bubble">
+            <button *ngIf="m.role === 'assistant' && m.id"
+                    type="button"
+                    class="msg-copy-btn"
+                    (click)="copyMessage(m, $event)"
+                    [title]="copiedMessageId === m.id ? 'Copiado!' : 'Copiar resposta'"
+                    [class.copied]="copiedMessageId === m.id">
+              <svg *ngIf="copiedMessageId !== m.id" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+              </svg>
+              <svg *ngIf="copiedMessageId === m.id" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </button>
+            <div class="msg-content">{{ m.content }}</div>
+
+            <div class="msg-sources" *ngIf="m.role === 'assistant' && m.sources?.length">
+              <span class="msg-sources-label">Fontes:</span>
+              <span *ngFor="let s of m.sources" class="source-pill">{{ s }}</span>
+            </div>
+
+            <details class="msg-details"
+                     *ngIf="m.role === 'assistant' && (m.tools_used?.length || m.agent_actions?.length || m.metadata?.llm)">
+              <summary>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"/>
+                  <line x1="12" y1="16" x2="12" y2="12"/>
+                  <line x1="12" y1="8" x2="12.01" y2="8"/>
+                </svg>
+                Detalhes técnicos
+              </summary>
+              <div class="msg-details-body">
+                <div class="detail-row" *ngIf="m.execution_state">
+                  <span class="detail-label">Estado:</span>
+                  <span class="detail-value detail-state" [attr.data-state]="m.execution_state">{{ m.execution_state }}</span>
+                </div>
+                <div class="detail-row" *ngIf="m.metadata?.llm?.provider">
+                  <span class="detail-label">LLM:</span>
+                  <span class="detail-value">{{ m.metadata.llm.provider }} · {{ m.metadata.llm.model }}</span>
+                </div>
+                <div class="detail-row" *ngIf="m.metadata?.embed?.provider">
+                  <span class="detail-label">Embeddings:</span>
+                  <span class="detail-value">{{ m.metadata.embed.provider }} · {{ m.metadata.embed.model }}</span>
+                </div>
+                <div class="detail-row" *ngIf="m.tools_used?.length">
+                  <span class="detail-label">Ferramentas:</span>
+                  <div class="detail-value">
+                    <div *ngFor="let t of m.tools_used" class="tool-line">
+                      <code>{{ t.name }}</code>
+                      <span *ngIf="t.mode"> · {{ t.mode }}</span>
+                      <span *ngIf="t.filter_origin"> · filtro: {{ t.filter_origin }}</span>
+                      <span *ngIf="t.chunks_retrieved !== undefined"> · {{ t.chunks_retrieved }} chunks</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="detail-row" *ngIf="m.agent_actions?.length">
+                  <span class="detail-label">Etapas:</span>
+                  <ol class="detail-value detail-steps">
+                    <li *ngFor="let a of m.agent_actions">
+                      <code>{{ a.step }}</code>: {{ a.result }}
+                    </li>
+                  </ol>
+                </div>
+                <div class="detail-row" *ngIf="m.tokens_input !== null || m.tokens_output !== null">
+                  <span class="detail-label">Tokens:</span>
+                  <span class="detail-value">in: {{ m.tokens_input ?? '?' }} · out: {{ m.tokens_output ?? '?' }}</span>
+                </div>
+              </div>
+            </details>
+          </div>
+
+          <div class="msg-time">{{ formatMessageTime(m.timestamp) }}</div>
+        </article>
+
+        <article *ngIf="loading" class="msg msg-assistant msg-typing">
+          <div class="msg-bubble">
+            <span class="typing-dot"></span>
+            <span class="typing-dot"></span>
+            <span class="typing-dot"></span>
+          </div>
+        </article>
+      </div>
+
+      <form class="chat-composer" (ngSubmit)="sendQuery()">
+        <textarea [(ngModel)]="question"
+                  name="question"
+                  placeholder="Pergunte algo ao EducaAssistAI..."
+                  rows="1"
+                  [disabled]="loading"
+                  #composerTextarea
+                  (keydown.enter)="$event.shiftKey ? null : ($event.preventDefault() || sendQuery())"></textarea>
+        <button *ngIf="!loading"
+                type="submit"
+                class="chat-send-btn"
+                [disabled]="!question.trim()"
+                title="Enviar (Enter)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="22" y1="2" x2="11" y2="13"/>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+          </svg>
+        </button>
+        <button *ngIf="loading"
+                type="button"
+                class="chat-send-btn chat-stop-btn"
+                (click)="stopQuery()"
+                title="Parar geração (Esc)">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <rect x="5" y="5" width="14" height="14" rx="2"/>
+          </svg>
+        </button>
+      </form>
+    </section>
+
+    <section class="error" *ngIf="error">{{ error }}</section>
+  </div>
+</main>

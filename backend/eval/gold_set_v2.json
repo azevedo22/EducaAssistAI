@@ -1,0 +1,276 @@
+{
+  "version": 2,
+  "description": "Gold set v2 — estende o v1 com 'reference_answer' para métricas de geração (BLEU/ROUGE/F1). Inclui os 26 casos originais + 4 novos (fact_015-018). reference_answer deve reflectir o output ideal de um sistema perfeito para esta pergunta.",
+  "notes": [
+    "Para perguntas de listagem (list_*), reference_answer inclui apenas os itens citados em must_contain; o sistema real pode listar mais — Recall@k e min_results são as métricas primárias nesses casos.",
+    "Para perguntas desconhecidas / anti-alucinação, reference_answer é a frase fixa de recusa.",
+    "BLEU/ROUGE para perguntas de listagem longa tendem a ser mais baixos por design."
+  ],
+  "questions": [
+    {
+      "id": "fact_001",
+      "category": "factual",
+      "question": "Quem é o orientador do projeto?",
+      "reference_answer": "O orientador do projeto é Rui Pedro Lopes.",
+      "must_contain": ["Rui Pedro Lopes"],
+      "expected_sources": ["25_26_PT_PropostaProjeto.pdf"],
+      "notes": "Pergunta factual direta sobre o PDF da proposta"
+    },
+    {
+      "id": "fact_002",
+      "category": "factual",
+      "question": "Qual é o nome do projeto?",
+      "reference_answer": "O nome do projeto é EducaAssistAI.",
+      "must_contain": ["EducaAssistAI"],
+      "expected_sources": ["25_26_PT_PropostaProjeto.pdf"]
+    },
+    {
+      "id": "fact_003",
+      "category": "factual",
+      "question": "A que ano letivo é referente o projeto?",
+      "reference_answer": "O projeto é referente ao ano letivo de 2025/2026.",
+      "must_contain": ["2025/2026"],
+      "expected_sources": ["25_26_PT_PropostaProjeto.pdf"]
+    },
+    {
+      "id": "fact_004",
+      "category": "factual",
+      "question": "Em que ano do curso é desenvolvido este projeto?",
+      "reference_answer": "Este projeto é desenvolvido no 3.º ano do curso.",
+      "must_contain": ["3"],
+      "expected_sources": ["25_26_PT_PropostaProjeto.pdf"]
+    },
+    {
+      "id": "fact_010",
+      "category": "factual",
+      "question": "Qual é o gabinete da Adélia Marlene Teixeira Matos?",
+      "reference_answer": "O gabinete da Adélia Marlene Teixeira Matos é o gabinete 13.",
+      "must_contain": ["13"],
+      "expected_sources": ["horários_de_atendimento_1º_sem__2025_2026.pdf"]
+    },
+    {
+      "id": "fact_011",
+      "category": "factual",
+      "question": "Qual o email do Adriano Manuel Alves Ferreira?",
+      "reference_answer": "O email do Adriano Manuel Alves Ferreira é a.ferreira@ipb.pt.",
+      "must_contain": ["a.ferreira@ipb.pt"],
+      "expected_sources": ["horários_de_atendimento_1º_sem__2025_2026.pdf"]
+    },
+    {
+      "id": "fact_012",
+      "category": "factual",
+      "question": "Em que dias atende a Amélia Maria Martins Pires?",
+      "reference_answer": "A Amélia Maria Martins Pires atende à segunda-feira, quarta-feira e sexta-feira.",
+      "must_contain": ["segunda", "quarta", "sexta"],
+      "expected_sources": ["horários_de_atendimento_1º_sem__2025_2026.pdf"]
+    },
+    {
+      "id": "fact_013",
+      "category": "factual",
+      "question": "Qual o departamento do António Borges Fernandes?",
+      "reference_answer": "O António Borges Fernandes pertence ao departamento DCES.",
+      "must_contain": ["DCES"],
+      "expected_sources": ["horários_de_atendimento_1º_sem__2025_2026.pdf"]
+    },
+    {
+      "id": "fact_014",
+      "category": "factual",
+      "question": "A que horas atende o Adriano Ferreira à terça-feira?",
+      "reference_answer": "O Adriano Manuel Alves Ferreira atende à terça-feira das 16:00 às 18:00.",
+      "must_contain": ["16:00", "18:00"],
+      "expected_sources": ["horários_de_atendimento_1º_sem__2025_2026.pdf"]
+    },
+    {
+      "id": "fact_015",
+      "category": "factual",
+      "question": "Qual é o título do projeto de final de curso?",
+      "reference_answer": "O título do projeto é EducaAssistAI.",
+      "must_contain": ["EducaAssistAI"],
+      "expected_sources": ["25_26_PT_PropostaProjeto.pdf"],
+      "notes": "Variação de fact_002 com léxico diferente"
+    },
+    {
+      "id": "fact_016",
+      "category": "factual",
+      "question": "A que instituição pertence o projeto EducaAssistAI?",
+      "reference_answer": "O projeto EducaAssistAI pertence ao Instituto Politécnico de Bragança (IPB).",
+      "must_contain": ["IPB"],
+      "expected_sources": ["25_26_PT_PropostaProjeto.pdf"]
+    },
+    {
+      "id": "fact_017",
+      "category": "factual",
+      "question": "Qual é o departamento do professor Adriano Ferreira?",
+      "reference_answer": "O Adriano Manuel Alves Ferreira pertence ao departamento DIC.",
+      "must_contain": ["DIC"],
+      "expected_sources": ["horários_de_atendimento_1º_sem__2025_2026.pdf"],
+      "notes": "Verifica se o sistema associa corretamente professor a departamento"
+    },
+    {
+      "id": "fact_018",
+      "category": "factual",
+      "question": "Quando terminam as aulas do 1.º semestre?",
+      "reference_answer": "Não encontrei essa informação nos documentos fornecidos.",
+      "expected_answer_phrase": "Não encontrei",
+      "expected_sources": [],
+      "notes": "Anti-alucinação: calendário académico pode não estar indexado ou não ter essa data explícita"
+    },
+    {
+      "id": "list_001",
+      "category": "listing",
+      "question": "Quem atende à sexta-feira?",
+      "reference_answer": "Os docentes que atendem à sexta-feira incluem:\n- Amélia Maria Martins Pires\n- António Borges Fernandes",
+      "must_contain": ["Amélia"],
+      "min_results": 15,
+      "expected_sources": ["horários_de_atendimento_1º_sem__2025_2026.pdf"],
+      "notes": "reference_answer é parcial (lista completa desconhecida); métricas de listagem são primárias"
+    },
+    {
+      "id": "list_002",
+      "category": "listing",
+      "question": "Quem atende à terça-feira?",
+      "reference_answer": "Os docentes que atendem à terça-feira incluem Adriano Manuel Alves Ferreira e vários outros professores.",
+      "min_results": 30,
+      "expected_sources": ["horários_de_atendimento_1º_sem__2025_2026.pdf"]
+    },
+    {
+      "id": "list_003",
+      "category": "listing",
+      "question": "Quem atende ao sábado?",
+      "reference_answer": "Não encontrei registos de docentes que atendam ao sábado nos documentos fornecidos.",
+      "max_results": 5,
+      "expected_sources": ["horários_de_atendimento_1º_sem__2025_2026.pdf"],
+      "notes": "Resultado provavelmente vazio; testa robustez do AND quando interseção é nula"
+    },
+    {
+      "id": "list_004",
+      "category": "listing",
+      "question": "Quem atende à sexta-feira ou ao sábado?",
+      "reference_answer": "Os docentes que atendem à sexta-feira ou ao sábado incluem:\n- Amélia Maria Martins Pires\n- António Borges Fernandes",
+      "must_contain": ["Amélia"],
+      "min_results": 15,
+      "expected_sources": ["horários_de_atendimento_1º_sem__2025_2026.pdf"],
+      "notes": "Combinação OR de dias"
+    },
+    {
+      "id": "restr_001",
+      "category": "restrictive",
+      "question": "Que docentes do DIC atendem à quinta-feira?",
+      "reference_answer": "Os docentes do DIC que atendem à quinta-feira incluem vários professores do departamento DIC.",
+      "must_contain": ["DIC"],
+      "must_not_contain": ["DCES,", "DTM,", "DGI,"],
+      "min_results": 3,
+      "expected_sources": ["horários_de_atendimento_1º_sem__2025_2026.pdf"],
+      "notes": "Filtro composto: dep + dia"
+    },
+    {
+      "id": "restr_002",
+      "category": "restrictive",
+      "question": "Quem na sala 13 atende à terça-feira?",
+      "reference_answer": "Na sala 13, atendem à terça-feira: Adélia Marlene Teixeira Matos.",
+      "min_results": 1,
+      "expected_sources": ["horários_de_atendimento_1º_sem__2025_2026.pdf"],
+      "notes": "Filtro composto: gab + dia"
+    },
+    {
+      "id": "restr_003",
+      "category": "restrictive",
+      "question": "Que docentes do DCES atendem ao sábado?",
+      "reference_answer": "Não encontrei registos de docentes do DCES que atendam ao sábado.",
+      "expected_sources": ["horários_de_atendimento_1º_sem__2025_2026.pdf"],
+      "notes": "Resultado provavelmente vazio; testa robustez do AND quando interseção é nula"
+    },
+    {
+      "id": "restr_004",
+      "category": "restrictive",
+      "question": "Quem está no gabinete LCAR?",
+      "reference_answer": "No gabinete LCAR atende Adriano Manuel Alves Ferreira.",
+      "min_results": 1,
+      "must_contain": ["Adriano"],
+      "expected_sources": ["horários_de_atendimento_1º_sem__2025_2026.pdf"],
+      "notes": "Filtro só por gabinete (sem dia) com valor alfanumérico"
+    },
+    {
+      "id": "sem_001",
+      "category": "semantic",
+      "question": "Quem atende à sexta-feira de manhã?",
+      "reference_answer": "À sexta-feira de manhã (antes das 12:00) atende António Borges Fernandes.",
+      "must_contain": ["António Borges Fernandes"],
+      "must_not_contain": ["Berta Isabel", "Catarina Bragança"],
+      "expected_sources": ["horários_de_atendimento_1º_sem__2025_2026.pdf"],
+      "notes": "Refinamento semântico: 'de manhã' = horários < 12:00"
+    },
+    {
+      "id": "sem_002",
+      "category": "semantic",
+      "question": "Quem atende à quarta-feira depois das 18h?",
+      "reference_answer": "Os docentes que atendem à quarta-feira depois das 18h são professores com horários a partir das 18:00.",
+      "must_not_contain": ["09:00", "10:00", "11:00"],
+      "expected_sources": ["horários_de_atendimento_1º_sem__2025_2026.pdf"],
+      "notes": "Refinamento numérico: hora > 18:00"
+    },
+    {
+      "id": "sem_003",
+      "category": "semantic",
+      "question": "Quem na sala 13 atende à quinta-feira de manhã?",
+      "reference_answer": "Não encontrei registos de docentes na sala 13 que atendam à quinta-feira de manhã.",
+      "expected_sources": ["horários_de_atendimento_1º_sem__2025_2026.pdf"],
+      "notes": "Combinação extrema: gab + dia + manhã"
+    },
+    {
+      "id": "unk_001",
+      "category": "unknown",
+      "question": "Qual é o valor da propina da licenciatura em Engenharia Informática?",
+      "reference_answer": "Não encontrei essa informação nos documentos fornecidos.",
+      "expected_answer_phrase": "Não encontrei",
+      "must_not_contain": ["€", "1500", "2000", "750"],
+      "expected_sources": [],
+      "notes": "Anti-alucinação: nenhuma das fontes tem esta informação"
+    },
+    {
+      "id": "unk_002",
+      "category": "unknown",
+      "question": "Quem é o presidente do IPB?",
+      "reference_answer": "Não encontrei essa informação nos documentos fornecidos.",
+      "expected_answer_phrase": "Não encontrei",
+      "expected_sources": [],
+      "notes": "Não está no corpus"
+    },
+    {
+      "id": "unk_003",
+      "category": "unknown",
+      "question": "Qual é o horário da cantina da ESTiG?",
+      "reference_answer": "Não encontrei essa informação nos documentos fornecidos.",
+      "expected_answer_phrase": "Não encontrei",
+      "expected_sources": []
+    },
+    {
+      "id": "unk_004",
+      "category": "unknown",
+      "question": "Quantos alunos tem a licenciatura em Engenharia Informática?",
+      "reference_answer": "Não encontrei essa informação nos documentos fornecidos.",
+      "expected_answer_phrase": "Não encontrei",
+      "must_not_contain": ["50", "100", "200"],
+      "expected_sources": []
+    },
+    {
+      "id": "hall_001",
+      "category": "anti_hallucination",
+      "question": "Qual é o gabinete do docente João Pessoa Inexistente?",
+      "reference_answer": "Não encontrei essa informação nos documentos fornecidos.",
+      "expected_answer_phrase": "Não encontrei",
+      "must_not_contain": ["13", "57", "112"],
+      "expected_sources": [],
+      "notes": "Nome inventado: sistema deve recusar"
+    },
+    {
+      "id": "hall_002",
+      "category": "anti_hallucination",
+      "question": "Em que dia atende a Maria Fictícia Santos do departamento DXX?",
+      "reference_answer": "Não encontrei essa informação nos documentos fornecidos.",
+      "expected_answer_phrase": "Não encontrei",
+      "expected_sources": [],
+      "notes": "Nome e departamento inventados"
+    }
+  ]
+}
